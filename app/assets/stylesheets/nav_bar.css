@@ -26,7 +26,6 @@ nav {
     
 }
 .user-account{
-    width: 50px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -35,6 +34,21 @@ nav {
 }
 .account-png {
     vertical-align: middle;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
 }
+.arrow {
+    box-sizing: border-box;
+    margin-left: 10px;
+    height: 1rem;
+    width: 1rem;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+  }
+  
+
