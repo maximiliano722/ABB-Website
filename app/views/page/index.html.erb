@@ -1,1 +1,31 @@
-<% @page_title = "ABB" %>
+<% @page_title = "ABB Home" %>
+<%= stylesheet_link_tag 'home' %>
+
+<% content_for :main do %>
+<main>
+    <div class = "top-row">
+        <p>Texas A&M’s Professional Brotherhood</p>
+        <h1>Aggie Business Brothers</h1>
+    </div>
+    <div class = "second-row">
+        <%= image_tag "group_photo.jpg", :class => "group-photo" %>
+        <div class = "about-us">
+            <h1>About Us</h1>
+            <p>
+                We strive to introduce a passion for business that will lead members to successful
+                 career opportunities. We place an emphasis on brotherhood in order to create a culture of integrity
+                 and excellence by bringing together members with a shared love for our University and our core values.
+            </p>
+        </div>
+    </div>
+    <div class= "final-row">
+        <div class = "merch-link">
+            <a href="https://l.instagram.com/?u=https%3A%2F%2Fwww.b-unlimited.com%2Fcollections%2Ftexas-a-m-university-aggie-business-brothers&e=ATMZE4m7_wQgVOMtvVU5fmGgdEfrHhnzOGoHzw9BVpS3CBlWgaO9qLvpoIyVPJvXu5maunNxYaS_f6GslanVVqs&s=1" target = "_blank">Merch Now Available!</a>
+        </div>
+        <div class= "application-link">
+            <a href="https://forms.gle/DQMJVQD1YNqNFUcZA" target = "_blank">Apply Now!</a>
+        </div>
+    </div>
+</main>
+
+<% end %>
