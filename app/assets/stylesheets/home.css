@@ -15,15 +15,19 @@ main{
     height: 500px;
 }
 
-.second-row img{
+.group-photo {
     height: 100%;
-    width: auto;
-}
-
-.about-us {
     width: 100%;
+    object-fit: cover;
+}
+.col-lg {
+    padding: 0 !important;
+}
+.about-us {
+    max-height: 680px;
     text-align: center;
-    padding: 20px;
+    padding: 20px !important;
+    overflow-y: auto;
     outline: 1px solid #e2e2e2;
     background-color: #500000;
     color: white;
@@ -31,11 +35,17 @@ main{
 .about-us h1 {
     margin: 0;
     padding: 0;
-    font-size: 2.5rem;
-    text-decoration: underline;
+    font-size: 2rem;
+}
+.about-us hr {
+    color: white;
+    background-color: white;
+    opacity: .7;
 }
 .about-us p {
-    font-size: 2rem;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    overflow-y: auto;
 }
 
 .final-row{

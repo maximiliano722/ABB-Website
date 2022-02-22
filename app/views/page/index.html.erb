@@ -3,14 +3,19 @@
 
 <% content_for :main do %>
 <main>
-    <div class = "top-row">
-        <p>Texas A&M’s Professional Brotherhood</p>
-        <h1>Aggie Business Brothers</h1>
-    </div>
-    <div class = "second-row">
-        <%= image_tag "group_photo.jpg", :class => "group-photo" %>
-        <div class = "about-us">
+    <div class="container">
+        <div class = "row">
+            <p>Texas A&M’s Professional Brotherhood</p>
+            <h1>Aggie Business Brothers</h1>
+        </div>
+    
+    <div class = "row">
+        <div class="col-lg">
+            <%= image_tag "group_photo.jpg", :class => "group-photo" %>
+        </div>
+        <div class = "about-us col-lg">
             <h1>About Us</h1>
+            <hr>
             <p>
                 We strive to introduce a passion for business that will lead members to successful
                  career opportunities. We place an emphasis on brotherhood in order to create a culture of integrity
@@ -26,6 +31,9 @@
             <a href="https://forms.gle/DQMJVQD1YNqNFUcZA" target = "_blank">Apply Now!</a>
         </div>
     </div>
+
+    </div>
+    
 </main>
 
 <% end %>
