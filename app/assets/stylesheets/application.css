@@ -20,10 +20,19 @@ body,html{
 }
 
 main{
-    max-width: 1440px;
-    margin: auto;
+    background-color: rgba(80,0,0,.2) !important;
+
+}
+@media (max-width: 1200px){
+    .container{
+        max-width: 100% !important;
+        padding-left: 20px;
+        padding-right: 20px;;
+    }
 }
 
 .container{ 
-    margin: auto !important;    
+    margin: auto !important; 
+    padding-top: 20px;  
+    padding-bottom: 20px; 
 }

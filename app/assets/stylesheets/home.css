@@ -1,14 +1,30 @@
-main{
-    padding: 20px;
-    background-color: #eeeeee;
-}
 .top-row{
     font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif; 
 
 }
+.first-container{
+    background-image: url('/assets/academic_plaza-600x396.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
 
-.image-slideshow{
+}
+.make-f > *{
+    z-index: 122;
+    color: white;
+}
+.mask {
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(80, 0, 0, .5);
+    z-index: 10;
+}
+.image-slideshow{
+    z-index: 11;
 }
 .second-row{
     display: flex;
@@ -28,9 +44,8 @@ main{
     text-align: center;
     padding: 20px !important;
     overflow-y: auto;
-    outline: 1px solid #e2e2e2;
-    background-color: #500000;
     color: white;
+    z-index: 11;
 }
 .about-us h1 {
     margin: 0;
@@ -92,4 +107,72 @@ main{
 
 .application-link {
     width: 50%;
+}
+
+.second-container{
+    background-color: #500000;
+    color: white;
+}
+
+.second-container .row {
+    padding-top: 20px;
+}
+.second-container input {
+    margin-top: 4px;
+    height: 3rem;
+    font-size: 1.2rem;
+}
+.second-container label {
+    font-size: 1.2rem;
+}
+.second-container .form-group {
+    text-align: center;
+}
+.second-container {
+    padding-bottom: 100px !important;
+}
+.second-container textarea{
+    width: 60%;
+    font-size: 1.2rem;
+    margin: auto;
+    max-width: 500px;
+}
+.submit-btn {
+    background-color: black;
+    color: white;
+    outline: none;
+    border: none;
+}
+.submit-btn:active {
+    background-color: white !important;
+    color: black;
+    transition: all .2s ease;
+}
+.logos-png img {
+    width: auto;
+    height: 60px;
+}
+.ig-png-div{
+    position: relative;
+}
+.ig-png-div div {
+    position: absolute;
+    right: 0;
+}
+.form-group{
+    min-width: 200px;
+}
+.ig-png-div{
+    position: relative;
+}
+.ig-png-div div {
+    position: absolute;
+    right: 0;
+}
+@media (max-width:600px){
+    .second-container textarea{
+        width: 90%;
+        font-size: 1.2rem;
+        margin: auto;
+    }
 }
