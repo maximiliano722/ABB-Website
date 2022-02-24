@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/about' => 'page#about'
   get '/contact' => 'page#contact'
   get '/recruitment' => 'page#recruitment'
+  get '/our_team' => 'page#our_team'
 
   resources :academic_tracker do 
   end
