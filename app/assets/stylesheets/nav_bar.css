@@ -4,6 +4,19 @@ nav {
     background-color: #500000;
     font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif; 
     display: flex;
+    padding: 0 !important;
+}
+nav a {
+    color: white !important; 
+    font-size: 1.3rem;
+
+}
+.navbar-nav{
+    width: 100%;
+
+}
+.navbar-brand {
+    height: 100%;
 }
 .abb-logo{
     width: auto;
