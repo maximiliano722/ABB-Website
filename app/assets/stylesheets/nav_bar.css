@@ -11,6 +11,7 @@ nav a {
     font-size: 1.3rem;
 
 }
+
 .navbar-nav{
     width: 100%;
 
@@ -64,3 +65,24 @@ nav a {
   }
   
 
+.navbar-collapse.show {
+    background-color: rgba(80,0,0,.8);
+    z-index: 200;
+    padding-bottom: 10px;
+}
+
+.navbar-collapse.show .navbar-nav .nav-item {
+    width: 100%;
+    padding-top: 10px;
+    border-bottom: 1px solid white;
+    
+}
+.navbar-collapse.show .navbar-nav .nav-item a {
+    width: fit-content;
+    margin: auto;
+}
+
+.navbar-collapse.show .navbar-nav .user-account{
+    margin: auto;
+    border-bottom: none;
+}
