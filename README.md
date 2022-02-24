@@ -22,4 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+<<<<<<< HEAD
 * Test 
+=======
+* Khai: 
+>>>>>>> e7cd67dbec7ba6903bd3a649aabc8115d7a15d3f
