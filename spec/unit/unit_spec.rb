@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
   subject do #what is the subject 
     described_class.new(name: 'Khai Nguyen', DOB: '2000-09-06', year: 2020, email: "khaihuyennguyen@tamu.edu", major: "Computer Science", active_points: 0, gpa: 4.0, total_hours: 30)
   end
-
+ 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
