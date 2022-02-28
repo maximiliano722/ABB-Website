@@ -1,7 +1,7 @@
 class Application < ApplicationRecord
-  validates :application_id, presence: true #enables validation for title attribute
-  validates :user_id, presence: true #enables validation for title attribute
-  validates :name, presence: true #enables validation for title attribute
-  validates :email, presence: true
-  validates :status, presence: true 
+    validates :name, presence: true
+    validates :email, format: { with: /[A-Za-z0-9._-]+@tamu\.edu/,
+    message: "must be a valid tamu email address" }
+    validates :status, presence: true
 end
+ 
