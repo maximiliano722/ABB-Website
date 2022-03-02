@@ -13,4 +13,11 @@ class PageController < ApplicationController
 
   def recruitment
   end
+
+  def login
+  end
+
+  def create_account
+  end
+  
 end
