@@ -1,1 +1,41 @@
-<h1>Create Account Page</h1>
+<% @page_title = "Create Account Page" %>
+<%= stylesheet_link_tag '' %>create_account
+
+<head>
+  <link rel="stylesheet" href="/app/assets/stylesheets/create_account.css">
+</head>
+
+
+<div class = walkway></div>
+
+
+<div class = forma>
+<div class = Sign-Up-title>Sign Up </div> 
+    <br>
+    <form>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" placeholder="@enter first name"><br>
+        <br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" placeholder="@enter last name"><br>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="@enter email"><br>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="@enter password"><br>
+        <br>
+
+        <label for="password_confirm">Password Confirmation:</label>
+        <input type="password_confirmation" id="password_confirmation" name="password_confirm" placeholder="@reenter password"><br>
+        <br>
+
+        <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a> 
+        <input type="submit" class="buttonLog-submit" value="Confirm">
+    </form> <br>
+    <p style="font-size:17.5px;">----------- OR -----------<p>
+    <p style="font-size:16px;">Have an account? <a href="/login" style="color:#F78A8A;">Log in</a><p>
+</div>
