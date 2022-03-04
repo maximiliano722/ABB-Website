@@ -1,5 +1,176 @@
 <% @page_title = "ABB Our Team Page" %>
 <%= stylesheet_link_tag 'home' %>
 
+<<<<<<< HEAD
+<h1>Our Team Page</h1>
+<% content_for :main do %>
+    <main>
+       <div class="container first-container">
+          <div class = "row first-row make-f">
+             <p>Texas A&M’s Professional Brotherhood</p>
+             <h1>Our Team</h1>
+          </div>
+          <div class = "row">
+            <div class = "about-us col-lg">
+                <div
+                    id="carouselMultiItemExample"
+                    class="carousel slide carousel-dark text-center"
+                    data-mdb-ride="carousel"
+                >
+                <div class="d-flex justify-content-center mb-4">
+                    <button
+                        class="carousel-control-prev position-relative"
+                        type="button"
+                        data-mdb-target="#carouselMultiItemExample"
+                        data-mdb-slide="prev"
+                    >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                        class="carousel-control-next position-relative"
+                        type="button"
+                        data-mdb-target="#carouselMultiItemExample"
+                        data-mdb-slide="next"
+                    >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="carousel-inner py-4">
+                    <!-- Single item -->
+                    <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card">
+                            <img
+                                src="https://static.wixstatic.com/media/84a3c7_fdeb26661c5c4efdb2ccbb4a535e76ae~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_fdeb26661c5c4efdb2ccbb4a535e76ae~mv2.webp"
+                                class="card-img-top"
+                                alt="Brandon Homann"
+                            >
+                            <div class="card-body">
+                                <h5 class="card-title" style="color:black;">Brandon Homann | President</h5>
+                                <a href="#!" class="btn btn-primary">Contact Me</a>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="card">
+                            <img
+                                src="https://static.wixstatic.com/media/84a3c7_b1c2458c914c47658576ad3a3211b256~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_b1c2458c914c47658576ad3a3211b256~mv2.webp"
+                                class="card-img-top"
+                                alt="Collin Froehlich"
+                            >
+                            <div class="card-body">
+                                <h5 class="card-title" style="color:black;">Collin Froehlich | Vice President</h5>
+                                <a href="#!" class="btn btn-primary">Contact Me</a>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="card">
+                            <img
+                                src= "https://static.wixstatic.com/media/84a3c7_2d3c702d07294b8891672cd4409aad8b~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_2d3c702d07294b8891672cd4409aad8b~mv2.webp"
+                                class="card-img-top"
+                                alt="Nate Garcia"
+                            >
+                            <div class="card-body">
+                                <h5 class="card-title" style="color:black;">Nate Garcia | VP of Finance</h5>
+                                <a href="#!" class="btn btn-primary">Contact Me</a>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 d-none d-lg-block">
+                            <div class="card">
+                            <img
+                                src= "https://static.wixstatic.com/media/84a3c7_f92f41525cdb44fd9fc24eb7e1d47215~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_f92f41525cdb44fd9fc24eb7e1d47215~mv2.webp"
+                                class="card-img-top"
+                                alt="Tony Hernandez"
+                            >
+                            <div class="card-body">
+                                <h5 class="card-title" style="color:black;">Tony Hernandez | VP of Brotherhood</h5>
+                                <a href="#!" class="btn btn-primary">Contact Me</a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <div class="mask"></div>
+       </div>
+       <div class="container second-container">
+          <h1 style="text-align:center">Questions</h1>
+          <hr>
+          <form method="post">
+             <div class="row d-flex w-100 justify-content-evenly">
+                <div class="col d-flex justify-content-center">
+                   <div class="form-group col-xs-4 col-md-4">
+                      <label for="first-name" class="control-label">First Name</label>
+                      <input type="name" value='' class="form-control" id="first-name" placeholder="First">
+                   </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                   <div class="form-group col-xs-4 col-md-4">
+                      <label for="last-name" class="control-label">Last Name</label>
+                      <input type="name" value='' class="form-control" id="last-name" placeholder="Last">
+                   </div>
+                </div>
+             </div>
+             <div class="row d-flex w-100">
+                <div class="col d-flex justify-content-center">
+                   <div class="form-group col-xs-4 col-md-4">
+                      <label for="email" class="control-label">Email</label>
+                      <input type="email" value='' class="form-control" id="email" placeholder="johndoe@gmail.com">
+                   </div>
+                </div>
+                <div class="col d-flex justify-content-center">
+                   <div class="form-group col-xs-4 col-md-4">
+                      <label for="phone-number" class="control-label">Phone Number</label>
+                      <input type="text" value='' class="form-control" id="phone-number" placeholder="123-456-7890">
+                   </div>
+                </div>
+             </div>
+             <div class="row d-flex w-100">
+                <div class="col d-flex justify-content-center w-100 message-form">
+                   <div class="form-group col-xs-4 col-md-4 w-100">
+                      <label for="message" class="control-label">Message</label>
+                      <textarea type="text" rows="7" cols="20" value='' class="form-control" id="message" placeholder="Type..."></textarea>
+                   </div>
+                </div>
+             </div>
+             <div class="row d-flex w-100">
+                <div class="col d-flex justify-content-center">
+                   <input class="btn btn-primary submit-btn btn-lg" type="submit" value="Submit">
+                </div>
+             </div>
+             <div class="row d-flex w-100 logos-png">
+                <div class="col align-items-end flex-column float-right ig-png-div">
+                   <div>
+                      <a href="">
+                        <%= image_tag "ig-png.png", :class => "ig-png" %>
+                      </a>
+                   </div>
+                </div>
+                <div class="col align-items-start flex-column linkedin-png-div">
+                   <div>
+                      <a href="">
+                        <%= image_tag "linkedIn-png.png", :class => "linkedin-png" %>
+                      </a>
+                   </div>
+                </div>
+             </div>
+          </form>
+       </div>
+    </main>
+    <% end %>
+=======
 <%= render :partial => 'page/nav_bar' %>
 <h1>Our Team Page</h1>
+>>>>>>> d5018a5ca34f2c2173c440c7e4d7ac54b94525ab
