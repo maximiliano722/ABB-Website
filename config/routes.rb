@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/contact' => 'page#contact'
   get '/recruitment' => 'page#recruitment'
   get '/our_team' => 'page#our_team'
+  get '/login' => 'page#login'
+  get '/create_account' => 'page#create_account'
 
   resources :academic_tracker do 
   end

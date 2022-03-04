@@ -1,0 +1,30 @@
+<% @page_title = "Login Page" %>
+<%= stylesheet_link_tag 'login' %>
+
+<head>
+  <link rel="stylesheet" href="/app/assets/stylesheets/login.css">
+</head>
+
+
+<div class = walkway></div>
+
+
+<div class = forma>
+<div class = login-title>Login </div> 
+    <br>
+    <form>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="@enter email"><br>
+        <br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="@enter password"><br>
+        <br>
+        <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a> 
+        <input type="submit" class="buttonLog-submit" value="Confirm">
+    </form> <br>
+    <p style="font-size:17.5px;">----------- OR -----------<p>
+    <p style="font-size:16px;">Need an account? <a href="/create_account" style="color:#F78A8A;">SIGN UP</a><p>
+</div>
+
+
