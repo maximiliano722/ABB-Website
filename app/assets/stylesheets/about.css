@@ -9,7 +9,6 @@
 }
 .what-is-abb{
     color: white;
-    width: 70%;
     text-align: center;
 }
 .about-brandon {
@@ -43,4 +42,73 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.second-container-about .row{
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 30px;
+
+}
+.core-values{
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    color: white;
+    background-color: rgba(0,0,0, .1);
+    width: fit-content;
+    margin: auto;
+}
+.mask-snow{
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(80, 0, 0, .3);
+}
+@media (min-width:300px ) and (max-width:1000px){
+    @media (max-width:750px){
+        .pic-of-brandon-div{
+            width: fit-content;
+            margin: auto;
+        }
+        .about-row{
+            padding-top: 10px;
+        }
+        .pic-brandon{
+            height: 250px;
+            width: auto;
+            margin: auto;
+        }
+        
+        .about-brandon{
+            width: 90%;
+        }
+    }
+    .what-is-abb{
+        padding-top: 30px;
+
+    }
+}
+.our-core-values-div{
+    padding-bottom: 20px !important;
+}
+.core-values-first-row img {
+    width: 100%;
+    height: auto;
+}
+.pic-theme-about {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: underline;
+}
+.quote-about{
+    text-align: start;
+    padding-top: 1.6rem;
+}
+.quote-about p{
+    color: white;
+    line-height: normal;
+    font-size:1.4rem !important;
+    width: 90%;
 }
