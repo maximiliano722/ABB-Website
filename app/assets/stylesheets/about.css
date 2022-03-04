@@ -24,7 +24,23 @@
     margin:auto;
 }
 .pic-brandon{
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
     
+}
+.second-container-about .row > *{
+    z-index:100;
+}
+.image-snow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.image-snow img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
