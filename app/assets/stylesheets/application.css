@@ -30,7 +30,7 @@ main{
         padding-right: 20px;;
     }
 }
-
+a:hover {text-decoration: none; background: none;}
 .container{ 
     margin: auto !important; 
     padding-top: 20px;  
