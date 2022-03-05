@@ -89,6 +89,22 @@
         padding-top: 30px;
 
     }
+    .quote-about {
+        text-align: center !important;
+    }
+    .quote-about p{
+        margin: auto;
+    }
+    .core-values-pic {
+        width: 60%;
+        margin: auto !important;
+        height: auto !important;
+    }
+    @media (max-width: 400px){
+        .core-values {
+            width: 80%;
+        }
+    }
 }
 .our-core-values-div{
     padding-bottom: 20px !important;
@@ -111,4 +127,19 @@
     line-height: normal;
     font-size:1.4rem !important;
     width: 90%;
+    margin:auto
+}
+
+.quote-about-right {
+    text-align: right;
+}
+
+.row-padding-change {
+    padding-bottom: 30px !important;
+}
+.third-container-about {
+    background: #500000;
+    padding-top: 50px;
+    text-align: center;
+
 }
