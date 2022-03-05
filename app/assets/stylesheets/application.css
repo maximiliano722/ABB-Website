@@ -23,6 +23,9 @@ main{
     background-color: rgba(80,0,0,.2) !important;
 
 }
+.container {
+    position: relative;
+}
 @media (max-width: 1200px){
     .container{
         max-width: 100% !important;
@@ -30,7 +33,7 @@ main{
         padding-right: 20px;;
     }
 }
-
+a:hover {text-decoration: none; background: none;}
 .container{ 
     margin: auto !important; 
     padding-top: 20px;  
