@@ -4,102 +4,202 @@
 <h1>Our Team Page</h1>
 <% content_for :main do %>
     <main>
+       <%= render :partial => 'page/nav_bar' %>
        <div class="container first-container">
           <div class = "row first-row make-f">
              <p>Texas A&M’s Professional Brotherhood</p>
-             <h1>Our Team</h1>
           </div>
           <div class = "row">
             <div class = "about-us col-lg">
-                <div
-                    id="carouselMultiItemExample"
-                    class="carousel slide carousel-dark text-center"
-                    data-mdb-ride="carousel"
-                >
-                <div class="d-flex justify-content-center mb-4">
-                    <button
-                        class="carousel-control-prev position-relative"
-                        type="button"
-                        data-mdb-target="#carouselMultiItemExample"
-                        data-mdb-slide="prev"
-                    >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button
-                        class="carousel-control-next position-relative"
-                        type="button"
-                        data-mdb-target="#carouselMultiItemExample"
-                        data-mdb-slide="next"
-                    >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div class="carousel-inner py-4">
-                    <!-- Single item -->
-                    <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row">
-                        <div class="col-lg-4">
-                            <div class="card">
-                            <img
-                                src="https://static.wixstatic.com/media/84a3c7_fdeb26661c5c4efdb2ccbb4a535e76ae~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_fdeb26661c5c4efdb2ccbb4a535e76ae~mv2.webp"
-                                class="card-img-top"
-                                alt="Brandon Homann"
-                            >
-                            <div class="card-body">
-                                <h5 class="card-title" style="color:black;">Brandon Homann | President</h5>
-                                <a href="#!" class="btn btn-primary">Contact Me</a>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 d-none d-lg-block">
-                            <div class="card">
-                            <img
-                                src="https://static.wixstatic.com/media/84a3c7_b1c2458c914c47658576ad3a3211b256~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_b1c2458c914c47658576ad3a3211b256~mv2.webp"
-                                class="card-img-top"
-                                alt="Collin Froehlich"
-                            >
-                            <div class="card-body">
-                                <h5 class="card-title" style="color:black;">Collin Froehlich | Vice President</h5>
-                                <a href="#!" class="btn btn-primary">Contact Me</a>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 d-none d-lg-block">
-                            <div class="card">
-                            <img
-                                src= "https://static.wixstatic.com/media/84a3c7_2d3c702d07294b8891672cd4409aad8b~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_2d3c702d07294b8891672cd4409aad8b~mv2.webp"
-                                class="card-img-top"
-                                alt="Nate Garcia"
-                            >
-                            <div class="card-body">
-                                <h5 class="card-title" style="color:black;">Nate Garcia | VP of Finance</h5>
-                                <a href="#!" class="btn btn-primary">Contact Me</a>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 d-none d-lg-block">
-                            <div class="card">
-                            <img
-                                src= "https://static.wixstatic.com/media/84a3c7_f92f41525cdb44fd9fc24eb7e1d47215~mv2.jpg/v1/fill/w_352,h_528,al_c,q_80,usm_0.66_1.00_0.01/84a3c7_f92f41525cdb44fd9fc24eb7e1d47215~mv2.webp"
-                                class="card-img-top"
-                                alt="Tony Hernandez"
-                            >
-                            <div class="card-body">
-                                <h5 class="card-title" style="color:black;">Tony Hernandez | VP of Brotherhood</h5>
-                                <a href="#!" class="btn btn-primary">Contact Me</a>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+               <h1>Executive Team</h1>
+               <hr>
+               <figure class="figure">
+                  <%= image_tag "Brandon_Homann.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Brandon Homann | President</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Collin_Froehlich.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Collin Froehlich | Vice President</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Nate_Garcia.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Nate Garcia | VP of Finance</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Tony_Hernandez.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Tony Hernandez | VP of Brotherhood</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Dilan_Patel.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Dilan Patel | VP of Networking</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Thomas_Traicoff.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Thomas Traicoff | VP of Community Service</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Jacob_Grigsby.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Jacob Grigsby | VP of Public Relations</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Brock_Cantu.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Brock Cantu | VP of Professionalism</figcaption>
+                  <a href="#!" class="btn btn-primary" style="background-color:black; border: 2px solid black;">Contact Me</a>
+               </figure>
+               <hr>
+               <h1>Fall 2021 Class</h1>
+               <hr>
+               <figure class="figure">
+                  <%= image_tag "Aaron_Roberts.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Aaron Roberts | Biology</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Andrew_Zavala.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Andrew Zavala | Business</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Brennan_Ross.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Brennan Ross | Wildlife & Fisheries</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Austin_Domino.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Austin Domino | Finance</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Cody_Sims.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Cody Sims | Mechanical Engineering</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Colby_Chaplowe.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Colby Chaplowe | Ag Economics</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Caleb_Moderski.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Caleb Moderski | Architecture</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Cole_Rather.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Cole Rather | Ag Economics</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Chris_Zeidan.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Chris Zeidan | Business</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Derrick_Winn.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Derrick Winn | Sports Management</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Drew_Fenner.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Drew Fenner | Parks & Rec</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Cole_Feuquay.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Cole Feuquay | Biomedical Sciences</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Euan_Fraser.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Euan Fraser | Biomedical Sciences</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Connor_Nelson.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Connor Nelson | Accounting</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Jake_Lacey.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Jake Lacey | Accounting</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Hayden_Freeman.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Hayden Freeman | M.I.S.</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Dylan_Folse.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Dylan Folse | Business</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Hunter_Goudeau.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Hunter Goudeau | Finance</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Garrett_McAllister.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Garrett McAllister | Construction Science</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Ryan_Starritt.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Ryan Starritt | Ag Economics</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Jamison_Reynolds.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Jamison Reynolds | Allied Health</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Jarrod_Coker.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Jarrod Coker | Geology</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Jorge_Enciso_III.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Jorge Enciso III | Nuclear Engineering</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Jackson_Collins.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Jackson Collins | Finance</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "William_Walters.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">William Walters | Finance</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Noah_Kindseth.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Noah Kindseth| PPA</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Matt_Zschiesche.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Matt Zschiesche | Accounting</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Max_West.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Max West | Education</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Joseph_Jordana.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Joseph Jordana | Finance</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Thomas_Zorn.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Thomas Zorn | Marketing</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Shane_Little.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Shane Little | M.I.S.</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Preston_Belt.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Preston Belt | Accounting</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Mitch_Kalinowski.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Mitch Kalinowski | Construction Science</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Ryan_Powell.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Ryan Powell | Finance</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Ryan_Solberg.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Ryan Solberg | Industrial Distribution</figcaption>
+               </figure>
+               <figure class="figure">
+                  <%= image_tag "Thomas_Dennis.webp", :class => "figure-img img-fluid rounded", :style => "width:250px; height:auto;"%>
+                  <figcaption class="figure-caption" style="color:white;">Thomas Dennis | Telecommunications</figcaption>
+               </figure>
             </div>
           </div>
           <div class="mask"></div>
