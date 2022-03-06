@@ -12,14 +12,14 @@ body {
 
 .create-account-title {
     text-align: center;
-    font-size: 45px;
+    font-size: 35px;
     color: white;
 }
 
 .forma {
     position: fixed; /* or absolute */
     top: 25%;
-    left: 55%;
+    left: 44%;
     font-size: 18px;
     color: white;
     line-height: normal;
