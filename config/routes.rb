@@ -8,15 +8,16 @@ Rails.application.routes.draw do
     #resources :sessions
   end
   resources :users
+  resources :sessions
   
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #root 
-  #root to: 'page#index'
-  #get '/index' => 'page#index'
-  #get '/about' => 'page#about'
-  #get '/contact' => 'page#contact'
-  #get '/recruitment' => 'page#recruitment'
+
+  get '/index' => 'page#index'
+  get '/about' => 'page#about'
+  get '/contact' => 'page#contact'
+  get '/recruitment' => 'page#recruitment'
 
   resources :academic_tracker do 
   end
