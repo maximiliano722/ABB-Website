@@ -10,9 +10,9 @@ body {
     background-size: cover;
 }
 
-.login-title {
-    text-align: center;
-    font-size: 60px;
+.create-account-title {
+    text-align: top-center;
+    font-size: 20px;
     color: white;
 }
 
@@ -20,7 +20,7 @@ body {
     position: fixed; /* or absolute */
     top: 25%;
     left: 44%;
-    font-size: 18px;
+    font-size: 12px;
     color: white;
     line-height: normal;
 }
