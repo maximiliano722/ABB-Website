@@ -12,7 +12,7 @@ body {
 
 .create-account-title {
     text-align: top-center;
-    font-size: 35px;
+    font-size: 25px;
     color: white;
 }
 
@@ -20,7 +20,7 @@ body {
     position: fixed; /* or absolute */
     top: 25%;
     left: 44%;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     line-height: normal;
 }
