@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :attendance_logs
-  resources :sponsors
-  resources :applications
+
   root to: 'page#index'
   #root to: 'dashboards#show'
   devise_for :admins, controllers: { omniauth_callbacks: 'admins/omniauth_callbacks' }
@@ -12,7 +10,9 @@ Rails.application.routes.draw do
   end
   resources :users
   resources :sessions
-  
+   resources :attendance_logs
+  resources :sponsors
+  resources :applications
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #root 
