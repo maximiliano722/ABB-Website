@@ -96,6 +96,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '607258219706-6420g7pmrkdsueeonfsnm27smvn99bld.apps.googleusercontent.com'
+  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
