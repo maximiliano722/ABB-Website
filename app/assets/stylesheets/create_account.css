@@ -10,7 +10,10 @@
 }
 
 .second-container-create{
-    background-color: #500000 !important;
+    background-image: url('rev');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
     position: relative;
 }
 
@@ -69,6 +72,7 @@
 .third-container-create{
     background-color: #500000 !important;
     text-align: center;
+    color: white;
     position: relative;
 }
 
