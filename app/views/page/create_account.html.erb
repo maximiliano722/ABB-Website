@@ -3,9 +3,11 @@
 <% content_for :main do %>
 
 <main>
-  <div class="container first-container">
+  <div class="container first-container-header">
     <p class="header"> Create an Account </p>
     <br>
+  </div>
+  <div class="container second-container-create">
     <div class = forma>
     <form>
         <label for="first_name">First Name:</label><br>
@@ -31,9 +33,10 @@
         <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a> 
         <input type="submit" class="buttonLog-submit" value="Confirm">
     </form> <br>
+  </div>
+  <div class="container-third-container-create">
     <p style="font-size:17.5px;">----------- OR -----------<p>
     <p style="font-size:16px;">Have an account? <a href="/login" style="color:#F78A8A;">Log in</a><p>
-    </div>
   </div>
 </main>
 <% end %>
