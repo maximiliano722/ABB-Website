@@ -1,19 +1,12 @@
-
 <% @page_title = "Create Account" %>
 <%= stylesheet_link_tag 'create_account' %>
-<html>
+<% content_for :main do %>
 
-<head>
-  <link rel="stylesheet" href="testing.css">
-</head>
-
-
-<div class = walkway></div>
-
-
-<div class = forma>
-<div class = Sign-Up-title> New Member Sign Up </div> 
+<main>
+  <div class="container first-container">
+    <p class="header"> Create an Account </p>
     <br>
+    <div class = forma>
     <form>
         <label for="first_name">First Name:</label><br>
         <input type="text" id="first_name" name="first_name" placeholder="@enter first name"><br>
@@ -40,6 +33,9 @@
     </form> <br>
     <p style="font-size:17.5px;">----------- OR -----------<p>
     <p style="font-size:16px;">Have an account? <a href="/login" style="color:#F78A8A;">Log in</a><p>
-</div>
+    </div>
+  </div>
+</main>
+<% end %>
 
-</html>>
+      

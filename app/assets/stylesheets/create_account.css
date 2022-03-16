@@ -1,19 +1,16 @@
-body {
-    background-color: #500000;
-}
-
-.rev {
-    background-image: url('Rev');
-    opacity: 0.6;
-    width: 100%;
-    height: 100%;
+.first-container{
+    background-image: url('rev');
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
+    position: relative;
+
 }
 
-.login-title {
-    text-align: center;
-    font-size: 60px;
-    color: white;
+.header{
+    font-size: 3rem;
+    position: fixed;
+    text-align:center
 }
 
 .forma {
