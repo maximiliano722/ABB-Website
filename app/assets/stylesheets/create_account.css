@@ -39,13 +39,9 @@
     background-color: rgba(80, 0, 0, .3);
 }
 
-.forma {
-    position: fixed; /* or absolute */
-    top: 25%;
-    left: 44%;
-    font-size: 18px;
-    color: white;
-    line-height: normal;
+.form-group{
+    color:white;
+    text-align: center;
 }
 
 
@@ -72,6 +68,7 @@
 
 .third-container-create{
     background-color: #500000 !important;
+    text-align: center;
     position: relative;
 }
 
