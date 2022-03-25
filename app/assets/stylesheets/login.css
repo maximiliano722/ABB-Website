@@ -1,10 +1,16 @@
 body {
     background-color: #500000;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .walkway {
     background-image: url('walkway.jpg');
     opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -16,10 +22,11 @@ body {
     color: white;
 }
 
-.forma {
-    position: fixed; /* or absolute */
-    top: 25%;
-    left: 44%;
+.forma-login {
+    margin: auto !important;
+    position: relative;
+    left: 0;
+    top: 0;
     font-size: 18px;
     color: white;
     line-height: normal;
