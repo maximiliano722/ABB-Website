@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-03-28T22:13:53+00:00">2022-03-28T22:13:53+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-03-28T22:49:58+00:00">2022-03-28T22:49:58+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,7 +23,7 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  74.75%
+  74.56%
 </span>
 
      </span>
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>796</b> relevant lines,
+    <b>798</b> relevant lines,
     <span class="green"><b>595</b> lines covered</span> and
-    <span class="red"><b>201</b> lines missed. </span>
+    <span class="red"><b>203</b> lines missed. </span>
     (<span class="red">
-  74.75%
+  74.56%
 </span>
 )
   </div>
@@ -600,12 +600,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#40e821aea65f72b9c064ee35fab70aeb25869caa" class="src_link" title="spec/requests/user_flows_spec.rb">spec/requests/user_flows_spec.rb</a></td>
-            <td class="yellow strong cell--number t-file__coverage">83.33 %</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">6</td>
+            <td class="red strong cell--number t-file__coverage">62.50 %</td>
+            <td class="cell--number">12</td>
+            <td class="cell--number">8</td>
             <td class="cell--number">5</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">0.83</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0.63</td>
             
           </tr>
         
@@ -17958,8 +17958,8 @@
   <div class="header">
     <h3>spec/requests/user_flows_spec.rb</h3>
     <h4>
-      <span class="yellow">
-  83.33%
+      <span class="red">
+  62.5%
 </span>
 
       lines covered
@@ -17968,9 +17968,9 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
+      <b>8</b> relevant lines.
       <span class="green"><b>5</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
 
     
@@ -18020,7 +18020,7 @@
 
             
 
-            <code class="ruby">  describe &quot;GET /user_flows&quot; do</code>
+            <code class="ruby">  describe &quot;Navigation should be available&quot; do</code>
           </li>
         </div>
       
@@ -18031,7 +18031,7 @@
 
             
 
-            <code class="ruby">    it &quot;works! (now write some real specs)&quot; do</code>
+            <code class="ruby">    it &quot;should show the navigation on the home page&quot; do</code>
           </li>
         </div>
       
@@ -18042,7 +18042,7 @@
 
             
 
-            <code class="ruby">      get user_flows_index_path</code>
+            <code class="ruby">      visit root_path</code>
           </li>
         </div>
       
@@ -18053,12 +18053,34 @@
 
             
 
-            <code class="ruby">      expect(response).to have_http_status(200)</code>
+            <code class="ruby">      page.should have_link(&#39;Home&#39;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
+          <li class="missed" data-hits="0" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">      page.should have_link(&#39;About&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">      page.should have_link(&#39;Recruitment&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -18069,7 +18091,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="9">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -18080,7 +18102,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
