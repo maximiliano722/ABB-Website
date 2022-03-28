@@ -15,13 +15,13 @@
  */
 body,html{
     margin: 0;
-    height: 101vh;
+    min-height: 101vh;
     min-width: 99vw ;
 }
 
 main{
     background-color: rgba(80,0,0,.2) !important;
-
+    width: 100%;
 }
 .container {
     position: relative;
