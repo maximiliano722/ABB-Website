@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "UserFlows", type: :request do
-  describe "GET /user_flows" do
-    it "works! (now write some real specs)" do
-      get user_flows_path
-      expect(response).to have_http_status(200)
+  describe "GET /about" do
+    it "Can get the about page from the home page" do
+      get root_path
+      assert_select "a", "About", 1
     end
   end
 end
