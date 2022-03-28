@@ -14,11 +14,8 @@ Rails.application.routes.draw do
   get '/our_team' => 'page#our_team'
   get '/login' => 'page#login'
   get '/create_account' => 'page#create_account'
-<<<<<<< HEAD
   get '/sponsor' => 'sponsors#index'
-=======
   get '/events' => 'page#events'
->>>>>>> event_view
 
   resources :academic_tracker do 
   end
