@@ -85,7 +85,6 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
   database: ABB_Website_production
   username: ABB_Website
   password: <%= ENV['ABB_WEBSITE_DATABASE_PASSWORD'] %>
