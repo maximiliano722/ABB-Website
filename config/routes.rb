@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :sessions
    resources :attendance_logs
   resources :sponsors
-  resources :applications
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #root 
