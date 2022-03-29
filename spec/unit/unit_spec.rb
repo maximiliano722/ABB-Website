@@ -104,35 +104,6 @@ RSpec.describe Sponsor, type: :model do
     expect(subject).not_to be_valid
   end
 end
-
-#________________________________
-# unit testing application
-RSpec.describe Application, type: :model do
-  subject do
-    described_class.new(name: "Diamond Azailia", email: "regenR8@tamu.edu", status: "pending")
-  end
-
-  it 'is valid with valid attributes' do
-    expect(subject).to be_valid
-  end
-
-  it 'is invalid with an invalid name' do
-    subject.name = ""
-    expect(subject).not_to be_valid
-  end
-
-  it 'is invalid with an invalid email' do
-    subject.name = "Diamond Azailia"
-    subject.email ="hahah@live.com"
-    expect(subject).not_to be_valid
-  end
-
-  it 'is invalid with an invalid status' do
-    subject.email = "regenR8@tamu.edu"
-    subject.status ="waiting"
-    expect(subject).not_to be_valid
-  end
-end
 #________________________________
 # testing hours_request
 
