@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "nav_bar.css" %>
 <nav class="navbar navbar-expand-lg">
+
   <a class="navbar-brand" href="#">
   <%= image_tag "abb logo.png", :class => "abb-logo" %>
   </a>
@@ -29,6 +30,8 @@
           <a class="dropdown-item" href="#">Aggie Open</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/sponsor">Sponsors</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/events">Events</a>
         </div>
       </li>
       <li class="nav-item" style="border-bottom:none">
@@ -42,10 +45,5 @@
     </ul>
     
   </div>
-  <script>
-    $('#navbarDropdown').click(function(){
-      $('.dropdown').toggleClass("show");
-      $('.dropdown-menu').toggleClass("show");
-    });
-  </script>
+  
 </nav>
