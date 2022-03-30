@@ -7,11 +7,9 @@ Rails.application.routes.draw do
   end
   resources :attendance_logs
   resources :sponsors
-  resources :applications
   resources :users
   resources :sessions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
 
   get '/index' => 'page#index'
   get '/about' => 'page#about'

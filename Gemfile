@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
+
+# Start doing Devise and OmniAuth
 gem 'devise'
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-google-oauth2'

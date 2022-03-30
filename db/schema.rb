@@ -25,17 +25,16 @@ ActiveRecord::Schema.define(version: 2022_03_03_004019) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
-  create_table "applications", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "status"
+  create_table "attendance_logs", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "attendance_logs", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "user_id"
+  create_table "messages", force: :cascade do |t|
+    t.string "name"
+    t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,6 +43,13 @@ ActiveRecord::Schema.define(version: 2022_03_03_004019) do
     t.integer "event_id"
     t.string "sponsor_name"
     t.string "sponsor_type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "support_logs", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "sponsor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
