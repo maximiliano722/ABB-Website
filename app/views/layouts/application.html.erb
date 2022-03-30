@@ -10,12 +10,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- CSS only -->>
-    <title>GoogleOauthDevise</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- CSS only -->
     <style>
         .flash__alert   { color: red; }
         .flash__notice  { color: blue; }
@@ -24,13 +19,11 @@
   </head>
 
   <body>
-  
     <% if flash.any? %>
       <% flash.each do |key, value| -%>
         <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
       <% end -%>
     <% end %>
-    <%= yield %>
     <%= yield :main %>
     <%= yield  %>
     <!-- JavaScript Bundle with Popper -->
