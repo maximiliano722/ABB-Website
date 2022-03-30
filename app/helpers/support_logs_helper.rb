@@ -1,0 +1,2 @@
+module SupportLogsHelper
+end

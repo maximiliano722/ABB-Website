@@ -1,7 +1,122 @@
-<p id="notice"><%= notice %></p>
+<% @page_title = "Sponsors" %>
+<%= stylesheet_link_tag 'home' %>
 
-<h1>Sponsors</h1>
+<% content_for :main do %>
+  <main>
+    <%= render :partial => 'page/nav_bar' %>
+    <div class="container first-container">
+        <div class = "row first-row make-f">
+            <p>Texas A&M’s Professional Brotherhood</p>
+            <h1>Our Sponsors</h1>
+        </div>
+        <div class = "row">
+          <div class = "about-us col-lg">
+              <hr>
+              <p class="about-brandon"> Thank you to all of our sponsors! 
+              <br>
+              <% if false %>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Event</th>
+                      <th>Sponsor name</th>
+                      <th>Sponsor type</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
 
+                  <tbody>
+                    <% @sponsors.each do |sponsor| %>
+                      <tr>
+                        <td><%= sponsor.event_id %></td>
+                        <td><%= sponsor.sponsor_name %></td>
+                        <td><%= sponsor.sponsor_type %></td>
+                        <td><%= link_to 'Show', sponsor %></td>
+                        <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
+                        <td><%= link_to 'Destroy', sponsor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+
+                <br>
+
+                <%= link_to 'New Sponsor', new_sponsor_path %>
+              <% end %>
+          </div>
+        </div>
+        <div class="mask"></div>
+      </div>
+      
+      <div class="container second-container">
+        <h1 style="text-align:center">Questions</h1>
+        <hr>
+        <form method="post">
+          <div class="row d-flex w-100 justify-content-evenly">
+              <div class="col d-flex justify-content-center">
+                <div class="form-group col-xs-4 col-md-4">
+                    <label for="first-name" class="control-label">First Name</label>
+                    <input type="name" value='' class="form-control" id="first-name" placeholder="First">
+                </div>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <div class="form-group col-xs-4 col-md-4">
+                    <label for="last-name" class="control-label">Last Name</label>
+                    <input type="name" value='' class="form-control" id="last-name" placeholder="Last">
+                </div>
+              </div>
+          </div>
+          <div class="row d-flex w-100">
+              <div class="col d-flex justify-content-center">
+                <div class="form-group col-xs-4 col-md-4">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="email" value='' class="form-control" id="email" placeholder="johndoe@gmail.com">
+                </div>
+              </div>
+              <div class="col d-flex justify-content-center">
+                <div class="form-group col-xs-4 col-md-4">
+                    <label for="phone-number" class="control-label">Phone Number</label>
+                    <input type="text" value='' class="form-control" id="phone-number" placeholder="123-456-7890">
+                </div>
+              </div>
+          </div>
+          <div class="row d-flex w-100">
+              <div class="col d-flex justify-content-center w-100 message-form">
+                <div class="form-group col-xs-4 col-md-4 w-100">
+                    <label for="message" class="control-label">Message</label>
+                    <textarea type="text" rows="7" cols="20" value='' class="form-control" id="message" placeholder="Type..."></textarea>
+                </div>
+              </div>
+          </div>
+          <div class="row d-flex w-100">
+              <div class="col d-flex justify-content-center">
+                <input class="btn btn-primary submit-btn btn-lg" type="submit" value="Submit">
+              </div>
+          </div>
+          <div class="row d-flex w-100 logos-png">
+              <div class="col align-items-end flex-column float-right ig-png-div">
+                <div>
+                    <a href="">
+                      <%= image_tag "ig-png.png", :class => "ig-png" %>
+                    </a>
+                </div>
+              </div>
+              <div class="col align-items-start flex-column linkedin-png-div">
+                <div>
+                    <a href="">
+                      <%= image_tag "linkedIn-png.png", :class => "linkedin-png" %>
+                    </a>
+                </div>
+              </div>
+          </div>
+        </form>
+    </div>
+  </main>
+<% end %>
+
+
+
+<% if false %>
 <table>
   <thead>
     <tr>
@@ -29,3 +144,4 @@
 <br>
 
 <%= link_to 'New Sponsor', new_sponsor_path %>
+<% end %>

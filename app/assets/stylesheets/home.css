@@ -181,3 +181,6 @@ a:hover { text-decoration: none; background-color: transparent; }
         margin: auto;
     }
 }
+main { 
+    width: 100%;
+}

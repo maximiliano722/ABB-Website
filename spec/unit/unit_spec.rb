@@ -109,3 +109,38 @@ end
 
 #________________________________
 # unit testing events
+
+#________________________________
+#unit testing support_logs
+RSpec.describe SupportLog, type: :model do
+  subject do
+    described_class.new(event_id: 1, sponsor_id: 1)
+  end
+
+  it 'is valid with valid attributes' do
+    expect(subject).to be_valid
+  end
+
+  it 'is invalid with an negative sponsor_id' do
+    subject.sponsor_id = -1
+    expect(subject).not_to be_valid
+  end
+
+  it 'is invalid with an negative event_id' do
+    subject.sponsor_id = 2
+    subject.event_id = -1
+    expect(subject).not_to be_valid
+  end
+
+  it 'is invalid with a blank event_id' do
+    subject.event_id = nil
+    subject.sponsor_id = 1
+    expect(subject).not_to be_valid
+  end
+
+  it 'is invalid with a blank sponsor_id' do
+    subject.event_id = 1
+    subject.sponsor_id = nil
+    expect(subject).not_to be_valid
+  end
+end
