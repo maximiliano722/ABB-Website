@@ -6,9 +6,11 @@ class User < ApplicationRecord
    
     validates :email, presence: true
     #validates :position, presence :true
-    validates :active_points, presence: true
+    validates :service_points, presence: true
+    validates :brother_points, presence: true
+    validates :social_points, presence: true
     validates :gpa, presence: true
-    validates :total_hours, presence: true
+    validates :study_hours, presence: true
     #validates :is_officer, presence :true
     #validates :is_admin, presence :true
    

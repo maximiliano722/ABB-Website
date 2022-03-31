@@ -55,9 +55,11 @@ ActiveRecord::Schema.define(version: 2022_03_03_004019) do
     t.string "major"
     t.string "position"
     t.string "email"
-    t.integer "active_points"
+    t.integer "service_points"
+    t.integer "brother_points"
+    t.integer "social_points"
     t.float "gpa"
-    t.float "total_hours"
+    t.float "study_hours"
     t.boolean "is_officer"
     t.boolean "is_admin"
     t.datetime "created_at", precision: 6, null: false

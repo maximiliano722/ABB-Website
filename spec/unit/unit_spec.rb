@@ -5,7 +5,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   subject do #what is the subject 
-    described_class.new(name: 'Khai Nguyen', DOB: '2000-09-06', year: 2020, email: "khaihuyennguyen@tamu.edu", major: "Computer Science", active_points: 0, gpa: 4.0, total_hours: 30)
+    described_class.new(name: 'Khai Nguyen', DOB: '2000-09-06', year: 2020, email: "khaihuyennguyen@tamu.edu", major: "Computer Science", service_points: 0, brother_points: 0, social_points: 0, gpa: 4.0, study_hours: 30)
   end
  
   it 'is valid with valid attributes' do
@@ -38,7 +38,17 @@ RSpec.describe User, type: :model do
   end
 
   it 'is not valid without a name' do
-    subject.active_points = nil
+    subject.service_points = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a name' do
+    subject.brother_points = nil
+    expect(subject).not_to be_valid
+  end
+
+  it 'is not valid without a name' do
+    subject.social_points = nil
     expect(subject).not_to be_valid
   end
 
@@ -48,7 +58,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'is not valid without a name' do
-    subject.total_hours = nil
+    subject.study_hours = nil
     expect(subject).not_to be_valid
   end
 
