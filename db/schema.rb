@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_03_004019) do
+ActiveRecord::Schema.define(version: 2022_03_31_143521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2022_03_03_004019) do
     t.string "full_name"
     t.string "uid"
     t.string "avatar_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 2022_03_03_004019) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.string "name"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sponsors", force: :cascade do |t|
     t.integer "event_id"
     t.string "sponsor_name"
@@ -48,20 +55,26 @@ ActiveRecord::Schema.define(version: 2022_03_03_004019) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "support_logs", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "sponsor_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.date "DOB"
     t.integer "year"
     t.string "major"
     t.string "position"
     t.string "email"
-    t.integer "active_points"
-    t.float "gpa"
-    t.float "total_hours"
-    t.boolean "is_officer"
-    t.boolean "is_admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "service_points"
+    t.integer "brother_points"
+    t.integer "social_points"
+    t.float "study_point"
+    t.string "image_url"
   end
 
 end
