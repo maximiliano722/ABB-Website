@@ -1,5 +1,13 @@
-<h1>Editing User Points: <%=@user.name%></h1>
 
-<%= render 'points_form', user: @user %>
 
-<%= link_to("Back", {:action => 'points'})%>
+<div style="color:red;">
+    <hr>
+
+        <h1>Editing User Points: <%=@user.name%></h1>
+
+        <%= render 'points_form', user: @user %>
+
+        <%= link_to("Back", {:action => 'points'})%>
+
+    <hr>
+</div>

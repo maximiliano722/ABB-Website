@@ -1,31 +1,38 @@
-<h1>Membership</h1>
+<div>
+    <h1>Membership</h1>
 
-<hr>
+    <hr>
 
-<p>
-  <strong>Current Points for user:</strong>
-  <%= @user.name %>
-</p>
+    <p>
+    <strong>Current Points for user:</strong>
+    <%= @user.name %>
+    </p>
 
-<hr>
+    <hr>
 
-<table>
-  <tr>
-    <td><strong>service_points</strong></td>
-    <td><%= @user.service_points %></td>
-  </tr>
-  <tr>
-    <td><strong>brother_points</strong></td>
-    <td><%= @user.brother_points %></td>
-  </tr>
-  <tr>
-    <td><strong>social_points</strong></td>
-    <td><%= @user.social_points %></td>
-  </tr>
-  <tr>
-    <td><strong>study_hours</strong></td>
-    <td><%= @user.study_hours %></td>
-  </tr>
-</table>
+    <table>
+    <tr>
+        <td><strong>service_points</strong></td>
+        <td><%= @user.service_points %></td>
+    </tr>
+    <tr>
+        <td><strong>brother_points</strong></td>
+        <td><%= @user.brother_points %></td>
+    </tr>
+    <tr>
+        <td><strong>social_points</strong></td>
+        <td><%= @user.social_points %></td>
+    </tr>
+    <tr>
+        <td><strong>study_hours</strong></td>
+        <td><%= @user.study_hours %></td>
+    </tr>
+    </table>
 
-<%= link_to("All Member Points", {:action => 'points'})%>
+    <div style="color:red;">
+        <hr>
+        <%= link_to("All Member Points", {:action => 'points'})%>
+        <hr>
+    </div>
+</div>
+

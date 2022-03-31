@@ -1,25 +1,29 @@
-<h1>Membership#points</h1>
+<div style="color:red;">
+    <hr>
+        <h1>Member Points</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <table>
+        <thead>
+            <tr>
+            <th>Name</th>
+            <th colspan="3"></th>
+            </tr>
+        </thead>
 
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.service_points %></td>
-        <td><%= user.brother_points %></td>
-        <td><%= user.social_points %></td>
-        <td><%= user.study_hours%></td>
-        <td><%= link_to("Edit", {:action => 'edit', :id => user.id})%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        <tbody>
+            <% @users.each do |user| %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.service_points %></td>
+                <td><%= user.brother_points %></td>
+                <td><%= user.social_points %></td>
+                <td><%= user.study_hours%></td>
+                <td><%= link_to("Edit", {:action => 'edit', :id => user.id})%></td>
+            </tr>
+            <% end %>
+        </tbody>
+        </table>
 
-<%= link_to("Back", {:action => 'index'})%>
+        <%= link_to("Back", {:action => 'index'})%>
+    <hr>
+</div>
