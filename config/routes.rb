@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'membership/index'
+  get 'membership/events'
   root to: 'page#index'
   devise_for :admins, controllers: { omniauth_callbacks: 'admins/omniauth_callbacks' }
   devise_scope :admin do
@@ -23,6 +25,6 @@ Rails.application.routes.draw do
   get '/sponsor' => 'sponsors#index'
   get '/events' => 'page#events'
 
-  resources :academic_tracker do 
-  end
+  get '/membership' => 'membership#index'
+  get '/membership/events' => 'membership#events'
 end
