@@ -1,4 +1,31 @@
-<h1>Membership#index</h1>
-<p>Find me in app/views/membership/index.html.erb</p>
+<h1>Membership</h1>
 
+<hr>
 
+<p>
+  <strong>Current Points for user:</strong>
+  <%= @user.name %>
+</p>
+
+<hr>
+
+<table>
+  <tr>
+    <td><strong>service_points</strong></td>
+    <td><%= @user.service_points %></td>
+  </tr>
+  <tr>
+    <td><strong>brother_points</strong></td>
+    <td><%= @user.brother_points %></td>
+  </tr>
+  <tr>
+    <td><strong>social_points</strong></td>
+    <td><%= @user.social_points %></td>
+  </tr>
+  <tr>
+    <td><strong>study_hours</strong></td>
+    <td><%= @user.study_hours %></td>
+  </tr>
+</table>
+
+<%= link_to("All Member Points", {:action => 'points'})%>

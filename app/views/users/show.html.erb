@@ -53,4 +53,5 @@
   <%= @user.is_admin %>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Back To Users', users_path %> |
+<%= link_to("Back To Points", {:controller => 'membership', :action => 'points'})%>

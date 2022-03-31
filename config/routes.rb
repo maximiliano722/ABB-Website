@@ -27,4 +27,6 @@ Rails.application.routes.draw do
 
   get '/membership' => 'membership#index'
   get '/membership/events' => 'membership#events'
+  get '/membership/points' => 'membership#points'
+  get '/membership/points/edit' => 'membership#edit'
 end
