@@ -13,8 +13,9 @@ class PageController < ApplicationController
 
   def recruitment
   end
-
+  
   def login
+    authenticate_admin!
   end
 
   def create_account
