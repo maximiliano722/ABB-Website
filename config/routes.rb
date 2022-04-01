@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/recruitment' => 'page#recruitment'
   get '/our_team' => 'page#our_team'
   get '/login' => 'page#login'
-  get '/create_account' => 'page#create_account'
+  get '/create_account' => 'users#new' #note, change to user show
   get '/sponsor' => 'sponsors#index'
   get '/events' => 'page#events'
 
