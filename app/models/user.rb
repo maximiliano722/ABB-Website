@@ -13,6 +13,7 @@ class User < ApplicationRecord
     #validates :total_hours, presence: true
     #validates :is_officer, presence :true
     #validates :is_admin, presence :true
-   
+    has_secure_password
+    validates :password, presence: true, length: { minimum: 6 }
 
 end
