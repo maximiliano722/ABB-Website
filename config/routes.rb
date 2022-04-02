@@ -26,3 +26,4 @@ Rails.application.routes.draw do
   resources :academic_tracker do 
   end
 end
+
