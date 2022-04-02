@@ -27,3 +27,23 @@ iframe{
     width: 75% !important;
     margin: auto;
 }
+.second-row-events button{
+    z-index: 2;
+    width: 30%;
+    min-width: 50px;
+}
+.button-div {
+    display: flex;
+    z-index: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+.modal-footer{
+    justify-content: center !important;
+}
+
+.modal-body {
+    overflow-y: auto;
+    max-height: 500px;
+}
