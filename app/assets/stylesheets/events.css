@@ -64,3 +64,11 @@ iframe{
     width: fit-content;
     margin: auto;
 }
+.row-container{
+    overflow-x: auto;
+}
+@media only screen and (max-width: 750px) {
+    iframe{
+        width: 100% !important;
+    }
+}
