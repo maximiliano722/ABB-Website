@@ -1,23 +1,15 @@
 class PageController < ApplicationController
-  def page
-  end
-  
-  def index
-  end
+  def page; end
 
-  def about
-  end
+  def index; end
 
-  def contact
-  end
+  def about; end
 
-  def recruitment
-  end
+  def contact; end
 
-  def login
-  end
+  def recruitment; end
 
-  def create_account
-  end
-  
+  def login; end
+
+  def create_account; end
 end

@@ -1,5 +1,5 @@
 class SupportLogsController < ApplicationController
-  before_action :set_support_log, only: %i[ show edit update destroy ]
+  before_action :set_support_log, only: %i[show edit update destroy]
 
   # GET /support_logs or /support_logs.json
   def index
@@ -7,8 +7,7 @@ class SupportLogsController < ApplicationController
   end
 
   # GET /support_logs/1 or /support_logs/1.json
-  def show
-  end
+  def show; end
 
   # GET /support_logs/new
   def new
@@ -16,8 +15,7 @@ class SupportLogsController < ApplicationController
   end
 
   # GET /support_logs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /support_logs or /support_logs.json
   def create
@@ -25,7 +23,7 @@ class SupportLogsController < ApplicationController
 
     respond_to do |format|
       if @support_log.save
-        format.html { redirect_to support_log_url(@support_log), notice: "Support log was successfully created." }
+        format.html { redirect_to support_log_url(@support_log), notice: 'Support log was successfully created.' }
         format.json { render :show, status: :created, location: @support_log }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class SupportLogsController < ApplicationController
   def update
     respond_to do |format|
       if @support_log.update(support_log_params)
-        format.html { redirect_to support_log_url(@support_log), notice: "Support log was successfully updated." }
+        format.html { redirect_to support_log_url(@support_log), notice: 'Support log was successfully updated.' }
         format.json { render :show, status: :ok, location: @support_log }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class SupportLogsController < ApplicationController
     @support_log.destroy
 
     respond_to do |format|
-      format.html { redirect_to support_logs_url, notice: "Support log was successfully destroyed." }
+      format.html { redirect_to support_logs_url, notice: 'Support log was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_support_log
-      @support_log = SupportLog.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def support_log_params
-      params.require(:support_log).permit(:event_id, :sponsor_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_support_log
+    @support_log = SupportLog.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def support_log_params
+    params.require(:support_log).permit(:event_id, :sponsor_id)
+  end
 end

@@ -1,1 +1,1 @@
-json.array! @support_logs, partial: "support_logs/support_log", as: :support_log
+json.array! @support_logs, partial: 'support_logs/support_log', as: :support_log

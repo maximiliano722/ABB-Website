@@ -8,8 +8,7 @@ class AdminsController < ApplicationController
     respond_to do |format|
       format.html do
         redirect_to('/permission_users',
-                    notice: "#{@admin.full_name}'s profile was successfully destroyed."
-                   )
+                    notice: "#{@admin.full_name}'s profile was successfully destroyed.")
       end
       format.json { head(:no_content) }
     end

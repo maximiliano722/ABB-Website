@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   get '/sponsor' => 'sponsors#index'
   get '/events' => 'page#events'
 
-  resources :academic_tracker do 
+  resources :academic_tracker do
   end
 end

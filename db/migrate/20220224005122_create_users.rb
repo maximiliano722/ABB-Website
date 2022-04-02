@@ -12,8 +12,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.float :total_hours
       t.boolean :is_officer
       t.boolean :is_admin
-      
-
 
       t.timestamps
     end

@@ -1,9 +1,9 @@
 class DropApplicationsTable < ActiveRecord::Migration[6.1]
-  #def up
+  # def up
   #  drop_table :applications
-  #end
+  # end
 
   def down
-    raise ActiveRecord::IrreversibleMigration 
+    raise ActiveRecord::IrreversibleMigration
   end
 end
