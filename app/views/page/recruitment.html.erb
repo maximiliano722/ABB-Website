@@ -1,1 +1,96 @@
-<h1>Recruitment Page</h1>
+<% @page_title = "ABB Recruitment Page" %>
+<%= stylesheet_link_tag 'home' %>
+<% content_for :main do %>
+<main>
+<%= render :partial => 'page/nav_bar' %>
+   <div class="container first-container">
+      <div class = "row first-row make-f">
+         <p>Texas A&M’s Professional Brotherhood</p>
+         <h1>Recruitment</h1>
+      </div>
+      <div class = "row">
+         <div class = "about-us col-lg">
+            <h1>The Admission Process</h1>
+            <hr>
+            <p>
+                Howdy! Welcome to the ABB Admissions Process. We are very excited to meet you this spring semester and are looking forward to establishing relationships with the applicants. Below you will find the admissions schedule and application. 
+            </p>
+            <p>
+                It is important that you pay attention to dates, times, and locations.  If you have any questions, comments, or concerns then please do not hesitate to <a href="/our_team">contact us</a>.  
+            </p>
+            <p>
+                Gig’em and God Bless.
+            </p>
+            <hr>
+            <h1>Application</h1>
+            <p></p>
+            <button class="btn btn-primary submit-btn btn-lg" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSdIY5KiBgn1ckevB9RBh3yHUwqHxEffENlM8x_gufONZEF9dA/viewform'" type="button"> View Application </button>
+         </div>
+      </div>
+      <div class="mask"></div>
+   </div>
+   <div class="container second-container">
+      <h1 style="text-align:center">Questions</h1>
+      <hr>
+      <form method="post">
+         <div class="row d-flex w-100 justify-content-evenly">
+            <div class="col d-flex justify-content-center">
+               <div class="form-group col-xs-4 col-md-4">
+                  <label for="first-name" class="control-label">First Name</label>
+                  <input type="name" value='' class="form-control" id="first-name" placeholder="First">
+               </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+               <div class="form-group col-xs-4 col-md-4">
+                  <label for="last-name" class="control-label">Last Name</label>
+                  <input type="name" value='' class="form-control" id="last-name" placeholder="Last">
+               </div>
+            </div>
+         </div>
+         <div class="row d-flex w-100">
+            <div class="col d-flex justify-content-center">
+               <div class="form-group col-xs-4 col-md-4">
+                  <label for="email" class="control-label">Email</label>
+                  <input type="email" value='' class="form-control" id="email" placeholder="johndoe@gmail.com">
+               </div>
+            </div>
+            <div class="col d-flex justify-content-center">
+               <div class="form-group col-xs-4 col-md-4">
+                  <label for="phone-number" class="control-label">Phone Number</label>
+                  <input type="text" value='' class="form-control" id="phone-number" placeholder="123-456-7890">
+               </div>
+            </div>
+         </div>
+         <div class="row d-flex w-100">
+            <div class="col d-flex justify-content-center w-100 message-form">
+               <div class="form-group col-xs-4 col-md-4 w-100">
+                  <label for="message" class="control-label">Message</label>
+                  <textarea type="text" rows="7" cols="20" value='' class="form-control" id="message" placeholder="Type..."></textarea>
+               </div>
+            </div>
+         </div>
+         <div class="row d-flex w-100">
+            <div class="col d-flex justify-content-center">
+               <input class="btn btn-primary submit-btn btn-lg" type="submit" value="Submit">
+            </div>
+         </div>
+         <div class="row d-flex w-100 logos-png">
+            <div class="col align-items-end flex-column float-right ig-png-div">
+               <div>
+                  <a href="">
+                    <%= image_tag "ig-png.png", :class => "ig-png" %>
+                  </a>
+               </div>
+            </div>
+            <div class="col align-items-start flex-column linkedin-png-div">
+               <div>
+                  <a href="">
+                    <%= image_tag "linkedIn-png.png", :class => "linkedin-png" %>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+</main>
+<% end %>

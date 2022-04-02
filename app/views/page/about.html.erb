@@ -1,1 +1,95 @@
-<h1>About Page</h1>
+<% @page_title = "About ABB" %>
+<%= stylesheet_link_tag 'about' %>
+<% content_for :main do %>
+
+<main>
+   <%= render :partial => 'page/nav_bar' %>
+   <div class="container first-container-about container-fluid">
+        <div class = "row first-row make-f">
+            <p class="tamu-row-1">Texas A&M’s Professional Brotherhood</p>
+
+        </div>
+        <div class = "row about-row">
+            <div class="col-lg-8 what-is-abb order-last">
+                <h1>What is ABB?</h1>
+                <hr style="color:white">
+                <p class="about-brandon">Howdy! My name is Brandon Homann, President of Aggie Business Brothers. ABB is a student-led and run organization at Texas A&M University. Our purpose is to facilitate the growth of our members by hosting professional events including guest speakers, recruiters, business etiquette seminars, resume reviews, interview skills, and excel workshops. 
+                <br>
+                <br>
+                We strive to introduce a passion for business that will lead members to successful career opportunities. We place an emphasis on brotherhood in order to create a culture of integrity and excellence by bringing together members with a shared love for our University and our core values.
+​                </p>
+            </div>
+            <div class="col-lg-4 pic-of-brandon-div order-first">
+                <%= image_tag "pic-brandon.PNG", :class => "pic-brandon" %>
+            </div>
+        </div>
+    </div>
+    <div class="container second-container-about">
+        <div class="mask-snow"></div>
+        <div class="image-snow">
+            <%= image_tag "snow.jpg", :class => "snow-background" %>
+        </div>
+        <div class="row our-core-values-div">
+            <h3 class="core-values">Our Core Values</h3>
+        </div>
+        <div class="row core-values-first-row row-padding-change">
+            <div class="col-lg-4">
+                <p class= "pic-theme-about">Integrity</p>
+                <%= image_tag "rev.jpg", :class => "core-values-pic integrity-pic" %>
+            </div>
+            <div class="col-lg-8 quote-about">
+                <p>"Integrity was the core value that A&M gave me more of than any other. It helped me succeed in my career because my fellow professionals, clients and friends knew that they could rely on me and my word."
+                    <br>
+                    <br>
+                    - Former student
+                </p>
+            </div>
+        </div>
+        <div class="row core-values-first-row row-padding-change">
+
+            <div class="col-lg-8 quote-about quote-about-right order-md-2 order-sm-2 order-xs-2">
+                <p>"Professional is not a label you give yourself - it's a description you hope others will apply to you."
+                    <br>
+                    <br>
+                    - David Maister
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12 order-lg-2 order-md-1 order-sm-1 order-xs-1 order-first">
+                <p class= "pic-theme-about">Professionalism</p>
+                <%= image_tag "rev.jpg", :class => "core-values-pic integrity-pic" %>
+            </div>
+        </div>
+    </div>
+    <div class="container third-container-about">
+        <div class="row core-values-first-row row-padding-change">
+            <div class="col-lg-4">
+                <p class= "pic-theme-about">Brotherhood</p>
+                <%= image_tag "rev.jpg", :class => "core-values-pic integrity-pic" %>
+            </div>
+            <div class="col-lg-8 quote-about">
+                <p>Of a truth, men are mystically united: a mystic bond of brotherhood makes all men one.”  
+                    <br>
+                    <br>
+                    -Thomas Carlyle
+                </p>
+            </div>
+        </div>
+        <div class="row core-values-first-row row-padding-change">
+
+            <div class="col-lg-8 quote-about quote-about-right order-md-2 order-sm-2 order-xs-2">
+                <p>Life's most important and urgent question is, "What are you doing for others?" 
+                    <br>
+                    <br>
+                    -Martin Lurther King Jr. 
+                </p>
+            </div>
+
+            <div class="col-lg-4 col-md-12 col-sm-12 order-lg-2 order-md-1 order-sm-1 order-xs-1 order-first">
+                <p class= "pic-theme-about">Service</p>
+                <%= image_tag "rev.jpg", :class => "core-values-pic integrity-pic" %>
+            </div>
+        </div>
+    </div>
+</main>
+<% end %>
