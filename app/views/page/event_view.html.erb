@@ -15,25 +15,25 @@
                 </div>
                 <div class="modal-body">
                     <label for="">Event name:</label>
-                    <input type="text" class="form-control" id="exampleInputEventName" aria-describedby="emailHelp" placeholder="Event name">
+                    <input type="text" name="event_name" class="form-control" id="exampleInputEventName" aria-describedby="emailHelp" placeholder="Event name">
                     <br>
                     <label for="">Date:</label>
-                    <input type="date" class="form-control" id="exampleInputDate" aria-describedby="dateHelp">
+                    <input type="date" name= "date" class="form-control" id="exampleInputDate" aria-describedby="dateHelp">
                     <br>
                     <label for="">Time:</label>
-                    <input type="text" class="form-control" id="exampleInputTime" aria-describedby="timeHelp" placeholder="Time">
+                    <input type="text" name="time" class="form-control" id="exampleInputTime" aria-describedby="timeHelp" placeholder="Time">
                     <br>
                     <label for="">Location:</label>
-                    <input type="text" class="form-control" id="exampleInputLocation" aria-describedby="locationHelp" placeholder="400 Bizzell St">
+                    <input type="text" name= "location" class="form-control" id="exampleInputLocation" aria-describedby="locationHelp" placeholder="400 Bizzell St">
                     <br>
                     <label for="">Event Type:</label>
-                    <input type="text" class="form-control" id="exampleInputType" aria-describedby="locationHelp" placeholder="Event Type">
+                    <input type="text" name="event_type" class="form-control" id="exampleInputType" aria-describedby="locationHelp" placeholder="Event Type">
                     <br>
                     <label for="">Description:</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name= "description" id="exampleFormControlTextarea1" rows="3"></textarea>
                     <br>
                     <label for="">Password:</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp" placeholder="Password">
                     <br>
                     <label for="">Confirm Password:</label>
                     <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp" placeholder="Confirm Password">
@@ -60,6 +60,38 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                     Create Event
                 </button>
+            </div>
+        </div>
+        <br>
+        <div class="row table-event-row">
+            <div class="row-container">
+                <h1 class="event-details-header">Event Details</h1>
+                <table class="table table-hover event-table">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Event Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Event Type</th>
+                        <th scope="col">Password</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Customer Meet</td>
+                        <td>11/12/2022</td>
+                        <td>8:00PM</td>
+                        <td>510 Westgreen BLVD</td>
+                        <td>Council</td>
+                        <td>Council</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
             </div>
         </div>
         

@@ -47,3 +47,20 @@ iframe{
     overflow-y: auto;
     max-height: 500px;
 }
+.event-table {
+    margin-top: 20px !important;
+    background: white;
+    width: 75% !important;
+    margin: auto;
+}
+.table-event-row{
+    padding-bottom: 50px;
+}
+
+.event-details-header{
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid white;
+    width: fit-content;
+    margin: auto;
+}
