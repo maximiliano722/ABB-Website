@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   get '/create_account' => 'page#create_account'
   get '/sponsor' => 'sponsors#index'
   get '/event_view' => 'page#event_view'
-
+  get '/edit_event' => 'page#edit_event'
+ 
   resources :academic_tracker do 
   end
 end
