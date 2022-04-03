@@ -1,0 +1,67 @@
+<% @page_title = "Create Account" %>
+<%= stylesheet_link_tag 'create_account' %>
+<% content_for :main do %>
+
+<main>
+  <div class="container first-container-header">
+    <div class = "row">
+    <p class="header"> Create an Account </p>
+    </div
+  </div>
+  <div class="container second-container-create">
+    <div class = "row">
+      <form>
+        
+        <div class="form-group">
+          <div class="col-xs-3">
+            <label for="formFirstName">Enter your First Name</label>
+            <input type="text" class="form-control" id="formFirstName" placeholder="First Name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-3">
+            <label for="formLastName">Enter your Last Name</label>
+            <input type="text" class="form-control" id="formLastName" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-3">
+          <label for="formEmail">Enter your Email</label>
+          <input type="email" class="form-control" id="formEmail" placeholder="Email">
+          </div>
+        <div>
+
+        <div class="form-group">
+          <div class="col-xs-3">
+            <label for="formPassword">Enter your Password</label>
+            <input type="password" class="form-control" id="formPassword" placeholder="Password">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-3">
+            <label for="formConfirmPassword">Enter your Password Again</label>
+            <input type="password" class="form-control" id="formConfirmPassword" placeholder="Confirm Password">
+          </div>
+        </div>
+
+        <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a> 
+        <input type="submit" class="buttonLog-submit" value="Confirm">
+      </form>
+    </div>
+    <div class = "row">
+    </div>
+  </div>
+  </div>
+  <div class="container third-container-create">
+    <div class = "row">
+      <p style="font-size:17.5px;">----------- OR -----------<p>
+      <p style="font-size:16px;">Have an account? <a href="/login" style="color:#F78A8A;">Log in</a><p>
+    </div>
+  </div>
+</main>
+<% end %>
+
+      
