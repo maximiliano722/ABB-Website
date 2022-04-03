@@ -20,7 +20,7 @@ module SessionsHelper
   end
 
   def log_out
-    reset_session
+    reset_session #to enhance security
     @current_user = nil
   end
 end
