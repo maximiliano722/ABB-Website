@@ -25,16 +25,17 @@ ActiveRecord::Schema.define(version: 2022_03_31_143521) do
     t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
-  create_table "attendance_logs", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "user_id"
+  create_table "applications", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.string "name"
-    t.string "content"
+  create_table "attendance_logs", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

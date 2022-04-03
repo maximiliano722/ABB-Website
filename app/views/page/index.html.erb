@@ -1,5 +1,4 @@
 <% @page_title = "ABB Home" %>
-<% @home_message = Message.find_by name: "HomeParagraph" %>      
 <%= stylesheet_link_tag 'home' %>
 <% content_for :main do %>
 <main>
@@ -37,7 +36,9 @@
             <h1>About Us</h1>
             <hr>
             <p>
-               <%= @home_message.content %>
+               We strive to introduce a passion for business that will lead members to successful
+               career opportunities. We place an emphasis on brotherhood in order to create a culture of integrity
+               and excellence by bringing together members with a shared love for our University and our core values.
             </p>
          </div>
       </div>

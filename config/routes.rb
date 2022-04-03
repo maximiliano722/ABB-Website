@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   end
   resources :attendance_logs
   resources :sponsors
+  resources :applications
   resources :users
   resources :sessions
-  resources :messages
-  resources :support_logs
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
 
   get '/index' => 'page#index'
   get '/about' => 'page#about'
@@ -23,6 +23,6 @@ Rails.application.routes.draw do
   get '/sponsor' => 'sponsors#index'
   get '/events' => 'page#events'
 
-  resources :academic_tracker do
+  resources :academic_tracker do 
   end
 end

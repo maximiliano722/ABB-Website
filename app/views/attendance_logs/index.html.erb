@@ -12,7 +12,7 @@
   </thead>
 
   <tbody>
-    <% @attendance_logs.order("event_id").each do |attendance_log| %>
+    <% @attendance_logs.each do |attendance_log| %>
       <tr>
         <td><%= attendance_log.event_id %></td>
         <td><%= attendance_log.user_id %></td>
