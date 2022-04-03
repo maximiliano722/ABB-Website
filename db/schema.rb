@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_30_111241) do
+ActiveRecord::Schema.define(version: 2022_04_03_065052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,24 +32,10 @@ ActiveRecord::Schema.define(version: 2022_03_30_111241) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "messages", force: :cascade do |t|
-    t.string "name"
-    t.string "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "sponsors", force: :cascade do |t|
     t.integer "event_id"
     t.string "sponsor_name"
     t.string "sponsor_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "support_logs", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "sponsor_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -68,6 +54,14 @@ ActiveRecord::Schema.define(version: 2022_03_30_111241) do
     t.boolean "is_admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.integer "service_points"
+    t.integer "brother_points"
+    t.integer "social_points"
+    t.decimal "study_hours"
+    t.string "image_url"
+    t.string "remember_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
