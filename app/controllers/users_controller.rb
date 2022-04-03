@@ -25,7 +25,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to user_url(@user), notice: "Please check your email to complete the sign up" }
+        #format.html { redirect_to user_url(@user), notice: "User was successfully created." }
+        #below two lines of code will make the users log in immediately
+        reset_session
+        log_in @user
+        format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +69,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :DOB, :year, :major, :email, :position, :active_points, :gpa, :total_hours, :is_officer, :is_admin)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
