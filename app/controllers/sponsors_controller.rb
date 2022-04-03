@@ -22,7 +22,6 @@ class SponsorsController < ApplicationController
   # POST /sponsors or /sponsors.json
   def create
     @sponsor = Sponsor.new(sponsor_params)
-
     respond_to do |format|
       if @sponsor.save
         format.html { redirect_to sponsor_url(@sponsor), notice: "Sponsor was successfully created." }
@@ -65,6 +64,6 @@ class SponsorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sponsor_params
-      params.require(:sponsor).permit(:event_id, :sponsor_name, :sponsor_type)
+      params.require(:sponsor).permit(:sponsor_name, :sponsor_type, :image)
     end
 end
