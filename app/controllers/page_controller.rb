@@ -15,7 +15,7 @@ class PageController < ApplicationController
   end
   
   def login
-    authenticate_admin!
+    #authenticate_admin!
   end
 
   def create_account

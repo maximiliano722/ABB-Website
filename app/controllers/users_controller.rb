@@ -26,6 +26,9 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         #format.html { redirect_to user_url(@user), notice: "User was successfully created." }
+        #below two lines of code will make the users log in immediately
+        reset_session
+        log_in @user
         format.html { redirect_to user_url(@user), notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else

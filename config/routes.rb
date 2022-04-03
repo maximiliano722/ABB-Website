@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   root to: 'page#index'
   devise_for :admins, controllers: { omniauth_callbacks: 'admins/omniauth_callbacks' }
   devise_scope :admin do
@@ -18,12 +19,13 @@ Rails.application.routes.draw do
   get '/contact' => 'page#contact'
   get '/recruitment' => 'page#recruitment'
   get '/our_team' => 'page#our_team'
-  get '/login' => 'page#login'
-  get '/create_account' => 'users#new' #note, change to user show
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+  get '/create_account', to: 'users#new' #note, change to user show
   get '/sponsor' => 'sponsors#index'
   get '/events' => 'page#events'
 
   resources :academic_tracker do 
   end
 end
-
