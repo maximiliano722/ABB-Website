@@ -23,7 +23,6 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   def create
-    authenticate_admin!
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -85,6 +84,9 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless @user == current_user
+      
+      if @user != current_user
+        redirect_to(root_url)
+      end
     end
 end
