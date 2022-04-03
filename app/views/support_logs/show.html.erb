@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @support_log.event_id %>
+</p>
+
+<p>
+  <strong>Sponsor:</strong>
+  <%= @support_log.sponsor_id %>
+</p>
+
+<%= link_to 'Edit', edit_support_log_path(@support_log) %> |
+<%= link_to 'Back', support_logs_path %>
