@@ -20,4 +20,6 @@ class PageControllerTest < ActionDispatch::IntegrationTest
     get page_recruitment_url
     assert_response :success
   end
+
+  end
 end
