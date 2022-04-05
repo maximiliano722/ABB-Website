@@ -1,15 +1,12 @@
-# frozen_string_literal: true
-
 # location: spec/unit/unit_spec.rb
-require 'rails_helper'
+require 'rails_helper' 
 
-# testing username
+#testing user
 RSpec.describe User, type: :model do
-  subject do # what is the subject
-    described_class.new(name: 'Khai Nguyen', DOB: '2000-09-06', year: 2020, email: 'khaihuyennguyen@tamu.edu',
-                        major: 'Computer Science', active_points: 0, gpa: 4.0, total_hours: 30)
+  subject do #what is the subject 
+    described_class.new(name: 'Khai Nguyen', DOB: '2000-09-06', year: 2020, email: "khaihuyennguyen@tamu.edu", major: "Computer Science", active_points: 0, gpa: 4.0, total_hours: 30)
   end
-
+ 
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
@@ -82,7 +79,7 @@ end
 # unit testing sponsor
 RSpec.describe Sponsor, type: :model do
   subject do
-    described_class.new(sponsor_name: "Starbright Inc.", sponsor_type: "silver")
+    described_class.new(event_id: 1, sponsor_name: "Starbright Inc.", sponsor_type: "silver")
   end
 
   it 'is valid with valid attributes' do
@@ -100,7 +97,12 @@ RSpec.describe Sponsor, type: :model do
     expect(subject).not_to be_valid
   end
 
-=======
+  it 'is invalid with an invalid event_id' do
+    subject.event_id = nil
+    subject.sponsor_name ="Starbright Inc."
+    subject.sponsor_type ="gold"
+    expect(subject).not_to be_valid
+  end
 end
 #________________________________
 # testing hours_request

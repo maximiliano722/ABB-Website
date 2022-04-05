@@ -1,62 +1,69 @@
-<% provide(:title, "Create An Account") %>
-<%= stylesheet_link_tag 'create_account' %>
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-<div class = "rev"></div>
-
-<div class = "forma forma-login">
-  <div class = "sign-up-title">Create an Account </div>
-  <br>
-
-  <%= form_with(model: user) do |form| %>
-    <div class = "flash-error-color">
-      <% if user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-          <ul>
-            <% user.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
     </div>
-  
-    <%= form.label :name, "Full Name:" %>
-    <%= form.text_field :name %>
-  
-    <br>
-    <br>
-  
-    <%= form.label :email, "Email:" %>
-    <%= form.email_field :email %>
-
-    <br>
-    <br>
-  
-    <%= form.label :password, "Password:" %>
-    <%= form.password_field :password %>
-
-    <br>
-    <br>
-  
-    <%= form.label :password_confirmation, "Confirm Password:" %>
-    <%= form.password_field :password_confirmation %>
-
-    <br>
-    <br>
-
-    <%= form.label :image %>
-    <%= form.file_field :image %>
- 
-    <br>
-    <br>
-  
-    <%= form.submit "Create Account" %>
   <% end %>
-  <br>
-  <p style="font-size:16px;">Have an account? <u> <a href="/login" class="login-button">Log in</a> </u><p>
-  <hr>
-  <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a>
-  <a href="admins/sign_in" style="color:white;"><button type="button" class="buttonLog-back">Login as Admin</button></a>
-</div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DOB %>
+    <%= form.date_field :DOB %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :major %>
+    <%= form.text_field :major %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :active_points %>
+    <%= form.number_field :active_points %>
+  </div>
+  <div class="field">
+    <%= form.label :gpa %>
+    <%= form.number_field :gpa %>
+  </div>
+  <div class="field">
+    <%= form.label :total_hours %>
+    <%= form.text_field :total_hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_officer %>
+    <%= form.text_field :is_officer %>
+  </div>
+  <div class="field">
+    <%= form.label :is_admin %>
+    <%= form.text_field :is_admin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,15 +1,13 @@
-<% provide(:page_title, @user.name) %>
-<div>
-  <aside>
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
+<p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+<p>
+  <strong>DOB:</strong>
+  <%= @user.DOB %>
+</p>
 <p>
   <strong>year:</strong>
   <%= @user.year %>
@@ -27,35 +25,24 @@
   <%= @user.position %>
 </p>
 <p>
-  <strong>service_points:</strong>
-  <%= @user.service_points %>
+  <strong>active_points:</strong>
+  <%= @user.active_points %>
 </p>
 <p>
-  <strong>brother_points:</strong>
-  <%= @user.brother_points %>
+  <strong>gpa:</strong>
+  <%= @user.gpa %>
 </p>
 <p>
-  <strong>social_points:</strong>
-  <%= @user.social_points %>
+  <strong>total_hours:</strong>
+  <%= @user.total_hours %>
 </p>
 <p>
-  <strong>study_hours:</strong>
-  <%= @user.study_hours %>
+  <strong>is_officer:</strong>
+  <%= @user.is_officer %>
 </p>
 <p>
-  <strong>image_url:</strong>
-  <%= @user.image_url %>
+  <strong>is_admin:</strong>
+  <%= @user.is_admin %>
 </p>
-
-<p>
-  <strong>User Image:</strong>
-    <% if @user.image.attached? %>
-      <%= image_tag @user.image, width: "50px", height: "50px" %>
-    <% else %>
-      <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
-    <% end %>
-</p>
-
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-<%= link_to 'Home', root_url %>

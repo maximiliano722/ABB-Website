@@ -12,17 +12,14 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :sponsor_name %>
-    <%= form.text_field :sponsor_name %>
+    <%= form.label :event_id %>
+    <%= form.number_field :event_id %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.label :sponsor_name %>
+    <%= form.text_field :sponsor_name %>
   </div>
-  <% if :image == nil %>
-        :image = image_tag("default.jpg", alt: sponsor.sponsor_name)  
-  <% end %>
 
   <div class="field">
     <%= form.label :sponsor_type %>

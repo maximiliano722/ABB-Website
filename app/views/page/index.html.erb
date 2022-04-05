@@ -1,7 +1,5 @@
 <% @page_title = "ABB Home" %>
 <%= stylesheet_link_tag 'home' %>
-<% @home_message = Message.find_by name: 'Home Message' %>
-
 <% content_for :main do %>
 <main>
    <%= render :partial => 'page/nav_bar' %>
@@ -38,11 +36,9 @@
             <h1>About Us</h1>
             <hr>
             <p>
-               <% if @home_message && @home_message.content %>
-                  <%= @home_message.content %>
-               <% else %>
-                  This message is nil...like a nil pickle. Fix it by creating a message named 'Home Message' and making its content whatever text you want to be displayed here.
-               <% end %>
+               We strive to introduce a passion for business that will lead members to successful
+               career opportunities. We place an emphasis on brotherhood in order to create a culture of integrity
+               and excellence by bringing together members with a shared love for our University and our core values.
             </p>
          </div>
       </div>
