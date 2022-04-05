@@ -8,8 +8,6 @@
     <%= @user.name %>
     </p>
 
-    <hr>
-
     <table>
     <tr>
         <td><strong>service_points</strong></td>
@@ -29,10 +27,50 @@
     </tr>
     </table>
 
+    <hr>
+
     <div style="color:red;">
         <hr>
         <%= link_to("All Member Points", {:action => 'points'})%>
         <hr>
     </div>
+
+    <hr>
+    <strong>Submit Point Request:</strong>
+    <%= render 'point_request_form', request: @request %>
+    <hr>
+
+    <strong>Pending Point Request:</strong>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Points  </th>
+            <th>Category  </th>
+            <th>Description  </th>
+            <th colspan="2"></th>
+
+        </tr>
+        </thead>
+
+    <tbody>
+      <% @requests.each do |r| %>
+        <tr>
+          <td><%= r.points %></td>
+          <td><%= r.category %></td>
+          <td><%= r.description %></td>
+          <td><%= link_to 'Edit', edit_hour_request_path(r) %></td>
+          <td><%= link_to 'Cancel', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+    <div style="color:red;">
+        <hr>
+        <%= link_to("All Point Requests", '/hour_requests')%>
+        <hr>
+    </div>
+    
 </div>
 

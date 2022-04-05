@@ -1,0 +1,2 @@
+module HourRequestsHelper
+end
