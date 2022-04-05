@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Event:</strong>
-  <%= @sponsor.event_id %>
-</p>
-
-<p>
   <strong>Sponsor name:</strong>
   <%= @sponsor.sponsor_name %>
 </p>
@@ -13,6 +8,15 @@
 <p>
   <strong>Sponsor type:</strong>
   <%= @sponsor.sponsor_type %>
+</p>
+
+<p>
+  <strong>Sponsor Image:</strong>
+  <% if @sponsor.image.attached? %>
+     <%= image_tag @sponsor.image, width: "50px", height: "50px" %>
+  <% else %>
+     <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_sponsor_path(@sponsor) %> |

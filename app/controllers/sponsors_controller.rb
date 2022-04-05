@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SponsorsController < ApplicationController
-  before_action :set_sponsor, only: %i[ show edit update destroy ]
+  before_action :set_sponsor, only: %i[show edit update destroy]
 
   # GET /sponsors or /sponsors.json
   def index
@@ -7,8 +9,7 @@ class SponsorsController < ApplicationController
   end
 
   # GET /sponsors/1 or /sponsors/1.json
-  def show
-  end
+  def show; end
 
   # GET /sponsors/new
   def new
@@ -16,16 +17,14 @@ class SponsorsController < ApplicationController
   end
 
   # GET /sponsors/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /sponsors or /sponsors.json
   def create
     @sponsor = Sponsor.new(sponsor_params)
-
     respond_to do |format|
       if @sponsor.save
-        format.html { redirect_to sponsor_url(@sponsor), notice: "Sponsor was successfully created." }
+        format.html { redirect_to sponsor_url(@sponsor), notice: 'Sponsor was successfully created.' }
         format.json { render :show, status: :created, location: @sponsor }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +37,7 @@ class SponsorsController < ApplicationController
   def update
     respond_to do |format|
       if @sponsor.update(sponsor_params)
-        format.html { redirect_to sponsor_url(@sponsor), notice: "Sponsor was successfully updated." }
+        format.html { redirect_to sponsor_url(@sponsor), notice: 'Sponsor was successfully updated.' }
         format.json { render :show, status: :ok, location: @sponsor }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +51,20 @@ class SponsorsController < ApplicationController
     @sponsor.destroy
 
     respond_to do |format|
-      format.html { redirect_to sponsors_url, notice: "Sponsor was successfully destroyed." }
+      format.html { redirect_to sponsors_url, notice: 'Sponsor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_sponsor
-      @sponsor = Sponsor.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def sponsor_params
-      params.require(:sponsor).permit(:event_id, :sponsor_name, :sponsor_type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sponsor
+    @sponsor = Sponsor.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def sponsor_params
+      params.require(:sponsor).permit(:sponsor_name, :sponsor_type, :image)
+  end
 end

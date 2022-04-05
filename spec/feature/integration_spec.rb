@@ -1,6 +1,7 @@
-#location: spec/feature/integration_spec.rb
-require 'rails_helper'
+# frozen_string_literal: true
 
+# location: spec/feature/integration_spec.rb
+require 'rails_helper'
 
 #attendance log integration test
 RSpec.describe 'Creating a attendance_log', type: :feature do
@@ -13,4 +14,3 @@ RSpec.describe 'Creating a attendance_log', type: :feature do
       expect(page).to have_content('1')
     end
 end
-

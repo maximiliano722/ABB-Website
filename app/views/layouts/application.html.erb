@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,7 +25,6 @@
       <% end -%>
     <% end %>
 
-    
     <%= yield :main %>
     <%= yield  %>
     <!-- JavaScript Bundle with Popper -->
@@ -42,5 +40,7 @@
       });
 
   </script> 
+
+  <!--  <%= debug(params) if Rails.env.development? %> -->
 </body>
 </html>

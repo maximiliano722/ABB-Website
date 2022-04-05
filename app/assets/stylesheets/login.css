@@ -32,7 +32,6 @@ body {
     line-height: normal;
 }
 
-
 .buttonLog-back {
     background-color: #500000;
     text-align: center;
@@ -52,6 +51,21 @@ body {
     border       : 2px solid #500000;
     position: relative; /* or absolute */
     left: 12%;
+}
+
+.sign-up-button {
+    color: white;
+}
+
+.sign-up-button:visited {
+    color: #c6c6c6;
+}
+
+hr {
+    width: 100%;
+    border-top: 5px solid #ffffff;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a:link { text-decoration: none; }
