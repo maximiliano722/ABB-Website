@@ -1,6 +1,5 @@
 .container{
     background-color: #500000;
-    min-height: 100vh;
 }
 .first-row h2{
     text-align: center;
@@ -27,4 +26,49 @@ iframe{
     z-index: 2;
     width: 75% !important;
     margin: auto;
+}
+.second-row-events button{
+    z-index: 2;
+    width: 30%;
+    min-width: 50px;
+}
+.button-div {
+    display: flex;
+    z-index: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+.modal-footer{
+    justify-content: center !important;
+}
+
+.modal-body {
+    overflow-y: auto;
+    max-height: 500px;
+}
+.event-table {
+    margin-top: 20px !important;
+    background: white;
+    width: 75% !important;
+    margin: auto;
+}
+.table-event-row{
+    padding-bottom: 50px;
+}
+
+.event-details-header{
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid white;
+    width: fit-content;
+    margin: auto;
+}
+.row-container{
+    overflow-x: auto;
+}
+@media only screen and (max-width: 750px) {
+    iframe{
+        width: 100% !important;
+    }
 }
