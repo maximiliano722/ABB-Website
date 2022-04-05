@@ -1,55 +1,39 @@
-.first-container-header{
-    background-color: #500000 !important;
+body {
+    background-color: #500000;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
-.header{
-    font-size: 3rem;
-    text-align:center;
-    color: white;
-}
-
-.second-container-create{
-    background-image: url('rev');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-}
-
-.image-rev {
+.rev {
+    background-image: url('rev.jpg');
+    opacity: 0.6;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
+    background-size: cover;
 }
 
-.image-rev img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.mask-rev{
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    top:0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(80, 0, 0, .3);
-}
-
-.form-group{
-    color:white;
+.sign-up-title {
     text-align: center;
+    font-size: 60px;
+    color: white;
 }
 
+.forma-sign-up {
+    margin: auto !important;
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    color: white;
+    line-height: normal;
+}
 
 .buttonLog-back {
-    background-color: #080707;
+    background-color: #500000;
     text-align: center;
     color: white;
     border-radius: 10px;
@@ -59,7 +43,7 @@
 }
 
 .buttonLog-submit {
-    background-color: #050404;
+    background-color: #500000;
     text-align: center;
     color: white;
     border-radius: 10px;
@@ -69,11 +53,23 @@
     left: 12%;
 }
 
-.third-container-create{
-    background-color: #500000 !important;
-    text-align: center;
+.login-button {
     color: white;
-    position: relative;
+}
+
+.login-button:visited {
+    color: #c6c6c6;
+}
+
+.flash-error-color {
+    color: black;
+}
+
+hr {
+    width: 100%;
+    border-top: 5px solid #ffffff;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a:link { text-decoration: none; }
