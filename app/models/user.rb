@@ -26,6 +26,7 @@ class User < ApplicationRecord
            end
     BCrypt::Password.create(string, cost: cost)
   end
+  has_one_attached :image
 
   # Returns a random token.
   def self.new_token

@@ -8,6 +8,8 @@ gem 'devise'
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-google-oauth2'
 
+gem "aws-sdk-s3", require: false
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'bcrypt',         '~> 3.1.13'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'

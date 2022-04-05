@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :applications
   resources :users
   resources :sessions
+  resources :messages
+  resources :support_logs
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/index' => 'page#index'

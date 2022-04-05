@@ -1,0 +1,27 @@
+<%= form_with(model: support_log) do |form| %>
+  <% if support_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(support_log.errors.count, "error") %> prohibited this support_log from being saved:</h2>
+
+      <ul>
+        <% support_log.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.number_field :event_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sponsor_id %>
+    <%= form.number_field :sponsor_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
