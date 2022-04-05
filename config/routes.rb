@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   get '/create_account', to: 'users#new' # note, change to user show
-  get '/sponsor' => 'sponsors#index'
+  get '/sponsor' => 'page#sponsor'
   get '/events' => 'page#events'
 
   resources :academic_tracker do
