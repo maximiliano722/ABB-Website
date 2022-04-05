@@ -1,5 +1,4 @@
 <div>
-
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -45,5 +44,20 @@
 <%= link_to 'Edit', edit_member_event_path(@event) %> |
 <%= link_to 'Back', member_events_path %>
 
+<hr>
+    
+<strong>Attendedees:</strong>
+
+<% @attendance_logs.each do |log| %>
+  <hr>
+  <p>
+  <strong>Name:</strong>
+  <% user = User.find(log.user_id)%>
+  <%= user.name %>
+  </p>
+  <hr>
+<% end %>
+
 </div>
+
 

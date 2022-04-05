@@ -5,6 +5,8 @@ class MemberEventsController < ApplicationController
 
   def show
     @event = MemberEvent.find(params[:id])
+    sql_query = "SELECT * FROM attendance_logs WHERE event_id = " + @event.id.to_s
+    @attendance_logs = AttendanceLog.find_by_sql(sql_query)
   end
 
   def new
