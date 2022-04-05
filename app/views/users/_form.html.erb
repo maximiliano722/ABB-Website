@@ -1,38 +1,56 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% provide(:title, "Create An Account") %>
+<%= stylesheet_link_tag 'create_account' %>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class = "rev"></div>
+
+<div class = "forma forma-login">
+  <div class = "sign-up-title">Create an Account </div>
+  <br>
+
+  <%= form_with(model: user) do |form| %>
+    <div class = "flash-error-color">
+      <% if user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+          <ul>
+            <% user.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
+  
+    <%= form.label :name, "Full Name:" %>
     <%= form.text_field :name %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :email %>
+  
+    <br>
+    <br>
+  
+    <%= form.label :email, "Email:" %>
     <%= form.email_field :email %>
-  </div>
 
-  <div class="field">
-    <%= form.label :password %>
+    <br>
+    <br>
+  
+    <%= form.label :password, "Password:" %>
     <%= form.password_field :password %>
-  </div>
 
-  <div class="field">
-    <%= form.label :password_confirmation, "Confirmation" %>
+    <br>
+    <br>
+  
+    <%= form.label :password_confirmation, "Confirm Password:" %>
     <%= form.password_field :password_confirmation %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit "create my account" %>
-  </div>
-<% end %>
+    <br>
+    <br>
+
+    <%= form.submit "Create Account" %>
+  <% end %>
+  <br>
+  <p style="font-size:16px;">Have an account? <u> <a href="/login" class="login-button">Log in</a> </u><p>
+  <hr>
+  <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a>
+  <a href="admins/sign_in" style="color:white;"><button type="button" class="buttonLog-back">Login as Admin</button></a>
+</div>

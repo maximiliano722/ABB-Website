@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'sessions/new'
   root to: 'page#index'
@@ -12,7 +14,6 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  
 
   get '/index' => 'page#index'
   get '/about' => 'page#about'
@@ -22,10 +23,10 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  get '/create_account', to: 'users#new' #note, change to user show
+  get '/create_account', to: 'users#new' # note, change to user show
   get '/sponsor' => 'sponsors#index'
   get '/events' => 'page#events'
 
-  resources :academic_tracker do 
+  resources :academic_tracker do
   end
 end

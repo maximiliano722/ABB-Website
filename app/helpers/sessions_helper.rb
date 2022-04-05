@@ -1,5 +1,6 @@
-module SessionsHelper
+# frozen_string_literal: true
 
+module SessionsHelper
   # Logs in the given user.
   def log_in(user)
     session[:user_id] = user.id
@@ -9,7 +10,7 @@ module SessionsHelper
   # Instead going to database and checking all over again, create an instance variable
   def current_user
     if session[:user_id]
-      @current_user ||= User.find_by(id: session[:user_id]) # this means "or equal" just like += or -= 
+      @current_user ||= User.find_by(id: session[:user_id]) # this means "or equal" just like += or -=
     end
   end
 
@@ -20,7 +21,7 @@ module SessionsHelper
   end
 
   def log_out
-    reset_session #to enhance security
+    reset_session # to enhance security
     @current_user = nil
   end
 end

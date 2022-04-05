@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ApplicationsController < ApplicationController
-  before_action :set_application, only: %i[ show edit update destroy ]
+  before_action :set_application, only: %i[show edit update destroy]
 
   # GET /applications or /applications.json
   def index
@@ -7,8 +9,7 @@ class ApplicationsController < ApplicationController
   end
 
   # GET /applications/1 or /applications/1.json
-  def show
-  end
+  def show; end
 
   # GET /applications/new
   def new
@@ -16,17 +17,16 @@ class ApplicationsController < ApplicationController
   end
 
   # GET /applications/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /applications or /applications.json
   def create
     @application = Application.new(application_params)
-    @application.status = "pending"
+    @application.status = 'pending'
 
     respond_to do |format|
       if @application.save
-        format.html { redirect_to application_url(@application), notice: "Application was successfully created." }
+        format.html { redirect_to application_url(@application), notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class ApplicationsController < ApplicationController
   def update
     respond_to do |format|
       if @application.update(application_params)
-        format.html { redirect_to application_url(@application), notice: "Application was successfully updated." }
+        format.html { redirect_to application_url(@application), notice: 'Application was successfully updated.' }
         format.json { render :show, status: :ok, location: @application }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +53,20 @@ class ApplicationsController < ApplicationController
     @application.destroy
 
     respond_to do |format|
-      format.html { redirect_to applications_url, notice: "Application was successfully destroyed." }
+      format.html { redirect_to applications_url, notice: 'Application was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_application
-      @application = Application.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def application_params
-      params.require(:application).permit(:name, :email, :status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_application
+    @application = Application.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def application_params
+    params.require(:application).permit(:name, :email, :status)
+  end
 end
