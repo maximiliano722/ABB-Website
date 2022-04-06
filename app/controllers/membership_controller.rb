@@ -2,13 +2,14 @@ class MembershipController < ApplicationController
   def index
     @user = User.first
     @request = HourRequest.new
+
     @requests = HourRequest.find_by_sql("SELECT * FROM hour_requests WHERE user_id=1")
 
   end
 
   def events
     @user = User.first
-    @events = MemberEvent.all
+    @events = MemberEvent.find_by_sql("SELECT * FROM member_events WHERE id NOT IN (SELECT event_id FROM attendance_logs WHERE user_id = 1)")
     @attendance_logs = AttendanceLog.find_by_sql("SELECT * FROM attendance_logs WHERE user_id=1")
   end
 
