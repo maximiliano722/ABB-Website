@@ -9,6 +9,7 @@
     </p>
 
     <table>
+
     <tr>
         <td><strong>service_points</strong></td>
         <td><%= @user.service_points %></td>
@@ -37,7 +38,7 @@
 
     <hr>
     <strong>Submit Point Request:</strong>
-    <%= render 'point_request_form', request: @request %>
+    <%= render 'point_request_form', request: @request, user: @user %>
     <hr>
 
     <strong>Pending Point Request:</strong>
