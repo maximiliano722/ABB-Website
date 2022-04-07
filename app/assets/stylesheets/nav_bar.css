@@ -96,6 +96,11 @@ nav a {
     color: white;
     background: white;
 }
+.dropdown-item:hover{
+    background: none !important;
+    background-color: none !important;
+    cursor: pointer;
+}
 .small-display-divider {
     display: none;
 }

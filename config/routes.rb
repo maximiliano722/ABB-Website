@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/create_account', to: 'users#new' # note, change to user show
   get '/sponsor' => 'page#sponsor'
-  get '/events' => 'page#events'
+  get '/event_view' => 'page#event_view'
+  get '/edit_event' => 'page#edit_event'
 
   resources :academic_tracker do
   end
