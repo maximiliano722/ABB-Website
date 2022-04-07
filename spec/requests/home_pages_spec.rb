@@ -8,11 +8,4 @@ RSpec.describe "HomePages", type: :request do
 
     end
   end
-
-  describe "able to access the about page from home" do
-    it "get about pages from nav bar" do
-      get root_path
-      page.should have_link(href="/about")
-    end
-  end
 end
