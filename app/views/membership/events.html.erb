@@ -1,0 +1,88 @@
+<div>
+    <h1>Member Events</h1>
+
+    <% @events.each do |event| %>
+        <hr>
+        <p>
+        <strong>Event:</strong>
+        <%= event.event_name %>
+        </p>
+
+        <p>
+        <strong>Date:</strong>
+        <%= event.date %>
+        </p>
+
+        <p>
+        <strong>Time:</strong>
+        <%= event.time.strftime("%I:%M%p") %>
+        </p>
+
+        <p>
+        <strong>Location:</strong>
+        <%= event.location %>
+        </p>
+
+        <p>
+        <strong>Event Type:</strong>
+        <%= event.event_type %>
+        </p>
+
+        <p>
+        <strong>Point Value:</strong>
+        <%= event.point_value %>
+        </p>
+
+        <p>
+        <strong>description:</strong>
+        <%= event.description %>
+        </p>
+
+        <%= form_tag :action=>:sign_in do %>
+            <div class="field">
+                <strong>Password</strong>
+                <%= text_field "password", "password" %>
+            </div>
+            <div class="field">
+                <%= hidden_field :event_id, "id", value: event.id %>
+            </div>
+            <div class="field">
+                <%= hidden_field :user_id, "id", value: @user.id %>
+            </div>
+
+            <div class="actions">
+                <%= submit_tag "Login" %>
+            </div>
+        <% end %>
+        <hr>
+    <% end %>
+
+    <strong>Attended Events:</strong>
+
+    <% @attendance_logs.each do |log| %>
+        <hr>
+        <p>
+        <strong>Event Name:</strong>
+        <%event_attended = MemberEvent.find(log.event_id)%>
+        <%= event_attended.event_name %>
+        </p>
+
+        <p>
+        <strong>Date Attended:</strong>
+        <%= event_attended.date %>
+        </p>
+
+        <hr>
+    <% end %>
+    
+
+
+
+    <div style="color:red;">
+        <hr>
+        <strong><%= link_to("Show All Events", '/member_events')%></strong> |
+
+        <strong><%= link_to("Create New Event", '/member_events/new')%> </strong>
+        <hr>
+    </div>
+</div>

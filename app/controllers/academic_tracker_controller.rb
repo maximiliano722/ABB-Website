@@ -1,9 +1,0 @@
-# frozen_string_literal: true
-
-class AcademicTrackerController < ApplicationController
-  def index; end
-
-  def show; end
-
-  def edit; end
-end

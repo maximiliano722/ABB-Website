@@ -1,0 +1,35 @@
+<div>
+  <h1>Showing Point Request</h1>
+
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Request Id:</strong>
+    <%= @request.id %>
+  </p>
+
+  <p>
+    <strong>For User:</strong>
+    <%= @user.name %>
+  </p>
+
+  <p>
+    <strong>Points:</strong>
+    <%= @request.points %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= @request.category %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @request.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_hour_request_path(@request) %> |
+  <%= link_to 'Back', hour_requests_path %>
+
+</div>
+
