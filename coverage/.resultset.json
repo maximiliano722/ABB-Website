@@ -1662,6 +1662,20 @@
           null
         ]
       },
+      "/abb/ABB-Website/spec/requests/home_page_flows_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/abb/ABB-Website/spec/requests/messages_spec.rb": {
         "lines": [
           1,
@@ -3954,6 +3968,29 @@
           null
         ]
       },
+      "/abb/ABB-Website/app/controllers/page_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/abb/ABB-Website/app/controllers/sessions_controller.rb": {
         "lines": [
           null,
@@ -3983,6 +4020,6 @@
         ]
       }
     },
-    "timestamp": 1649532190
+    "timestamp": 1649544715
   }
 }
