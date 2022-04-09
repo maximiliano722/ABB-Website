@@ -1,6 +1,17 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get '/membership' => 'membership#index'
+  get '/membership/events' => 'membership#events'
+  get '/membership/points' => 'membership#points'
+  get '/membership/points/edit' => 'membership#edit'
+  post 'member_events/sign_in' => 'member_events#sign_in'
+  post 'membership/sign_in' => 'membership#sign_in'
+  get '/hour_requests/approve' => 'hour_requests#approve'
+  get '/hour_requests/deny' => 'hour_requests#deny'
+  post 'membership/edit_points' => 'membership#edit_points'
+  
+  
   resources :extra_images
   get 'sessions/new'
   root to: 'page#index'
@@ -16,6 +27,8 @@ Rails.application.routes.draw do
   resources :sessions
   resources :messages
   resources :support_logs
+  resources :hour_requests
+  resources :member_events
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/index' => 'page#index'
@@ -31,6 +44,6 @@ Rails.application.routes.draw do
   get '/event_view' => 'page#event_view'
   get '/edit_event' => 'page#edit_event'
 
-  resources :academic_tracker do
-  end
+  
+  
 end

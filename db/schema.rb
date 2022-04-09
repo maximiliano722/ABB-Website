@@ -67,6 +67,28 @@ ActiveRecord::Schema.define(version: 2022_04_05_170840) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "hour_requests", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "points"
+    t.string "category"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "member_events", force: :cascade do |t|
+    t.string "event_name"
+    t.date "date"
+    t.time "time"
+    t.string "location"
+    t.string "event_type"
+    t.float "point_value"
+    t.string "description"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.string "name"
     t.string "content"
@@ -94,15 +116,17 @@ ActiveRecord::Schema.define(version: 2022_04_05_170840) do
     t.string "major"
     t.string "position"
     t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.integer "service_points"
     t.integer "brother_points"
     t.integer "social_points"
-    t.decimal "study_hours"
+    t.float "study_hours"
+    t.boolean "is_officer"
+    t.boolean "is_admin"
     t.string "image_url"
     t.string "remember_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
