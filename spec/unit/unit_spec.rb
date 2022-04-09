@@ -99,8 +99,7 @@ RSpec.describe Sponsor, type: :model do
     subject.sponsor_type ="gold"
     expect(subject).not_to be_valid
   end
-
-=======
+  
 end
 #________________________________
 # testing hours_request
