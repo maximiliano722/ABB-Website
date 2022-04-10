@@ -15,16 +15,21 @@
         .flash__alert   { color: red; }
         .flash__notice  { color: blue; }
         .flash__success { color: green; }
+        .alert-primary { position: absolute !important; z-index:  1000;}
     </style>
   </head>
  
 
   <body>
-    <% if flash.any? %>
-      <% flash.each do |key, value| -%>
-        <div class="flash flash__<%= key %>"><%= value.html_safe %></div>
-      <% end -%>
-    <% end %>
+      <% if flash.any? %>
+        <% flash.each do |key, value| -%>
+        <div class="alert alert-primary" role="alert">
+
+          <div class="flash flash__<%= key %>"><%= value.html_safe %></div>
+        </div>
+        <% end -%>
+      <% end %>
+    
 
     <%= yield :main %>
     <%= yield  %>
