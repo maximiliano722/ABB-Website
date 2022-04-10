@@ -26,6 +26,9 @@
         <div class="alert alert-primary alert-dismissible" role="alert">
 
           <div class="flash flash__<%= key %>"><%= value.html_safe %></div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <% end -%>
       <% end %>
