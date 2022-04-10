@@ -109,11 +109,16 @@ class UsersController < ApplicationController
   # Only allow user see and edit their own page
 
   def correct_user
+
     @user = User.find(params[:id]) 
-    if @user != current_user 
-      redirect_to(root_url) unless @user.is_admin
+    if @user.nil?
+      redirect_to(root_url) unless !current_admin.nil?
+    
+    elsif @user != current_user
+      redirect_to(root_url) unless current_user.is_admin
     end
   end
+
   def admin_user
     authenticate_admin!
     #redirect_to(root_url) unless current_user.admin?
