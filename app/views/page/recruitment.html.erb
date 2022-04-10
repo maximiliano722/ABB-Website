@@ -1,5 +1,9 @@
 <% @page_title = "ABB Recruitment Page" %>
 <%= stylesheet_link_tag 'home' %>
+<% @recruitment_message = Message.find_by name: 'Recruitment Message' %>
+<% @recruitment_message_2 = Message.find_by name: 'Recruitment Message 2' %>
+<% @recruitment_message_3 = Message.find_by name: 'Recruitment Message 3' %>
+
 <% content_for :main do %>
 <main>
 <%= render :partial => 'page/nav_bar' %>
@@ -13,13 +17,21 @@
             <h1>The Admission Process</h1>
             <hr>
             <p>
-                Howdy! Welcome to the ABB Admissions Process. We are very excited to meet you this spring semester and are looking forward to establishing relationships with the applicants. Below you will find the admissions schedule and application. 
+            <% if @recruitment_message && @recruitment_message.content %>
+                    <%= @recruitment_message.content %>
+            <% else %>
+                    Create a message named 'Recruitment Message' and making its content whatever text you want to be displayed here.
+            <% end %>
             </p>
             <p>
-                It is important that you pay attention to dates, times, and locations.  If you have any questions, comments, or concerns then please do not hesitate to <a href="/our_team">contact us</a>.  
+            <% if @recruitment_message_2 && @recruitment_message_2.content %>
+                    <%= @recruitment_message_2.content %>
+            <% end %>
             </p>
             <p>
-                Gig’em and God Bless.
+            <% if @recruitment_message_3 && @recruitment_message_3.content %>
+               <%= @recruitment_message_3.content %>
+            <% end %>
             </p>
             <hr>
             <h1>Application</h1>

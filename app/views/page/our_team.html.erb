@@ -1,5 +1,6 @@
 <% @page_title = "ABB Our Team Page" %>
 <%= stylesheet_link_tag 'home' %>
+<% @officer_members = User.find_by position: 'Officer' %>
 
 <% content_for :main do %>
     <main>
