@@ -3,6 +3,8 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: %i[edit update]
   before_action :correct_user,   only: %i[show edit update]
+  before_action :admin_user,     only: :destroy
+
   # GET /users or /users.json
   def index
 
@@ -14,17 +16,26 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
+
     @user = User.find(params[:id])
+
+
   end
 
   # GET /users/new
   def new
-    @user = User.new
+
+    @user = User.new 
+  
   end
 
   # GET /users/1/edit
   def edit
-    @user = current_user
+
+      @user = User.find(params[:id])
+
+
+   
   end
 
   # POST /users or /users.json
@@ -67,7 +78,7 @@ class UsersController < ApplicationController
   # DELETE /users/1 or /users/1.json
   def destroy
     authenticate_admin!
-    @user.destroy
+    User.find(params[:id]).destroy
 
     respond_to do |format|
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
@@ -89,19 +100,24 @@ class UsersController < ApplicationController
 
 
   def logged_in_user
+    @user = User.find(params[:id]) 
     unless logged_in?
       flash[:danger] = 'Please log in.'
-      redirect_to login_url
+      redirect_to login_url unless @user.is_admin
     end
   end
   # Only allow user see and edit their own page
 
   def correct_user
-    @user = User.find(params[:id])
-
-    redirect_to(root_url) if @user != current_user
+    @user = User.find(params[:id]) 
+    if @user != current_user 
+      redirect_to(root_url) unless @user.is_admin
+    end
   end
-
+  def admin_user
+    authenticate_admin!
+    #redirect_to(root_url) unless current_user.admin?
+  end
 
 
 end

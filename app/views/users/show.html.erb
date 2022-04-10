@@ -50,6 +50,6 @@
 <%= link_to 'Back', users_path %>
 <%= link_to("Back To Points", {:controller => 'membership', :action => 'points'})%>
 <%= link_to 'Home', root_url %>
-<% if current_user.is_admin? && current_user == @user%>
+<% if !current_admin.nil? || current_user.is_admin && !current_user?(user)%>
   <%= link_to "delete", @user, method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>

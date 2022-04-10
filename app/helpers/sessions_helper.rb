@@ -11,7 +11,11 @@ module SessionsHelper
   def current_user
     if session[:user_id]
       @current_user ||= User.find_by(id: session[:user_id]) # this means "or equal" just like += or -=
+    elsif !@current_admin.nil?
+      email = current_admin.email
+      @current_user ||= User.find_by(email: email)
     end
+
   end
 
   # Returns true if the user is logged in, false otherwise.

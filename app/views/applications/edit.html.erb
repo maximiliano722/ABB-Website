@@ -4,4 +4,6 @@
 
 <%= link_to 'Show', @application %> |
 <%= link_to 'Back', applications_path %>
-
+<% if !current_admin.nil? || current_user.is_admin && !current_user?(user)%>
+  <%= link_to "delete", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
