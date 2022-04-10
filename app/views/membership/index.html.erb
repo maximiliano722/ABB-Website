@@ -39,13 +39,14 @@
                 </table>
 
                 <hr>
-
-                <div style="color:red;">
-                    <hr>
-                    <%= link_to("All Member Points", {:action => 'points'})%>
-                    <hr>
-                </div>
-
+                
+                <%if @user.is_admin%>
+                    <div style="color:red;">
+                        <hr>
+                        <%= link_to("All Member Points", {:action => 'points'})%>
+                        <hr>
+                    </div>
+                <%end%>
                 <hr>
                 <strong>Submit Point Request:</strong>
                 <%= render 'point_request_form', request: @request, user: @user %>
@@ -76,13 +77,15 @@
                 <% end %>
                 </tbody>
                 </table>
-
-                <div style="color:red;">
-                    <hr>
-                    <%= link_to("All Point Requests", '/hour_requests')%>
-                    <hr>
-                </div>
-
+                
+                <%if @user.is_admin%>
+                    <div style="color:red;">
+                        <hr>
+                        <%= link_to("All Point Requests", '/hour_requests')%>
+                        <hr>
+                    </div>
+                <%end%>
+                    
                 <strong>Attended Events:</strong>
 
                 <% @attendance_logs.each do |log| %>
