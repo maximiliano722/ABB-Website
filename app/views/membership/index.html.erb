@@ -1,95 +1,115 @@
-<div>
-    <h1>Membership</h1>
+<%= stylesheet_link_tag 'member' %>
+<% content_for :main do %>
+    <main>
+    <%= render :partial => 'page/nav_bar' %>
+    <div class="container first-container-about container-fluid">
+        <div class = "row first-row make-f">
+            <p class="tamu-row-1">Texas A&M’s Professional Brotherhood</p>
 
-    <hr>
+        </div>
+        <div class = "row about-row">
+            <div class="col-lg-8 what-is-abb order-last">
+                <h1>Membership</h1>
+                <hr style="color:white">
+                <p class="about-brandon">
+                    <strong>Current Points for user:</strong>
+                    <%= @user.name %>
+​                </p>
 
-    <p>
-    <strong>Current Points for user:</strong>
-    <%= @user.name %>
-    </p>
+                <div>
 
-    <table>
+                <table>
 
-    <tr>
-        <td><strong>service_points</strong></td>
-        <td><%= @user.service_points %></td>
-    </tr>
-    <tr>
-        <td><strong>brother_points</strong></td>
-        <td><%= @user.brother_points %></td>
-    </tr>
-    <tr>
-        <td><strong>social_points</strong></td>
-        <td><%= @user.social_points %></td>
-    </tr>
-    <tr>
-        <td><strong>study_hours</strong></td>
-        <td><%= @user.study_hours %></td>
-    </tr>
-    </table>
+                <tr>
+                    <td><strong>service_points</strong></td>
+                    <td><%= @user.service_points %></td>
+                </tr>
+                <tr>
+                    <td><strong>brother_points</strong></td>
+                    <td><%= @user.brother_points %></td>
+                </tr>
+                <tr>
+                    <td><strong>social_points</strong></td>
+                    <td><%= @user.social_points %></td>
+                </tr>
+                <tr>
+                    <td><strong>study_hours</strong></td>
+                    <td><%= @user.study_hours %></td>
+                </tr>
+                </table>
 
-    <hr>
+                <hr>
 
-    <div style="color:red;">
-        <hr>
-        <%= link_to("All Member Points", {:action => 'points'})%>
-        <hr>
+                <div style="color:red;">
+                    <hr>
+                    <%= link_to("All Member Points", {:action => 'points'})%>
+                    <hr>
+                </div>
+
+                <hr>
+                <strong>Submit Point Request:</strong>
+                <%= render 'point_request_form', request: @request, user: @user %>
+                <hr>
+
+                <strong>Pending Point Request:</strong>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Points  </th>
+                        <th>Category  </th>
+                        <th>Description  </th>
+                        <th colspan="2"></th>
+
+                    </tr>
+                    </thead>
+
+                <tbody>
+                <% @requests.each do |r| %>
+                    <tr>
+                    <td><%= r.points %></td>
+                    <td><%= r.category %></td>
+                    <td><%= r.description %></td>
+                    <td><%= link_to 'Edit', edit_hour_request_path(r) %></td>
+                    <td><%= link_to 'Cancel', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+                </table>
+
+                <div style="color:red;">
+                    <hr>
+                    <%= link_to("All Point Requests", '/hour_requests')%>
+                    <hr>
+                </div>
+
+                <strong>Attended Events:</strong>
+
+                <% @attendance_logs.each do |log| %>
+                    <hr>
+                    <p>
+                    <strong>Event Name:</strong>
+                    <%event_attended = MemberEvent.find(log.event_id)%>
+                    <%= event_attended.event_name %>
+                    </p>
+
+                    <p>
+                    <strong>Date Attended:</strong>
+                    <%= event_attended.date %>
+                    </p>
+
+                    <hr>
+                <% end %>
+
+                </div>
+            </div>
+        </div>
     </div>
+</main>
+<% end %>
 
-    <hr>
-    <strong>Submit Point Request:</strong>
-    <%= render 'point_request_form', request: @request, user: @user %>
-    <hr>
 
-    <strong>Pending Point Request:</strong>
 
-    <table>
-        <thead>
-        <tr>
-            <th>Points  </th>
-            <th>Category  </th>
-            <th>Description  </th>
-            <th colspan="2"></th>
 
-        </tr>
-        </thead>
 
-    <tbody>
-      <% @requests.each do |r| %>
-        <tr>
-          <td><%= r.points %></td>
-          <td><%= r.category %></td>
-          <td><%= r.description %></td>
-          <td><%= link_to 'Edit', edit_hour_request_path(r) %></td>
-          <td><%= link_to 'Cancel', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-    <div style="color:red;">
-        <hr>
-        <%= link_to("All Point Requests", '/hour_requests')%>
-        <hr>
-    </div>
-
-    <strong>Attended Events:</strong>
-
-    <% @attendance_logs.each do |log| %>
-        <hr>
-        <p>
-        <strong>Event Name:</strong>
-        <%event_attended = MemberEvent.find(log.event_id)%>
-        <%= event_attended.event_name %>
-        </p>
-
-        <p>
-        <strong>Date Attended:</strong>
-        <%= event_attended.date %>
-        </p>
-
-        <hr>
-    <% end %>
-
-</div>
 

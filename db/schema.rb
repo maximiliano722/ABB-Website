@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(version: 2022_04_05_170840) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "event_name"
+    t.date "date"
+    t.time "time"
+    t.string "location"
+    t.string "event_type"
+    t.string "description"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "extra_images", force: :cascade do |t|
     t.string "group"
     t.string "description"
@@ -68,6 +80,15 @@ ActiveRecord::Schema.define(version: 2022_04_05_170840) do
   end
 
   create_table "hour_requests", force: :cascade do |t|
+    t.integer "user_id"
+    t.float "points"
+    t.string "category"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "hours_request", force: :cascade do |t|
     t.integer "user_id"
     t.float "points"
     t.string "category"

@@ -1,0 +1,2 @@
+class HoursRequest < ApplicationRecord
+end
