@@ -27,8 +27,9 @@ class MembershipController < ApplicationController
   end
 
   def edit
-    @id = params['id']
-    @user = User.find(@id)
+    #@id = params['id']
+    #@user = User.find(@id)
+    @user = current_user
   end
 
   def sign_in

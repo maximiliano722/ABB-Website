@@ -9,7 +9,8 @@ class Admin < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:google_oauth2]
 
   def self.from_google(email:, full_name:, uid:, avatar_url:)
-    return nil unless /@gmail.com || @tamu.edu\z/.match?(email)
+    current_admin_in_database = User.where(email: email).first
+    return nil unless /@tamu.edu\z/.match?(email) && !current_admin_in_database.nil? && current_admin_in_database.is_admin
 
     admin = create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
     admin.update!(avatar_url: avatar_url)
@@ -57,4 +58,6 @@ class Admin < ApplicationRecord
 
     !user_permission.nil?
   end
+
+
 end
