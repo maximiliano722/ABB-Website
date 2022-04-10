@@ -35,4 +35,7 @@
   <div class="actions">
     <%= form.submit "Update Account" %>
   </div>
+  <% if !current_admin.nil? || current_user.is_admin %>
+    <%= link_to "delete", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
 <% end %>
