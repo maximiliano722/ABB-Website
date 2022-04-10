@@ -5,8 +5,11 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: %i[show edit update]
   # GET /users or /users.json
   def index
+
     authenticate_admin!
     @users = User.all
+
+ 
   end
 
   # GET /users/1 or /users/1.json
@@ -20,7 +23,9 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit; end
+  def edit
+    @user = current_user
+  end
 
   # POST /users or /users.json
   def create
@@ -82,6 +87,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :social_points, :service_points, :brother_points, :study_hours)
   end
 
+
   def logged_in_user
     unless logged_in?
       flash[:danger] = 'Please log in.'
@@ -95,4 +101,7 @@ class UsersController < ApplicationController
 
     redirect_to(root_url) if @user != current_user
   end
+
+
+
 end

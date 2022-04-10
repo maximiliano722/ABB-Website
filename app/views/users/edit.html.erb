@@ -1,6 +1,38 @@
-<h1>Editing User</h1>
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-<%= render 'form', user: @user %>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= form.label :service_points %>
+    <%= form.number_field :service_points %>
+  </div>
+  <div class="field">
+    <%= form.label :brother_points %>
+    <%= form.number_field :brother_points %>
+  </div>
+  <div class="field">
+    <%= form.label :social_points %>
+    <%= form.number_field :social_points %>
+  </div>
+  <div class="field">
+    <%= form.label :study_hours %>
+    <%= form.text_field :study_hours %>
+  </div>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+   
+
+
+
+  <div class="actions">
+    <%= form.submit "Update Account" %>
+  </div>
+<% end %>
