@@ -26,7 +26,11 @@
                         <br>
                         <%= sponsor.sponsor_name %>
                         <br>
-                        <%= image_tag sponsor.image %>
+                        <% if sponsor.image.attached? %>
+                          <%= image_tag sponsor.image %>
+                        <% else %>
+                          <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
+                        <% end %>
                         <br>
                     <% end %>
           </div>
