@@ -23,7 +23,7 @@
   <body>
       <% if flash.any? %>
         <% flash.each do |key, value| -%>
-        <div class="alert alert-primary" role="alert">
+        <div class="alert alert-primary alert-dismissible" role="alert">
 
           <div class="flash flash__<%= key %>"><%= value.html_safe %></div>
         </div>

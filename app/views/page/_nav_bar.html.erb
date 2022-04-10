@@ -23,7 +23,7 @@
         </li>
         <!-- Layout change when log in starts -->
         <% if logged_in? || !current_admin.nil? %>
-          <li><%= link_to "Membership", "/membership"  %> </li>
+          <li class="nav-item"><%= link_to "Membership", "/membership", class: "nav-link" %> </li>
 
         <%end%>
 
@@ -43,9 +43,9 @@
         </li>
         <% if logged_in? %>
         
-          <li class="nav-item"><%= link_to "Log out", logout_path, method: :delete  %> </li>
+          <li class="nav-item"><%= link_to "Log out", logout_path, method: :delete, class: "nav-link"  %> </li>
           <%elsif !current_admin.nil? %>
-             <li class="nav-item"><%= link_to "Log out", destroy_admin_session_path %> </li>
+             <li class="nav-item"><%= link_to "Log out", destroy_admin_session_path, class: "nav-link" %> </li>
           <%else %>
             <li class="nav-item">
               <a class="nav-link" href="/login">

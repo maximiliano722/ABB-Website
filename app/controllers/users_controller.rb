@@ -41,7 +41,7 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-    @user.is_admin = true
+    @user.is_admin = false
     @user.service_points = 0
     @user.brother_points = 0
     @user.social_points = 0
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
         # below two lines of code will make the users log in immediately
         reset_session
         log_in @user
-        format.html { redirect_to user_url(@user), notice: 'User was successfully created.' }
+        format.html { redirect_to controller: :page, action: :index, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
