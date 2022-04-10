@@ -137,17 +137,15 @@ ActiveRecord::Schema.define(version: 2022_04_05_170840) do
     t.string "major"
     t.string "position"
     t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.integer "service_points"
     t.integer "brother_points"
     t.integer "social_points"
-    t.float "study_hours"
-    t.boolean "is_officer"
-    t.boolean "is_admin"
+    t.decimal "study_hours"
     t.string "image_url"
     t.string "remember_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
