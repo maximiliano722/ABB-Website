@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       redirect_to root_url # redirect the static page into home page, it should have some layouts of profile use
     else
       # Create an error message.
-      flash.now[:danger] = '' # flash now is to make sure the flash go off when access to another page
+      flash.now[:danger] = 'Incorrect username/password combination' # flash now is to make sure the flash go off when access to another page
       render 'new' # re-render
     end
   end
