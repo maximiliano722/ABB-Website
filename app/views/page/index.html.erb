@@ -1,5 +1,8 @@
 <% @page_title = "ABB Home" %>
 <%= stylesheet_link_tag 'home' %>
+<% @home_message = Message.find_by name: 'Home Message' %>
+<% @carousel_images = ExtraImage.where(group: "Carousel").find_each %>
+<% @first_image = ExtraImage.find_by group: 'First Image'%>
 <% content_for :main do %>
 <main>
    <%= render :partial => 'page/nav_bar' %>
@@ -13,14 +16,21 @@
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
                   <div class="carousel-item active">
-                     <%= image_tag "group_photo.jpg", :class => "group-photo" %>
+                  <% if @first_image && @first_image.image.attached? %>
+                     <%= image_tag @first_image.image, :class => "group-photo" %>
+                  <% else %>
+                     <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
+                  <% end %>
                   </div>
-                  <div class="carousel-item">
-                     <%= image_tag "group_photo.jpg", :class => "group-photo" %>
-                  </div>
-                  <div class="carousel-item">
-                     <%= image_tag "group_photo.jpg", :class => "group-photo" %>
-                  </div>
+                  <% @carousel_images.each do |carousel_image| %>
+                     <div class="carousel-item">
+                        <% if carousel_image.image.attached? %>
+                           <%= image_tag carousel_image.image, :class => "group-photo" %>
+                        <% else %>
+                           <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
+                        <% end %>
+                     </div>
+                  <% end %>
                </div>
                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -36,9 +46,11 @@
             <h1>About Us</h1>
             <hr>
             <p>
-               We strive to introduce a passion for business that will lead members to successful
-               career opportunities. We place an emphasis on brotherhood in order to create a culture of integrity
-               and excellence by bringing together members with a shared love for our University and our core values.
+               <% if @home_message && @home_message.content %>
+                  <%= @home_message.content %>
+               <% else %>
+                  This message is nil...like a nil pickle. Fix it by creating a message named 'Home Message' and making its content whatever text you want to be displayed here.
+               <% end %>
             </p>
          </div>
       </div>

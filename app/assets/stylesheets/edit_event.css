@@ -1,0 +1,25 @@
+#edit-event-h1{
+    text-align: center;
+    color: white;
+    width: fit-content;
+    margin: auto;
+    border-bottom: 1px solid white;
+}
+.edit-event-form{
+    width: 100%;
+    margin: auto;
+    color: white;
+    padding-bottom: 50px;
+    max-width: 400px;
+    padding-top: 20px;
+}
+
+.edit-event-body > *{
+    width: fit-content;
+
+}
+.buttons-to-submit{
+    margin: auto;
+    margin-top: 20px;
+
+}

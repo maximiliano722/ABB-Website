@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @extra_image.group %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @extra_image.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <% if @extra_image.image.attached? %>
+     <%= image_tag @extra_image.image, width: "50px", height: "50px" %>
+  <% else %>
+     <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_extra_image_path(@extra_image) %> |
+<%= link_to 'Back', extra_images_path %>

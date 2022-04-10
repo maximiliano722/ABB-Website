@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Extra Images</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th>Description</th>
+      <th>Image<th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @extra_images.each do |extra_image| %>
+      <tr>
+        <td><%= extra_image.group %></td>
+        <td><%= extra_image.description %></td>
+        <td>
+        <% if extra_image.image.attached? %>
+           <%= image_tag extra_image.image, width: "50px", height: "50px" %>
+        <% else %>
+           <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
+        <% end %>
+        </td>
+        <td><%= link_to 'Show', extra_image %></td>
+        <td><%= link_to 'Edit', edit_extra_image_path(extra_image) %></td>
+        <td><%= link_to 'Destroy', extra_image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Extra Image', new_extra_image_path %>

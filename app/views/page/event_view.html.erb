@@ -1,0 +1,137 @@
+<% @page_title = "ABB Events" %>
+<%= stylesheet_link_tag 'events' %>
+<% content_for :main do %>
+<main>
+    <%= render :partial => 'page/nav_bar' %>
+    <%= form_with(model: @event) do |form| %>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Event</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <div class="field">
+                        <%= form.label :event_name %>
+                        <%= form.text_field :event_name %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :date %>
+                        <%= form.date_field :date %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :time %>
+                        <%= form.time_field :time %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :location %>
+                        <%= form.text_field :location %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :event_type %>
+                        <%= form.select :event_type, ['Service', 'Brother', 'Social', 'Study'] %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :point_value %>
+                        <%= form.number_field :point_value %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :description %>
+                        <%= form.text_area :description %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :password %>
+                        <%= form.text_field :password %>
+                    </div>
+                </div>  
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                    <div class="actions">
+                        <%= form.submit "Create Event"%>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    <% end %>
+
+    <div class="container">
+        <div class = "row first-row make-f">
+            <p class="tamu-row-1">Texas A&M’s Professional Brotherhood</p>
+            <h2>Member Events</h2>
+        </div>
+        <div class="row second-row-events">
+            <div class="mask-snow"></div>
+            <%= image_tag "events_pictures/tamu_overview.jpg", :class => "tamu-overview" %>
+            <iframe src="https://calendar.google.com/calendar/embed?src=olsisadiku%40tamu.edu&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+            
+            <div class="button-div">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Create Event
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row table-event-row">
+            <div class="row-container">
+                <h1 class="event-details-header">Event Details</h1>
+                <table class="table table-hover event-table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Event Name</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Event Type</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @events.each do |event| %>
+                            
+                            <tr>
+                                <td><%= event.event_name %></td>
+                                <td><%= event.date %></td>
+                                <td><%= event.time.strftime("%I:%M%p") %></td>
+                                <td><%= event.location %></td>
+                                <td><%= event.event_type %></td>
+                                <% unless @user.nil? %>
+                                    <td><%= event.password %></td>
+                                    <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                    <td><%= link_to 'Edit', edit_member_event_path(event) %></td>
+                                    <td>                                
+                                        <%= form_tag :action=>:sign_in, :controller=>"membership" do %>
+                                            <div class="field">
+                                                <strong>Password</strong>
+                                                <%= text_field "password", "password" %>
+                                            </div>
+                                            <div class="field">
+                                                <%= hidden_field :event_id, "id", value: event.id %>
+                                            </div>
+                                            <div class="field">
+                                                <%= hidden_field :user_id, "id", value: @user.id %>
+                                            </div>
+                                            <div class="actions">
+                                                <%= submit_tag "Login" %>
+                                            </div>
+                                        <% end %>
+                                    </td>
+                                <%end%>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+    </div>
+</main>
+
+<% end %>
+
+
