@@ -18,6 +18,8 @@ module SessionsHelper
 
   end
 
+  
+
   # Returns true if the user is logged in, false otherwise.
   # Note: this is the boolean value: if current_user is valid, return true (not nill)
   def logged_in?

@@ -44,6 +44,8 @@
         <% if logged_in? %>
         
           <li><%= link_to "Log out", logout_path, method: :delete  %> </li>
+          <%elsif !current_admin.nil? %>
+             <li><%= link_to "Log out", destroy_admin_session_path %> </li>
           <%else %>
             <li class="nav-item" style="border-bottom:none">
               <a class="nav-link" href="/login" style="padding: 0;">
