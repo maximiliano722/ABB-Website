@@ -67,9 +67,13 @@
             <iframe src="https://calendar.google.com/calendar/embed?src=olsisadiku%40tamu.edu&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             
             <div class="button-div">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Create Event
-                </button>
+                <% unless @user.nil? %>
+                    <%if @user.is_admin %>    
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Create Event
+                        </button>
+                    <% end %>
+                <% end %>
             </div>
         </div>
         <br>
@@ -84,7 +88,6 @@
                         <th scope="col">Time</th>
                         <th scope="col">Location</th>
                         <th scope="col">Event Type</th>
-                        <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
