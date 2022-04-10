@@ -1,3 +1,25 @@
-<h2>Log in to the Admin Dashboard</h2>
-<%= link_to "Sign in with Google", admin_google_oauth2_omniauth_authorize_path %>
-<%= link_to "Home", root_path %>
+<% provide(:title, "Log in") %>
+<%= stylesheet_link_tag 'admin_login' %>
+
+<div class = "admin_walkway"></div>
+
+<div class = "forma forma-sign-up">
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <p>Invalid email/password combination</p>
+    </div>
+  <% end %>
+  <div class = "login-title">Login to the Admin Dashboard </div>
+  <br>
+
+  <div class = "login-admin-link">
+
+  <%= link_to "Sign In With Google", admin_google_oauth2_omniauth_authorize_path, class: "login-admin-link" %>
+
+  </div>
+    
+  <br>
+  <p style="font-size:16px;">Login as user? <u> <a href="/login" class="login-button">Log In</a> </u><p>
+  <hr>
+  <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a>
+</div>
