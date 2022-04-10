@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/membership/points/edit' => 'membership#edit'
   post 'member_events/sign_in' => 'member_events#sign_in'
   post 'membership/sign_in' => 'membership#sign_in'
+  #delete 'membership/logout' => 'membership#destroy'
   get '/hour_requests/approve' => 'hour_requests#approve'
   get '/hour_requests/deny' => 'hour_requests#deny'
   post 'membership/edit_points' => 'membership#edit_points'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
   resources :support_logs
   resources :hour_requests
   resources :member_events
+  resources :membership
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/index' => 'page#index'
