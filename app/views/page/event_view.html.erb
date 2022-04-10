@@ -3,7 +3,7 @@
 <% content_for :main do %>
 <main>
     <%= render :partial => 'page/nav_bar' %>
-    <form action="" method="POST">
+    <%= form_with(model: @event) do |form| %>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -14,62 +14,51 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <label for="">Event name:</label>
-                    <input type="text" name="event_name" class="form-control" id="exampleInputEventName" aria-describedby="emailHelp" placeholder="Event name">
-                    <br>
-                    <label for="">Date:</label>
-                    <input type="date" name= "date" class="form-control" id="exampleInputDate" aria-describedby="dateHelp">
-                    <br>
-                    <label for="">Time:</label>
-                    <input type="text" name="time" class="form-control" id="exampleInputTime" aria-describedby="timeHelp" placeholder="Time">
-                    <br>
-                    <label for="">Location:</label>
-                    <input type="text" name= "location" class="form-control" id="exampleInputLocation" aria-describedby="locationHelp" placeholder="400 Bizzell St">
-                    <br>
-                    <label for="">Event Type:</label>
-                    <input type="text" name="event_type" class="form-control" id="exampleInputType" aria-describedby="locationHelp" placeholder="Event Type">
-                    <br>
-                    <label for="">Description:</label>
-                    <textarea class="form-control" name= "description" id="exampleFormControlTextarea1" rows="3"></textarea>
-                    <br>
-                    <label for="">Password:</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp" placeholder="Password">
-                    <br>
-                    <label for="">Confirm Password:</label>
-                    <input type="password" class="form-control" id="exampleInputPassword" aria-describedby="passwordHelp" placeholder="Confirm Password">
-                
-                </div>
+                    <div class="field">
+                        <%= form.label :event_name %>
+                        <%= form.text_field :event_name %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :date %>
+                        <%= form.date_field :date %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :time %>
+                        <%= form.time_field :time %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :location %>
+                        <%= form.text_field :location %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :event_type %>
+                        <%= form.select :event_type, ['Service', 'Brother', 'Social', 'Study'] %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :point_value %>
+                        <%= form.number_field :point_value %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :description %>
+                        <%= form.text_area :description %>
+                    </div>
+                    <div class="field">
+                        <%= form.label :password %>
+                        <%= form.text_field :password %>
+                    </div>
+                </div>  
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+
+                    <div class="actions">
+                        <%= form.submit "Create Event"%>
+                    </div>
                 </div>
             </div>
             </div>
         </div>
-    </form>
-    <form action="" method="POST">
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Login to Event to earn points!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <label for="">Event Password:</label>
-                    <input type="text" name="event_password" class="form-control" id="exampleInputEventName" placeholder="Event Password">
-                 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-                </div>
-            </div>
-        </div>
-    </form>
+    <% end %>
+
     <div class="container">
         <div class = "row first-row make-f">
             <p class="tamu-row-1">Texas A&M’s Professional Brotherhood</p>
@@ -92,7 +81,6 @@
                 <table class="table table-hover event-table">
                     <thead>
                         <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Event Name</th>
                         <th scope="col">Date</th>
                         <th scope="col">Time</th>
@@ -103,33 +91,36 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Customer Meet</td>
-                        <td>11/12/2022</td>
-                        <td>8:00PM</td>
-                        <td>510 Aspury Dr</td>
-                        <td>Council</td>
-                        <td>Council</td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="" data-target="">
-                                Delete
-                            </button>
-                        </td>
-                        <td>
-                            <a href="/edit_event" target= "_blank">
-                                <button type="button" class="btn btn-primary">
-                                    Edit
-                                </button>
-                            </a>
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                Login
-                            </button>
-                        </td>
-                        </tr>
-                        
+                        <% @events.each do |event| %>
+                            
+                            <tr>
+                                <td><%= event.event_name %></td>
+                                <td><%= event.date %></td>
+                                <td><%= event.time %></td>
+                                <td><%= event.location %></td>
+                                <td><%= event.event_type %></td>
+                                <td><%= event.password %></td>
+                                <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                <td><%= link_to 'Edit', edit_member_event_path(event) %></td>
+                                <td>                                
+                                    <%= form_tag :action=>:sign_in, :controller=>"membership" do %>
+                                        <div class="field">
+                                            <strong>Password</strong>
+                                            <%= text_field "password", "password" %>
+                                        </div>
+                                        <div class="field">
+                                            <%= hidden_field :event_id, "id", value: event.id %>
+                                        </div>
+                                        <div class="field">
+                                            <%= hidden_field :user_id, "id", value: @user.id %>
+                                        </div>
+                                        <div class="actions">
+                                            <%= submit_tag "Login" %>
+                                        </div>
+                                    <% end %>
+                                </td>
+                            </tr>
+                        <% end %>
                     </tbody>
                 </table>
             </div>
@@ -140,3 +131,5 @@
 </main>
 
 <% end %>
+
+

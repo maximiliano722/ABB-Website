@@ -25,6 +25,11 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
+    @user.is_admin = true
+    @user.service_points = 0
+    @user.brother_points = 0
+    @user.social_points = 0
+    @user.study_hours = 0
 
     respond_to do |format|
       if @user.save
@@ -48,7 +53,7 @@ class UsersController < ApplicationController
         format.html { redirect_to user_url(@user), notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity}
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -74,7 +79,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :social_points, :service_points, :brother_points, :study_hours)
   end
 
   def logged_in_user

@@ -16,4 +16,11 @@ class PageController < ApplicationController
   end
 
   def create_account; end
+
+  def event_view
+    @event = MemberEvent.new
+    @events = MemberEvent.all
+    @user = current_user
+
+  end
 end
