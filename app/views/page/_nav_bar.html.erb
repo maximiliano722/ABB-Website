@@ -38,10 +38,12 @@
             <a class="dropdown-item" href="/sponsor">Sponsors</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/event_view">Events</a>
-            <% if !current_admin.nil? || current_user.is_admin %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "View All Users", users_path, class: "dropdown-item"%>
-            <% end %>
+            <%unless current_user.nil?%>
+              <% if !current_admin.nil? || current_user.is_admin %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "View All Users", users_path, class: "dropdown-item"%>
+              <% end %>
+            <%end%>
           </div>
         
         </li>
