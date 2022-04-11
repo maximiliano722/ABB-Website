@@ -14,3 +14,7 @@ RSpec.describe 'Creating a attendance_log', type: :feature do
       expect(page).to have_content('1')
     end
 end
+
+
+#All log in functions test
+
