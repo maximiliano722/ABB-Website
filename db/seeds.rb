@@ -34,3 +34,4 @@ User.create!(name:  "Max",
             password:              "1234567",
             password_confirmation: "1234567",
             is_admin: true)
+            
