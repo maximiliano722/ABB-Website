@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
 
-    authenticate_admin!
+
     @users = User.all
 
  
