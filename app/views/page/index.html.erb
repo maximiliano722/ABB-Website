@@ -101,6 +101,32 @@
                <input class="btn btn-primary submit-btn btn-lg" type="submit" value="Submit">
             </div>
          </div>
+         <%= form_tag :action=>:send_email, :controller=>"membership" do %>
+            <div class="field">
+                  <strong>Last Name</strong>
+                  <%= text_field "last_name", "last_name" %>
+            </div>
+            <div class="field">
+                  <strong>First Name</strong>
+                  <%= text_field "first_name", "first_name" %>
+            </div>
+            <div class="field">
+                  <strong>Email</strong>
+                  <%= text_field "email", "email" %>
+            </div>
+            <div class="field">
+                  <strong>Number</strong>
+                  <%= text_field "number", "number" %>
+            </div>
+            <div class="field">
+                  <strong>Message</strong>
+                  <%= text_field "message", "message" %>
+            </div>
+
+            <div class="actions">
+                  <%= submit_tag "Submit Question" %>
+            </div>
+         <% end %>
          <div class="row d-flex w-100 logos-png">
             <div class="col align-items-end flex-column float-right ig-png-div">
                <div>
