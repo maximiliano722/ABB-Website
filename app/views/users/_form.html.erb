@@ -48,7 +48,7 @@
   <p style="font-size:16px;">Have an account? <u> <a href="/login" class="login-button" style="color:blue;">Log in</a> </u><p>
   <hr>
   <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a>
-  <%if logged_in? %>
+  <%unless logged_in? %>
     <a href="admins/sign_in" style="color:white;"><button type="button" class="buttonLog-back">Login as Admin</button></a>
   <%end%>
 </div>
