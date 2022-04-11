@@ -136,12 +136,7 @@ a:hover { text-decoration: none; background-color: transparent; }
 .second-container {
     padding-bottom: 100px !important;
 }
-.second-container textarea{
-    width: 60%;
-    font-size: 1.2rem;
-    margin: auto;
-    max-width: 500px;
-}
+
 .submit-btn {
     background-color: black;
     color: white;
@@ -183,4 +178,9 @@ a:hover { text-decoration: none; background-color: transparent; }
 }
 main { 
     width: 100%;
+}
+.submit-questions {
+    width: 30%;
+    margin: auto;
+    padding-top: 15px;
 }
