@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/membership/points' => 'membership#points'
   get '/membership/points/edit' => 'membership#edit'
   post 'member_events/sign_in' => 'member_events#sign_in'
+  post 'membership/send_email' => 'membership#send_email'
   post 'membership/sign_in' => 'membership#sign_in'
   #delete 'membership/logout' => 'membership#destroy'
   get '/hour_requests/approve' => 'hour_requests#approve'
@@ -34,6 +35,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/index' => 'page#index'
+  post '/index' => 'membership#send_email'
   get '/about' => 'page#about'
   get '/contact' => 'page#contact'
   get '/recruitment' => 'page#recruitment'

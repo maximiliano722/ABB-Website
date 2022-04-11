@@ -84,7 +84,7 @@ Rails.application.configure do
     port:                 587,
     domain:               'gmail.com',
     user_name:            'ABBcsce431@gmail.com',
-    password:             'CSCE431tmp',
+    password:             'quatnnsetdjlcivv',
     authentication:       'plain',
     enable_starttls_auto: true,
     open_timeout:         5,
