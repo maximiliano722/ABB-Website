@@ -3,7 +3,12 @@
 class PageController < ApplicationController
   def page; end
 
-  def index; end
+  def index
+    msg = params[:notice]
+    unless msg.nil?
+      flash.now[:notice] = msg
+    end
+  end
 
   def about; end
 
@@ -21,6 +26,5 @@ class PageController < ApplicationController
     @event = MemberEvent.new
     @events = MemberEvent.all
     @user = current_user
-
   end
 end

@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   post '/sponsor' => 'membership#send_email'
   post '/recruitment' => 'membership#send_email'
   post '/' => 'membership#send_email'
+  post '/our_team' => 'membership#send_email'
   get '/about' => 'page#about'
   get '/contact' => 'page#contact'
   get '/recruitment' => 'page#recruitment'
@@ -51,6 +52,4 @@ Rails.application.routes.draw do
   get '/event_view' => 'page#event_view'
   get '/edit_event' => 'page#edit_event'
 
-  
-  
 end
