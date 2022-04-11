@@ -11,7 +11,9 @@
     color: white;
     text-align: center;
 }
-.about-brandon {
+
+
+.current-points {
     font-size: 1.2rem;
     line-height: normal;
     width: 70%;
@@ -81,7 +83,7 @@
             margin: auto;
         }
         
-        .about-brandon{
+        .current-points{
             width: 90%;
         }
     }
