@@ -100,9 +100,11 @@
                                 <td><%= event.location %></td>
                                 <td><%= event.event_type %></td>
                                 <% unless @user.nil? %>
-                                    <td><%= event.password %></td>
-                                    <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                    <td><%= link_to 'Edit', edit_member_event_path(event) %></td>
+                                    <%if @user.is_admin%>
+                                        <td><%= event.password %></td>
+                                        <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                        <td><%= link_to 'Edit', edit_member_event_path(event) %></td>
+                                    <%end%>
                                     <td>                                
                                         <%= form_tag :action=>:sign_in, :controller=>"membership" do %>
                                             <div class="field">
