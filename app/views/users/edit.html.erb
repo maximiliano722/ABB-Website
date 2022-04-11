@@ -52,6 +52,10 @@
                     <%= form.select :is_admin, [true, false] %>
                   <% end %>
 
+                  <div class="actions">
+                    <%= form.submit "Update"%>
+                  </div>
+                <%end%>
               
                 <br>
                 <u> <%= link_to 'Back', users_path(@user), {:style=>'color:#FFFFFF;'} %> </u> |
