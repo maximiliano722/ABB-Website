@@ -6,8 +6,12 @@ class QuestionMailer < ApplicationMailer
   #   en.question_mailer.new_question.subject
   #
   def new_question
-    @greeting = "Hi"
+    @last_name = "Zavala"
+    @first_name = "Max"
+    @email = "m.zavala22@tamu.edu"
+    @number = "123-456-7890"
+    @message = "Howdy!"
 
-    mail to: "to@example.org"
+    mail to: "m.zavala22@tamu.edu"
   end
 end
