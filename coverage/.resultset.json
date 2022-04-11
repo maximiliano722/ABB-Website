@@ -704,12 +704,7 @@
           1,
           1,
           1,
-          1,
           null,
-          1,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -722,13 +717,33 @@
           1,
           1,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
           1,
           1,
           null,
+          null,
           1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           null
         ]
@@ -747,6 +762,7 @@
           null,
           1,
           0,
+          0,
           null,
           0,
           0,
@@ -793,6 +809,8 @@
           null,
           null,
           0,
+          null,
+          null,
           null,
           null
         ]
@@ -838,7 +856,19 @@
           null
         ]
       },
+      "/abb/ABB-Website/app/helpers/events_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/abb/ABB-Website/app/helpers/extra_images_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/abb/ABB-Website/app/helpers/hours_request_helper.rb": {
         "lines": [
           1,
           null
@@ -868,11 +898,21 @@
           0,
           null,
           null,
+          1,
+          0,
+          null,
+          null,
           null,
           null,
           1,
           0,
           0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
           null,
           null,
           null,
@@ -909,10 +949,10 @@
           null,
           1,
           null,
-          1,
-          0,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -959,7 +999,45 @@
           null
         ]
       },
+      "/abb/ABB-Website/spec/helpers/events_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/abb/ABB-Website/spec/helpers/extra_images_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/abb/ABB-Website/spec/helpers/hours_request_helper_spec.rb": {
         "lines": [
           1,
           null,
@@ -1134,6 +1212,21 @@
           null
         ]
       },
+      "/abb/ABB-Website/spec/models/event_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/abb/ABB-Website/app/models/event.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/abb/ABB-Website/spec/models/extra_image_spec.rb": {
         "lines": [
           1,
@@ -1146,6 +1239,21 @@
       "/abb/ABB-Website/app/models/extra_image.rb": {
         "lines": [
           1,
+          1,
+          null
+        ]
+      },
+      "/abb/ABB-Website/spec/models/hours_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/abb/ABB-Website/app/models/hours_request.rb": {
+        "lines": [
           1,
           null
         ]
@@ -1527,6 +1635,17 @@
           null
         ]
       },
+      "/abb/ABB-Website/spec/requests/events_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/abb/ABB-Website/spec/requests/extra_images_spec.rb": {
         "lines": [
           1,
@@ -1658,6 +1777,17 @@
           0,
           0,
           null,
+          null,
+          null
+        ]
+      },
+      "/abb/ABB-Website/spec/requests/hours_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -2999,37 +3129,10 @@
           1,
           1,
           1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
           1,
           null,
           null,
           1,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
           null,
           0,
           0,
@@ -3039,6 +3142,54 @@
           null,
           null,
           1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
           0,
           0,
           0,
@@ -3073,18 +3224,32 @@
           0,
           null,
           null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
           null,
           1,
           0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
           null,
           0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -3983,6 +4148,6 @@
         ]
       }
     },
-    "timestamp": 1649532190
+    "timestamp": 1649636262
   }
 }
