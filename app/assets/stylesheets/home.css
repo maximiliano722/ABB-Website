@@ -162,19 +162,9 @@ a:hover { text-decoration: none; background-color: transparent; }
 .form-group{
     min-width: 200px;
 }
-.ig-png-div{
-    position: relative;
-}
-.ig-png-div div {
-    position: absolute;
-    right: 0;
-}
+
 @media (max-width:600px){
-    .second-container textarea{
-        width: 90%;
-        font-size: 1.2rem;
-        margin: auto;
-    }
+    
 }
 main { 
     width: 100%;
@@ -183,4 +173,9 @@ main {
     width: 30%;
     margin: auto;
     padding-top: 15px;
+}
+@media (max-width: 800px){
+    .submit-questions{
+        width: 100%;
+    }
 }
