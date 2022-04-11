@@ -12,3 +12,29 @@ User.create!(name:  "Ajay",
             password:              "1234567",
             password_confirmation: "1234567",
             is_admin: true)
+User.create!(name:  "Hanbit",
+            email: "hk24536@tamu.edu",
+            password:              "1234567",
+            password_confirmation: "1234567",
+            is_admin: true)
+User.create!(name:  "Anne",
+            email: "aeb178@tamu.edu",
+            password:              "1234567",
+            password_confirmation: "1234567",
+            is_admin: true)
+User.create!(name:  "khai",
+            email: "khaihuyennguyen90@tamu.edu",
+            password:              "1234567",
+            password_confirmation: "1234567",
+            is_admin: true)
+User.create!(name:  "Olsi",
+            email: "olsisadiku@tamu.edu",
+            password:              "1234567",
+            password_confirmation: "1234567",
+            is_admin: true)
+
+User.create!(name:  "Max",
+            email: "m.zavala22@tamu.edu",
+            password:              "1234567",
+            password_confirmation: "1234567",
+            is_admin: true)
