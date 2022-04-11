@@ -7,4 +7,12 @@ RSpec.describe "HomePageFlows", type: :request do
       expect(page).to have_link('Our Team', href: root_path, count: 1)
     end
   end
+
+  describe "Submiting the contact form" do
+    #Since form is not a entity(check for button)
+    it "tests for a submit button on the home page" do
+      get root_path
+      click_on "New Article"
+    end
+  end
 end
