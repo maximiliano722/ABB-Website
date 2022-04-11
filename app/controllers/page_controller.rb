@@ -22,5 +22,10 @@ class PageController < ApplicationController
     @events = MemberEvent.all
     @user = current_user
 
+    @notice = params[:notice]
+    unless @notice.nil?
+      flash.now[:notice] = @notice
+    end
+  
   end
 end

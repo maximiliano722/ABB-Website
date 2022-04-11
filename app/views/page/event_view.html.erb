@@ -1,3 +1,4 @@
+<%= flash[:notice] %>
 <% @page_title = "ABB Events" %>
 <%= stylesheet_link_tag 'events' %>
 <% content_for :main do %>
@@ -86,7 +87,6 @@
                         <th scope="col">Time</th>
                         <th scope="col">Location</th>
                         <th scope="col">Event Type</th>
-                        <th scope="col">Password</th>
                         <th scope="col"></th>
                         </tr>
                     </thead>
@@ -96,29 +96,31 @@
                             <tr>
                                 <td><%= event.event_name %></td>
                                 <td><%= event.date %></td>
-                                <td><%= event.time %></td>
+                                <td><%= event.time.strftime("%I:%M%p") %></td>
                                 <td><%= event.location %></td>
                                 <td><%= event.event_type %></td>
-                                <td><%= event.password %></td>
-                                <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                <td><%= link_to 'Edit', edit_member_event_path(event) %></td>
-                                <td>                                
-                                    <%= form_tag :action=>:sign_in, :controller=>"membership" do %>
-                                        <div class="field">
-                                            <strong>Password</strong>
-                                            <%= text_field "password", "password" %>
-                                        </div>
-                                        <div class="field">
-                                            <%= hidden_field :event_id, "id", value: event.id %>
-                                        </div>
-                                        <div class="field">
-                                            <%= hidden_field :user_id, "id", value: @user.id %>
-                                        </div>
-                                        <div class="actions">
-                                            <%= submit_tag "Login" %>
-                                        </div>
-                                    <% end %>
-                                </td>
+                                <% unless @user.nil? %>
+                                    <td><%= event.password %></td>
+                                    <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                    <td><%= link_to 'Edit', edit_member_event_path(event) %></td> 
+                                    <td>                                
+                                        <%= form_tag :action=>:sign_in, :controller=>"membership" do %>
+                                            <div class="field">
+                                                <strong>Password</strong>
+                                                <%= text_field "password", "password" %>
+                                            </div>
+                                            <div class="field">
+                                                <%= hidden_field :event_id, "id", value: event.id %>
+                                            </div>
+                                            <div class="field">
+                                                <%= hidden_field :user_id, "id", value: @user.id %>
+                                            </div>
+                                            <div class="actions">
+                                                <%= submit_tag "Login" %>
+                                            </div>
+                                        <% end %>
+                                    </td>
+                                <%end%>
                             </tr>
                         <% end %>
                     </tbody>
