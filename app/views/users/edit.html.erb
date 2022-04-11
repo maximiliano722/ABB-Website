@@ -10,23 +10,30 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+  <div class="field">
+    <%= form.label :major %>
+    <%= form.text_field :major %>
+  </div>
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+  <% if (!current_admin.nil? || current_user.is_admin) %>
+    <%= form.select :is_admin, [true, false] %>
+ 
   
-  <div class="field">
-    <%= form.label :service_points %>
-    <%= form.number_field :service_points %>
-  </div>
-  <div class="field">
-    <%= form.label :brother_points %>
-    <%= form.number_field :brother_points %>
-  </div>
-  <div class="field">
-    <%= form.label :social_points %>
-    <%= form.number_field :social_points %>
-  </div>
-  <div class="field">
-    <%= form.label :study_hours %>
-    <%= form.text_field :study_hours %>
-  </div>
+
+  <% end %>
+
 
    
 
@@ -36,6 +43,7 @@
     <%= form.submit "Update Account" %>
   </div>
   <% if (!current_admin.nil? || current_user.is_admin) %>
+
     <%= link_to "delete", @user, method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 <% end %>

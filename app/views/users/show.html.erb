@@ -1,50 +1,57 @@
 <% provide(:page_title, @user.name) %>
 
-<p>
-  <strong>year:</strong>
-  <%= @user.year %>
-</p>
-<p>
+
+<div>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</div>
+<div>
   <strong>major:</strong>
   <%= @user.major %>
-</p>
-<p>
+</div>
+<div>
   <strong>email:</strong>
   <%= @user.email %>
-</p>
-<p>
+</div>
+<div>
   <strong>position:</strong>
   <%= @user.position %>
-</p>
-<p>
+</div>
+<div>
   <strong>service_points:</strong>
   <%= @user.service_points %>
-</p>
-<p>
+</div>
+<div>
   <strong>brother_points:</strong>
   <%= @user.brother_points %>
-</p>
-<p>
+</div>
+<div>
   <strong>social_points:</strong>
   <%= @user.social_points %>
-</p>
-<p>
+</div>
+<div>
   <strong>study_hours:</strong>
   <%= @user.study_hours %>
-</p>
-<p>
+</div>
+<div>
   <strong>image_url:</strong>
   <%= @user.image_url %>
-</p>
+</div>
+  <% if (!current_admin.nil? || current_user.is_admin) %>
+    <div class="field">
+      <strong>Is_admin:</strong>
+       <%= @user.is_admin %>
+    </div>
 
-<p>
+  <% end %>
+<div>
   <strong>User Image:</strong>
     <% if @user.image.attached? %>
       <%= image_tag @user.image, width: "50px", height: "50px" %>
     <% else %>
       <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
     <% end %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
