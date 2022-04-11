@@ -94,3 +94,4 @@ class MembershipController < ApplicationController
       params.require(:user).permit(:service_points,:brother_points,:social_points, :study_hours)
     end
 end
+
