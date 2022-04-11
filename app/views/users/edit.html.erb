@@ -48,6 +48,7 @@
                     <%= form.file_field :image %>
                   </div>
                   <% if (!current_admin.nil? || current_user.is_admin) %>
+                    <strong>Is Admin:</strong>
                     <%= form.select :is_admin, [true, false] %>
                   <% end %>
 
