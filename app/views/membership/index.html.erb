@@ -128,12 +128,14 @@
                 </div>
             </div>
         </div>
+        <% if !current_admin.nil? || current_user.is_admin %>
+            <div><%= link_to "View all users", users_path, style: "color:aqua !important; font-size: 1.5rem;" %></div>
+        <% end %>
     </div>
+    
 </main>
 <% end %>
 
-    <% if !current_admin.nil? || current_user.is_admin %>
-        <li><%= link_to "View all users", users_path %></li>
-    <% end %>
+    
 
 </div>
