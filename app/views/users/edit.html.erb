@@ -1,49 +1,70 @@
-<%= form_with(model: @user, local: true) do |form| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% provide(:page_title, @user.name) %>
 
-      <ul>
-        <% @user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<p id="notice"><%= notice %></p>
+
+<%= stylesheet_link_tag 'users_edit' %>
+<% content_for :main do %>
+    <main>
+    <%= render :partial => 'page/nav_bar' %>
+    <div class="container first-container-about container-fluid">
+        <div class = "row first-row make-f">
+            <p class="tamu-row-1">Texas A&Ms Professional Brotherhood</p>
+
+        </div>
+        <div class = "row about-row">
+            <div class="col what-is-abb order-last">
+                <h1>Edit User</h1>
+                <hr style="color:white">
+                
+
+                <div>
+                <%= form_with(model: @user, local: true) do |form| %>
+                  <% if @user.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                
+                      <ul>
+                        <% @user.errors.each do |error| %>
+                          <li><%= error.full_message %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+                
+                  <div class="field">
+                    <%= form.label :name %>
+                    <%= form.text_field :name %>
+                  </div>
+                  <div class="field">
+                    <%= form.label :year %>
+                    <%= form.number_field :year %>
+                  </div>
+                  <div class="field">
+                    <%= form.label :major %>
+                    <%= form.text_field :major %>
+                  </div>
+                  <div class="field">
+                    <%= form.label :image %>
+                    <%= form.file_field :image %>
+                  </div>
+                  <% if (!current_admin.nil? || current_user.is_admin) %>
+                    <%= form.select :is_admin, [true, false] %>
+                  <% end %>
+
+              
+                <br>
+                <u> <%= link_to 'Back', users_path(@user), {:style=>'color:#FFFFFF;'} %> </u> |
+                <u> <%= link_to 'Home', root_url, {:style=>'color:#FFFFFF;'} %> </u>
+
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </div>
+        </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
-  </div>
-  <div class="field">
-    <%= form.label :major %>
-    <%= form.text_field :major %>
-  </div>
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-  <% if (!current_admin.nil? || current_user.is_admin) %>
-    <%= form.select :is_admin, [true, false] %>
- 
-  
-
-  <% end %>
-
-
-   
-
-
-
-  <div class="actions">
-    <%= form.submit "Update Account" %>
-  </div>
-  <% if (!current_admin.nil? || current_user.is_admin) %>
-
-    <%= link_to "delete", @user, method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
+</main>
 <% end %>
+<% end %>
+</div>
