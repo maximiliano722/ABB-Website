@@ -12,8 +12,3 @@ User.create!(name:  "Ajay",
             password:              "1234567",
             password_confirmation: "1234567",
             is_admin: true)
-User.create!(name:  "Khai",
-            email: "khaihuyennguyen90@tamu.edu",
-            password:              "1234567",
-            password_confirmation: "1234567",
-            is_admin: true)
