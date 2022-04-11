@@ -52,6 +52,4 @@ Rails.application.routes.draw do
   get '/event_view' => 'page#event_view'
   get '/edit_event' => 'page#edit_event'
 
-  
-  
 end
