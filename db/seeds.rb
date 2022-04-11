@@ -34,4 +34,10 @@ User.create!(name:  "Max",
             password:              "1234567",
             password_confirmation: "1234567",
             is_admin: true)
+
+User.create!(name:  "Hanbit",
+            email: "hk24536@tamu.edu",
+            password:              "1234567",
+            password_confirmation: "1234567",
+            is_admin: true)
             
