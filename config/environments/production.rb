@@ -121,4 +121,20 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   ENV['GOOGLE_OAUTH_CLIENT_ID'] = '107609895920-ccfjscpj7en7ntcb6fv0n6rj71vvlr1v.apps.googleusercontent.com'
   ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'gmail.com',
+    user_name:            'ABBcsce431@gmail.com',
+    password:             'CSCE431tmp',
+    authentication:       'plain',
+    enable_starttls_auto: true,
+    open_timeout:         5,
+    read_timeout:         5 
+  }
+
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+
 end
