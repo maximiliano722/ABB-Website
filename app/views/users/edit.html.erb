@@ -16,13 +16,11 @@
                 <h1>Edit User</h1>
                 <hr style="color:white">
                 
-
-                <div>
                 <%= form_with(model: @user, local: true) do |form| %>
                   <% if @user.errors.any? %>
                     <div id="error_explanation">
                       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-                
+
                       <ul>
                         <% @user.errors.each do |error| %>
                           <li><%= error.full_message %></li>
@@ -30,7 +28,7 @@
                       </ul>
                     </div>
                   <% end %>
-                
+
                   <div class="field">
                     <%= form.label :name %>
                     <%= form.text_field :name %>
@@ -54,11 +52,13 @@
                     </div>
                   <% end %>
 
+
                   <div class="actions">
-                    <%= form.submit "Update"%>
+                    <%= form.submit %>
                   </div>
-                <%end%>
-              
+                <% end %>
+
+                <div>
                 <br>
                 <u> <%= link_to 'Back', users_path(@user), {:style=>'color:#FFFFFF;'} %> </u> |
                 <u> <%= link_to 'Home', root_url, {:style=>'color:#FFFFFF;'} %> </u>
