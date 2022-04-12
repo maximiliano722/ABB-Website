@@ -76,7 +76,8 @@ Under staging app, select `Create new app` and link your main branch from your r
 
 ## CI/CD ##
 
-TBD
+Continuous Integration / Continuous Development is a set of practices that drives continuous project delivery. The goals of these practices is to create automated ways of building, testing, and deploying applications.
+CI/CD is an extremely important practice for testing and validating a system as it is developed and especially crucial when it comes to short projects like this one. We have set up GitHub actions to test our rails application which enables us to see immediate feedback and resolve whatever issues may be present. In addition to this we have also created a Heroku pipeline and connected it to our GitHub which enables our team to continuously test and deploy our application. Specifically Heroku allows for the creation of a test and production app each of which is set to target different branches in our GitHub repository. This allows us to push to our test branch and immediately see the impact of that in our test application allowing us to test and resolve any issues that may appear before pushing to our main branch which is linked to our production application.
 
 ## Cloud Image Storage ##
 The images uploaded within this application are stored on a cloud storage provided by AWS's S3 service.
