@@ -3,12 +3,8 @@
 
 <div class = "walkway"></div>
 
-<div class = "forma forma-sign-up">
-  <% flash.each do |type, msg| %>
-    <div class="alert alert-info">
-      <p>Invalid email/password combination</p>
-    </div>
-  <% end %>
+<div class = "forma forma-sign-up" style = "color: black;">
+  
   <div class = "login-title">Login </div>
   <br>
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
@@ -26,7 +22,7 @@
       <%= f.submit "Log In", class: "btn btn-primary" %>
     <% end %>
   <br>
-  <p style="color:white;"> New user? <u> <%= link_to "Sign up now!", create_account_path, class: "sign-up-button" %> </u></p>
+  <p style="color:white;"> New user? <u> <%= link_to "Sign up now!", create_account_path, class: "sign-up-button", style: "color: blue;" %> </u></p>
   <hr>
   <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a>
   <a href="admins/sign_in" style="color:white;"><button type="button" class="buttonLog-back">Login as Admin</button></a>

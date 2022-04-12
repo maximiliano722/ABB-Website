@@ -27,8 +27,9 @@ class MembershipController < ApplicationController
   end
 
   def edit
-    @id = params['id']
-    @user = User.find(@id)
+    #@id = params['id']
+    #@user = User.find(@id)
+    @user = current_user
   end
 
   def sign_in
@@ -72,9 +73,25 @@ class MembershipController < ApplicationController
     end
   end
 
+  def send_email
+    last_name = params[:last_name][:last_name]
+    first_name = params[:first_name][:first_name]
+    email = params[:email][:email]
+    number = params[:number][:number]
+    message = params[:message][:message]
+
+    QuestionMailer.new_question(last_name, first_name, email, number, message).deliver_now
+
+    respond_to do |format|
+      format.html { redirect_to controller: :page, action: :index, notice: "Email Sent!" }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Only allow a list of trusted parameters through.
     def point_params
       params.require(:user).permit(:service_points,:brother_points,:social_points, :study_hours)
     end
 end
+

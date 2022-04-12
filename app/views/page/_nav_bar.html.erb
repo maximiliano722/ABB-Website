@@ -12,33 +12,58 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto justify-content-around">
       <li class="nav-item active">
-        <a class="nav-link" href="/index">Home <span class="sr-only"></span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/about">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/recruitment">Recruitment</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href id="navbarDropdown"role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          More
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/our_team">Our Team</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/sponsor">Sponsors</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/event_view">Events</a>
-        </div>
-      </li>
-      <li class="nav-item" style="border-bottom:none">
-        <a class="nav-link" href="/login" style="padding: 0;">
-          <div class = "user-account">
-              <%= image_tag "account.png", :class => "account-png" %>
+       
+          <a class="nav-link" href="/index">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/recruitment">Recruitment</a>
+        </li>
+        <!-- Layout change when log in starts -->
+        <% if logged_in? || !current_admin.nil? %>
+          <li class="nav-item"><%= link_to "Membership", "/membership", class: "nav-link" %> </li>
+
+        <%end%>
+
+        <!-- Layout change when log in end -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href id="navbarDropdown"role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            More
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/our_team">Our Team</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/sponsor">Sponsors</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/event_view">Events</a>
+            <%unless current_user.nil?%>
+              <% if !current_admin.nil? || current_user.is_admin %>
+                <div class="dropdown-divider"></div>
+                <%= link_to "View All Users", users_path, class: "dropdown-item"%>
+              <% end %>
+            <%end%>
           </div>
-        </a>
+        
+        </li>
+        <% if logged_in? %>
+        
+          <li class="nav-item"><%= link_to "Log out", logout_path, method: :delete, class: "nav-link"  %> </li>
+          <%elsif !current_admin.nil? %>
+             <li class="nav-item"><%= link_to "Log out", destroy_admin_session_path, class: "nav-link" %> </li>
+          <%else %>
+            <li class="nav-item">
+              <a class="nav-link" href="/login">
+                Login
+              </a>
+            </li>
+        <%end%>
       </li>
+
+      <!-- Try to add another look after sign in -->
+
+
       
     </ul>
     

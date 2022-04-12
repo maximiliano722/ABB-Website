@@ -41,66 +41,51 @@
       <div class="container second-container">
         <h1 style="text-align:center">Questions</h1>
         <hr>
-        <form method="post">
-          <div class="row d-flex w-100 justify-content-evenly">
-              <div class="col d-flex justify-content-center">
-                <div class="form-group col-xs-4 col-md-4">
-                    <label for="first-name" class="control-label">First Name</label>
-                    <input type="name" value='' class="form-control" id="first-name" placeholder="First">
-                </div>
-              </div>
-              <div class="col d-flex justify-content-center">
-                <div class="form-group col-xs-4 col-md-4">
-                    <label for="last-name" class="control-label">Last Name</label>
-                    <input type="name" value='' class="form-control" id="last-name" placeholder="Last">
-                </div>
-              </div>
-          </div>
-          <div class="row d-flex w-100">
-              <div class="col d-flex justify-content-center">
-                <div class="form-group col-xs-4 col-md-4">
-                    <label for="email" class="control-label">Email</label>
-                    <input type="email" value='' class="form-control" id="email" placeholder="johndoe@gmail.com">
-                </div>
-              </div>
-              <div class="col d-flex justify-content-center">
-                <div class="form-group col-xs-4 col-md-4">
-                    <label for="phone-number" class="control-label">Phone Number</label>
-                    <input type="text" value='' class="form-control" id="phone-number" placeholder="123-456-7890">
-                </div>
-              </div>
-          </div>
-          <div class="row d-flex w-100">
-              <div class="col d-flex justify-content-center w-100 message-form">
-                <div class="form-group col-xs-4 col-md-4 w-100">
-                    <label for="message" class="control-label">Message</label>
-                    <textarea type="text" rows="7" cols="20" value='' class="form-control" id="message" placeholder="Type..."></textarea>
-                </div>
-              </div>
-          </div>
-          <div class="row d-flex w-100">
-              <div class="col d-flex justify-content-center">
-                <input class="btn btn-primary submit-btn btn-lg" type="submit" value="Submit">
-              </div>
-          </div>
-          <div class="row d-flex w-100 logos-png">
-              <div class="col align-items-end flex-column float-right ig-png-div">
-                <div>
-                    <a href="">
-                      <%= image_tag "ig-png.png", :class => "ig-png" %>
-                    </a>
-                </div>
-              </div>
-              <div class="col align-items-start flex-column linkedin-png-div">
-                <div>
-                    <a href="">
-                      <%= image_tag "linkedIn-png.png", :class => "linkedin-png" %>
-                    </a>
-                </div>
-              </div>
-          </div>
-        </form>
-    </div>
+        <div class="submit-questions">
+         <%= form_tag :action=>:send_email, :controller=>"membership" do %>
+            <div class="field">
+                  <strong>First Name</strong>
+                  <%= text_field "first_name", "first_name", class: "form-control", placeholder: "John" %>
+            </div>
+            <div class="field">
+                  <strong>Last Name</strong>
+                  <%= text_field "last_name", "last_name", class: "form-control", placeholder: "Doe" %>
+            </div>
+            
+            <div class="field">
+                  <strong>Email</strong>
+                  <%= text_field "email", "email", class: "form-control", placeholder: "doe@tamu.edu" %>
+            </div>
+            <div class="field">
+                  <strong>Number</strong>
+                  <%= text_field "number", "number", class: "form-control", placeholder: "123-456-7890" %>
+            </div>
+            <div class="field">
+                  <strong>Message</strong>
+                  <%= text_area "message", "message", :rows => 5, class: "form-control", placeholder: "Send us a message!" %>
+            </div>
+
+            <div class="actions">
+                  <%= submit_tag "Submit Question", class: "btn btn-primary" %>
+            </div>
+         <% end %>
+         <div class="row d-flex w-100 logos-png">
+            <div class="col align-items-end ig-png-div">
+               <div>
+                  <a href="https://www.instagram.com/tamuabb/" target = "_blank">
+                    <%= image_tag "ig-png.png", :class => "ig-png" %>
+                  </a>
+               </div>
+            </div>
+            <div class="col align-items-start linkedin-png-div">
+               <div>
+                  <a href="https://www.linkedin.com/company/aggiebusinessbrothers/">
+                    <%= image_tag "linkedIn-png.png", :class => "linkedin-png" %>
+                  </a>
+               </div>
+            </div>
+         </div>
+   </div>
   </main>
 
 <% end %>
