@@ -1,95 +1,141 @@
-<div>
-    <h1>Membership</h1>
+<%= stylesheet_link_tag 'member' %>
+<% content_for :main do %>
+    <main>
+    <%= render :partial => 'page/nav_bar' %>
+    <div class="container first-container-about container-fluid">
+        <div class = "row first-row make-f">
+            <p class="tamu-row-1">Texas A&Ms Professional Brotherhood</p>
 
-    <hr>
+        </div>
+        <div class = "row about-row">
+            <div class="col what-is-abb order-last">
+                <h1>Membership</h1>
+                <hr style="color:white">
+                <p class="current-points">
+                    <strong>Current Points for user:</strong>
+                    <%= @user.name %>
+                    <%= link_to "edit", user_url(@user) %>
+                   
 
-    <p>
-    <strong>Current Points for user:</strong>
-    <%= @user.name %>
-    </p>
+​                </p>
 
-    <table>
+                <div>
 
-    <tr>
-        <td><strong>service_points</strong></td>
-        <td><%= @user.service_points %></td>
-    </tr>
-    <tr>
-        <td><strong>brother_points</strong></td>
-        <td><%= @user.brother_points %></td>
-    </tr>
-    <tr>
-        <td><strong>social_points</strong></td>
-        <td><%= @user.social_points %></td>
-    </tr>
-    <tr>
-        <td><strong>study_hours</strong></td>
-        <td><%= @user.study_hours %></td>
-    </tr>
-    </table>
+                <br>
 
-    <hr>
+                <table class="table table-dark">
+                    <thread>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col">Points</th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        <tr>
+                            <td><strong>Service Points</strong></td>
+                            <td><%= @user.service_points %></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Brother Points</strong></td>
+                            <td><%= @user.brother_points %></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Social Points</strong></td>
+                            <td><%= @user.social_points %></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Study Hours</strong></td>
+                            <td><%= @user.study_hours %></td>
+                        </tr>
+                    </tbody>
+                </table>
 
-    <div style="color:red;">
-        <hr>
-        <%= link_to("All Member Points", {:action => 'points'})%>
-        <hr>
+
+                <br>
+                <hr>
+                
+                <%if @user.is_admin%>
+                    <div style="color:red;">
+                        <hr>
+                        <%= link_to("All Member Points", {:action => 'points'})%>
+                        <hr>
+                    </div>
+                <%end%>
+                <hr>
+                <strong>Submit Point Request:</strong>
+                <%= render 'point_request_form', request: @request, user: @user %>
+                <hr>
+
+                <strong>Pending Point Request:</strong>
+
+                <br>
+                <br>
+
+                <table class="table table-dark">
+                    <thread>
+                        <tr>
+                            <th scope="col">Points</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Description</th>
+                            <th colspan="2"></th>
+                        </tr>
+                    </thread>
+                    <tbody>
+                        <% @requests.each do |r| %>
+                            <tr>
+                                <td><%= r.points %></td>
+                                <td><%= r.category %></td>
+                                <td><%= r.description %></td>
+                                <td><%= link_to 'Edit', edit_hour_request_path(r) %></td>
+                                <td><%= link_to 'Cancel', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+                
+                <%if @user.is_admin%>
+                    <div style="color:red;">
+                        <hr>
+                        <%= link_to("All Point Requests", '/hour_requests')%>
+                        <hr>
+                    </div>
+                <%end%>
+
+                <br>
+                    
+                <strong>Attended Events:</strong>
+
+                <% @attendance_logs.each do |log| %>
+                    <hr>
+                    <p>
+                    <strong>Event Name:</strong>
+                    <%event_attended = MemberEvent.find(log.event_id)%>
+                    <%= event_attended.event_name %>
+                    </p>
+
+                    <p>
+                    <strong>Date Attended:</strong>
+                    <%= event_attended.date %>
+                    </p>
+
+                    <hr>
+                <% end %>
+
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </div>
+        </div>
+        <% if !current_admin.nil? || current_user.is_admin %>
+            <div><%= link_to "View all users", users_path, style: "color:aqua !important; font-size: 1.5rem;" %></div>
+        <% end %>
     </div>
+    
+</main>
+<% end %>
 
-    <hr>
-    <strong>Submit Point Request:</strong>
-    <%= render 'point_request_form', request: @request, user: @user %>
-    <hr>
-
-    <strong>Pending Point Request:</strong>
-
-    <table>
-        <thead>
-        <tr>
-            <th>Points  </th>
-            <th>Category  </th>
-            <th>Description  </th>
-            <th colspan="2"></th>
-
-        </tr>
-        </thead>
-
-    <tbody>
-      <% @requests.each do |r| %>
-        <tr>
-          <td><%= r.points %></td>
-          <td><%= r.category %></td>
-          <td><%= r.description %></td>
-          <td><%= link_to 'Edit', edit_hour_request_path(r) %></td>
-          <td><%= link_to 'Cancel', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-    <div style="color:red;">
-        <hr>
-        <%= link_to("All Point Requests", '/hour_requests')%>
-        <hr>
-    </div>
-
-    <strong>Attended Events:</strong>
-
-    <% @attendance_logs.each do |log| %>
-        <hr>
-        <p>
-        <strong>Event Name:</strong>
-        <%event_attended = MemberEvent.find(log.event_id)%>
-        <%= event_attended.event_name %>
-        </p>
-
-        <p>
-        <strong>Date Attended:</strong>
-        <%= event_attended.date %>
-        </p>
-
-        <hr>
-    <% end %>
+    
 
 </div>
-
