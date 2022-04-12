@@ -77,6 +77,7 @@ Under staging app, select `Create new app` and link your main branch from your r
 ## CI/CD ##
 
 CI: Visible in .github/workflows/workflow.yml
+
 CD: Contiously deploying two heroku apps: a test app tracking our testv2 branch and a prdocution app tracking our main branch
 
 ## Cloud Image Storage ##
