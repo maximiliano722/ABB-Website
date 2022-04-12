@@ -1,10 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe "HomeFlowTests", type: :request do
-  describe "GET /home_flow_tests" do
-    it "works! (now write some real specs)" do
-      get home_flow_tests_index_path
-      expect(response).to have_http_status(200)
+RSpec.describe "HomePageFlows", type: :request do
+  describe "GET our teams page from index" do
+    it "gets the our teams page from the index page" do
+      get root_path
+      expect(page).to have_link('Our Team', href= "/our_team" , count: 1)
     end
   end
+
 end
+
