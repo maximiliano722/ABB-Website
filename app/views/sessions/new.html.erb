@@ -4,11 +4,7 @@
 <div class = "walkway"></div>
 
 <div class = "forma forma-sign-up" style = "color: black;">
-  <% flash.each do |type, msg| %>
-    <div class="alert alert-info">
-      <p>Invalid email/password combination</p>
-    </div>
-  <% end %>
+  
   <div class = "login-title">Login </div>
   <br>
     <%= form_with(url: login_path, scope: :session, local: true) do |f| %>

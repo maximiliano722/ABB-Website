@@ -16,43 +16,40 @@
                 <div class="modal-body">
                     <div class="field">
                         <%= form.label :event_name %>
-                        <%= form.text_field :event_name %>
+                        <%= form.text_field :event_name, class: "form-control" %>
                     </div>
                     <div class="field">
                         <%= form.label :date %>
-                        <%= form.date_field :date %>
+                        <%= form.date_field :date, class: "form-control" %>
                     </div>
                     <div class="field">
                         <%= form.label :time %>
-                        <%= form.time_field :time %>
+                        <%= form.time_field :time, class: "form-control" %>
                     </div>
                     <div class="field">
                         <%= form.label :location %>
-                        <%= form.text_field :location %>
+                        <%= form.text_field :location, class: "form-control" %>
                     </div>
                     <div class="field">
                         <%= form.label :event_type %>
-                        <%= form.select :event_type, ['Service', 'Brother', 'Social', 'Study'] %>
+                        <%= form.select :event_type, ['Service', 'Brother', 'Social', 'Study'], class: "form-control" %>
                     </div>
                     <div class="field">
                         <%= form.label :point_value %>
-                        <%= form.number_field :point_value %>
+                        <%= form.number_field :point_value, class: "form-control" %>
                     </div>
                     <div class="field">
                         <%= form.label :description %>
-                        <%= form.text_area :description %>
+                        <%= form.text_area :description, class: "form-control" %>
                     </div>
                     <div class="field">
                         <%= form.label :password %>
-                        <%= form.text_field :password %>
+                        <%= form.text_field :password, class: "form-control" %>
                     </div>
                 </div>  
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                    <div class="actions">
-                        <%= form.submit "Create Event"%>
-                    </div>
+                    <%= form.submit "Create Event", class: "btn btn-primary" %>
                 </div>
             </div>
             </div>
@@ -70,9 +67,13 @@
             <iframe src="https://calendar.google.com/calendar/embed?src=olsisadiku%40tamu.edu&ctz=America%2FChicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
             
             <div class="button-div">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Create Event
-                </button>
+                <% unless @user.nil? %>
+                    <%if @user.is_admin %>    
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Create Event
+                        </button>
+                    <% end %>
+                <% end %>
             </div>
         </div>
         <br>
@@ -87,7 +88,6 @@
                         <th scope="col">Time</th>
                         <th scope="col">Location</th>
                         <th scope="col">Event Type</th>
-                        <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -100,9 +100,11 @@
                                 <td><%= event.location %></td>
                                 <td><%= event.event_type %></td>
                                 <% unless @user.nil? %>
-                                    <td><%= event.password %></td>
-                                    <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                    <td><%= link_to 'Edit', edit_member_event_path(event) %></td>
+                                    <%if @user.is_admin%>
+                                        <td><%= event.password %></td>
+                                        <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                                        <td><%= link_to 'Edit', edit_member_event_path(event) %></td>
+                                    <%end%>
                                     <td>                                
                                         <%= form_tag :action=>:sign_in, :controller=>"membership" do %>
                                             <div class="field">

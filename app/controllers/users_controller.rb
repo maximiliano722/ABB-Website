@@ -7,41 +7,29 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-
     authenticate_admin!
     @users = User.all
-
- 
   end
 
   # GET /users/1 or /users/1.json
   def show
-
     @user = User.find(params[:id])
-
-
   end
 
   # GET /users/new
   def new
-
     @user = User.new 
-  
   end
 
   # GET /users/1/edit
   def edit
-
-      @user = User.find(params[:id])
-
-
-   
+    @user = User.find(params[:id])
   end
 
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-    @user.is_admin = true
+    @user.is_admin = false
     @user.service_points = 0
     @user.brother_points = 0
     @user.social_points = 0
@@ -53,7 +41,7 @@ class UsersController < ApplicationController
         # below two lines of code will make the users log in immediately
         reset_session
         log_in @user
-        format.html { redirect_to user_url(@user), notice: 'User was successfully created.' }
+        format.html { redirect_to controller: :page, action: :index, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -95,7 +83,7 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :social_points, :service_points, :brother_points, :study_hours)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :social_points, :service_points, :brother_points, :study_hours, :is_admin, :major, :year, :position)
   end
 
 

@@ -41,11 +41,6 @@
     <%= form.password_field :password_confirmation, class: "form-control" %>
 
     <br>
-
-    <%= form.label :image %>
-    <%= form.file_field :image, class: "form-control" %>
- 
-    <br>
   
     <%= form.submit "Create Account", class: "btn btn-primary" %>
   <% end %>
@@ -53,5 +48,7 @@
   <p style="font-size:16px;">Have an account? <u> <a href="/login" class="login-button" style="color:blue;">Log in</a> </u><p>
   <hr>
   <a href="/index" style="color:white;"><button type="button" class="buttonLog-back">Back</button></a>
-  <a href="admins/sign_in" style="color:white;"><button type="button" class="buttonLog-back">Login as Admin</button></a>
+  <%if !logged_in? %>
+    <a href="admins/sign_in" style="color:white;"><button type="button" class="buttonLog-back">Login as Admin</button></a>
+  <%end%>
 </div>

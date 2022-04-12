@@ -1,55 +1,105 @@
 <% provide(:page_title, @user.name) %>
 
-<p>
-  <strong>year:</strong>
-  <%= @user.year %>
-</p>
-<p>
-  <strong>major:</strong>
-  <%= @user.major %>
-</p>
-<p>
-  <strong>email:</strong>
-  <%= @user.email %>
-</p>
-<p>
-  <strong>position:</strong>
-  <%= @user.position %>
-</p>
-<p>
-  <strong>service_points:</strong>
-  <%= @user.service_points %>
-</p>
-<p>
-  <strong>brother_points:</strong>
-  <%= @user.brother_points %>
-</p>
-<p>
-  <strong>social_points:</strong>
-  <%= @user.social_points %>
-</p>
-<p>
-  <strong>study_hours:</strong>
-  <%= @user.study_hours %>
-</p>
-<p>
-  <strong>image_url:</strong>
-  <%= @user.image_url %>
-</p>
+<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User Image:</strong>
-    <% if @user.image.attached? %>
-      <%= image_tag @user.image, width: "50px", height: "50px" %>
-    <% else %>
-      <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
-    <% end %>
-</p>
+<%= stylesheet_link_tag 'users_show' %>
+<% content_for :main do %>
+    <main>
+    <%= render :partial => 'page/nav_bar' %>
+    <div class="container first-container-about container-fluid">
+        <div class = "row first-row make-f">
+            <p class="tamu-row-1">Texas A&Ms Professional Brotherhood</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
-<%= link_to("Back To Points", {:controller => 'membership', :action => 'points'})%>
-<%= link_to 'Home', root_url %>
-<% if !current_admin.nil? || current_user.is_admin %>
-  <%= link_to "delete", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+        <div class = "row about-row">
+            <div class="col what-is-abb order-last">
+                <h1>User Description</h1>
+                <hr style="color:white">
+                
+
+                <div>
+
+                <br>
+
+                <div>
+                  <strong>Name:</strong>
+                  <%= @user.name %>
+                </div>
+                <br>
+                <div>
+                  <strong>Major:</strong>
+                  <%= @user.major %>
+                </div>
+                <br>
+                <div>
+                  <strong>Email:</strong>
+                  <%= @user.email %>
+                </div>
+                <br>
+                <div>
+                  <strong>Position:</strong>
+                  <%= @user.position %>
+                </div>
+                <br>
+                <div>
+                  <strong>Service Points:</strong>
+                  <%= @user.service_points %>
+                </div>
+                <br>
+                <div>
+                  <strong>Brother Points:</strong>
+                  <%= @user.brother_points %>
+                </div>
+                <br>
+                <div>
+                  <strong>Social Points:</strong>
+                  <%= @user.social_points %>
+                </div>
+                <br>
+                <div>
+                  <strong>Study Hours:</strong>
+                  <%= @user.study_hours %>
+                </div>
+                <div>
+                  <%= @user.image_url %>
+                </div>
+                <br>
+                  <% if (!current_admin.nil? || current_user.is_admin) %>
+                    <div class="field">
+                      <strong>Is Admin:</strong>
+                      <%= @user.is_admin %>
+                    </div>
+
+                  <% end %>
+                <div>
+                  <strong>User Image:</strong>
+                    <% if @user.image.attached? %>
+                      <%= image_tag @user.image, width: "50px", height: "50px" %>
+                    <% else %>
+                      <%= image_tag 'defaultProf.jpg', width: "50px", height: "50px" %>
+                    <% end %>
+                </div>
+                <br>
+                <u> <%= link_to 'Edit', edit_user_path(@user), {:style=>'color:#FFFFFF;'} %> </u> |
+                <u> <%= link_to "Back", "/membership", {:style=>'color:#FFFFFF;'} %> </u> |
+                <u> <%= link_to 'Home', root_url, {:style=>'color:#FFFFFF;'} %> </u>
+                
+                <br>
+                <br>
+                <% if !current_admin.nil? || current_user.is_admin %>
+                  <%= link_to "delete", @user, method: :delete, data: { confirm: "Are you sure?" } %>
+                <% end %>
+
+                <hr>                
+
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 <% end %>
+</div>

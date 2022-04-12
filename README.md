@@ -76,10 +76,19 @@ Under staging app, select `Create new app` and link your main branch from your r
 
 ## CI/CD ##
 
-TBD
+CI: Visible in .github/workflows/workflow.yml
+
+CD: Contiously deploying two heroku apps: a test app tracking our testv2 branch and a prdocution app tracking our main branch
+
+## Cloud Image Storage ##
+The images uploaded within this application are stored on a cloud storage provided by AWS's S3 service.
+The images are automatically deleted from the cloud when the users and sponsors with pictures are deleted on the application.
+A variable called RAILS_MASTER_KEY should be initiailized on the app's heroku configuration variables to use S3 cloud storage; without this key, the web application will not work.
 
 ## Support ##
 
 Admins looking for support should first look at the application help page.
 Users looking for help seek out assistance from the customer.
+
+
 
