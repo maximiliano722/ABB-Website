@@ -85,6 +85,10 @@ The images uploaded within this application are stored on a cloud storage provid
 The images are automatically deleted from the cloud when the users and sponsors with pictures are deleted on the application.
 A variable called RAILS_MASTER_KEY should be initiailized on the app's heroku configuration variables to use S3 cloud storage; without this key, the web application will not work.
 
+To set the extra_images on the webpage, you'll need to create extra_images with these "group" names for each page:
+ Home Page: First Image, Carousel
+ About page: About Image, Integrity Image, Brotherhood Image, Professionalism Image, Service Image
+
 ## Support ##
 
 Admins looking for support should first look at the application help page.
