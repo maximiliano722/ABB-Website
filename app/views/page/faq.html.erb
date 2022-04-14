@@ -3,8 +3,117 @@
 <% content_for :main do %>
 <main>
    <%= render :partial => 'page/nav_bar' %>
-    <div class="container">
-        
+    <div class="container faq-container">
+        <div class="faq_area section_padding_130" id="faq">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-8 col-lg-6">
+                    <!-- Section Heading-->
+                    <div class="section_heading text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <h3><span>Frequently </span> Asked Questions</h3>
+                        <p>The ABB Team is here to help you with any questions you have regarding the club!</p>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <!-- FAQ Area-->
+                <div class="col-12 col-sm-10 col-lg-8">
+                    <div class="accordion faq-accordian" id="faqAccordion">
+                        <div class="card border-0 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <div class="card-header" id="headingOne">
+                                <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Do I have to use my TAMU email?<span class="lni-chevron-up"></span></h6>
+                            </div>
+                            <div class="collapse" id="collapseOne" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>We currently do not require the use of a TAMU email, but we recommend it.
+                                    We want to be able to easily communicate with you and make our communication more secure.</p>
+                                    <p>Thank you for being interested in the Aggie Business Brothers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                            <div class="card-header" id="headingTwo">
+                                <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">Why can I not create an account?<span class="lni-chevron-up"></span></h6>
+                            </div>
+                            <div class="collapse" id="collapseTwo" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>Although there could be many reasons as to why you are not able to sign up using your email. We recommend that you contact us in the message form at the bottom of this page. </p>
+                                    <p>Thank you for being interested in the Aggie Business Brothers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 wow fadeInUp" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInUp;">
+                            <div class="card-header" id="headingThree">
+                                <h6 class="mb-0 collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Contact form isn't working?<span class="lni-chevron-up"></span></h6>
+                            </div>
+                            <div class="collapse" id="collapseThree" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                                <div class="card-body">
+                                    <p>If your contact form isn't working, we have a section on our website called "Our Team." On this page you will be able to find all the current officers with their emails. We recommend that you contact one of us if your contact form is not working.</p>
+                                    <p>Thank you for being interested in the Aggie Business Brothers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Support Button-->
+                    <div class="support-button text-center d-flex align-items-center justify-content-center mt-4 wow fadeInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        <i class="lni-emoji-sad"></i>
+                        <p class="mb-0 px-2">Can't find your answers?</p>
+                        <span>Use the Question form below!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container second-container">
+    <hr>
+
+      <h1 style="text-align:center">Questions</h1>
+      <hr>
+      <div class="submit-questions">
+         <%= form_tag :action=>:send_email, :controller=>"membership" do %>
+            <div class="field">
+                  <strong>First Name</strong>
+                  <%= text_field "first_name", "first_name", class: "form-control", placeholder: "John" %>
+            </div>
+            <div class="field">
+                  <strong>Last Name</strong>
+                  <%= text_field "last_name", "last_name", class: "form-control", placeholder: "Doe" %>
+            </div>
+            
+            <div class="field">
+                  <strong>Email</strong>
+                  <%= text_field "email", "email", class: "form-control", placeholder: "doe@tamu.edu" %>
+            </div>
+            <div class="field">
+                  <strong>Number</strong>
+                  <%= text_field "number", "number", class: "form-control", placeholder: "123-456-7890" %>
+            </div>
+            <div class="field">
+                  <strong>Message</strong>
+                  <%= text_area "message", "message", :rows => 5, class: "form-control", placeholder: "Send us a message!" %>
+            </div>
+
+            <div class="actions">
+                  <%= submit_tag "Submit Question", class: "btn btn-primary" %>
+            </div>
+         <% end %>
+         <div class="row d-flex w-100 logos-png">
+            <div class="col align-items-end ig-png-div">
+               <div>
+                  <a href="https://www.instagram.com/tamuabb/" target = "_blank">
+                    <%= image_tag "ig-png.png", :class => "ig-png" %>
+                  </a>
+               </div>
+            </div>
+            <div class="col align-items-start linkedin-png-div">
+               <div>
+                  <a href="https://www.linkedin.com/company/aggiebusinessbrothers/">
+                    <%= image_tag "linkedIn-png.png", :class => "linkedin-png" %>
+                  </a>
+               </div>
+            </div>
+         </div>
     </div>
 </main>
 <% end %>
