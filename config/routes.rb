@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get '/index' => 'page#index'
+  get '/faq' => 'page#faq'
+  post '/faq' => 'membership#send_email'
   post '/index' => 'membership#send_email'
   post '/sponsor' => 'membership#send_email'
   post '/recruitment' => 'membership#send_email'
