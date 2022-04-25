@@ -21,5 +21,5 @@ RSpec.describe 'sponsors/edit', type: :view do
 
       #assert_select 'input[name=?]', 'sponsor[sponsor_type]'
     #end
-  end
+  #end
 end
