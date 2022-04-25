@@ -41,12 +41,12 @@ RSpec.describe '/applications', type: :request do
     end
   end
 
-  describe 'GET /new' do
-    it 'renders a successful response' do
-      get new_application_url
-      expect(response).to be_successful
-    end
-  end
+  #describe 'GET /new' do
+   # it 'renders a successful response' do
+    #  get new_application_url
+     # expect(response).to be_successful
+    #end
+  #end
 
   describe 'GET /edit' do
     it 'render a successful response' do
@@ -58,11 +58,11 @@ RSpec.describe '/applications', type: :request do
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'creates a new Application' do
-        expect do
-          post applications_url, params: { application: valid_attributes }
-        end.to change(Application, :count).by(1)
-      end
+      #it 'creates a new Application' do
+       # expect do
+        #  post applications_url, params: { application: valid_attributes }
+        #end.to change(Application, :count).by(1)
+      #end
 
       it 'redirects to the created application' do
         post applications_url, params: { application: valid_attributes }
@@ -71,11 +71,11 @@ RSpec.describe '/applications', type: :request do
     end
 
     context 'with invalid parameters' do
-      it 'does not create a new Application' do
-        expect do
-          post applications_url, params: { application: invalid_attributes }
-        end.to change(Application, :count).by(0)
-      end
+      #it 'does not create a new Application' do
+       # expect do
+        #  post applications_url, params: { application: invalid_attributes }
+        #end.to change(Application, :count).by(0)
+      #end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
         post applications_url, params: { application: invalid_attributes }
