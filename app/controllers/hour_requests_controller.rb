@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HourRequestsController < ApplicationController
   def index
     @requests = HourRequest.all
@@ -19,8 +21,10 @@ class HourRequestsController < ApplicationController
 
     respond_to do |format|
       if @request.save
-        
-        format.html { redirect_to controller: :membership, action: :index, notice: "Hour Request was successfully created." }
+
+        format.html do
+          redirect_to controller: :membership, action: :index, notice: 'Hour Request was successfully created.'
+        end
         format.json { render :show, status: :created, location: @request }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +42,7 @@ class HourRequestsController < ApplicationController
 
     respond_to do |format|
       if @request.update(hour_request_params)
-        format.html { redirect_to controller: :membership, action: :index, notice: "Request was successfully updated." }
+        format.html { redirect_to controller: :membership, action: :index, notice: 'Request was successfully updated.' }
         format.json { render :show, status: :ok, location: @request }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +56,7 @@ class HourRequestsController < ApplicationController
     @request.destroy
 
     respond_to do |format|
-      format.html { redirect_to controller: :membership, action: :index, notice: "Request was successfully destroyed." }
+      format.html { redirect_to controller: :membership, action: :index, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -63,41 +67,43 @@ class HourRequestsController < ApplicationController
     approved_points = request.points
 
     user = User.find(request.user_id)
-    
-    if category == "Service"
+
+    case category
+    when 'Service'
       user.service_points += approved_points
       user.save
-    elsif category == "Brother"
+    when 'Brother'
       user.brother_points += approved_points
       user.save
-    elsif category == "Social"
+    when 'Social'
       user.social_points += approved_points
       user.save
-    elsif category == "Study"
+    when 'Study'
       user.study_hours += approved_points
       user.save
     end
-    
+
     request.destroy
     respond_to do |format|
-      format.html { redirect_to action: :index, notice: "Request was successfully approved." }
+      format.html { redirect_to action: :index, notice: 'Request was successfully approved.' }
       format.json { head :no_content }
     end
   end
 
-  def deny 
+  def deny
     request = HourRequest.find(params['id'])
     request.destroy
 
     respond_to do |format|
-      format.html { redirect_to action: :index, notice: "Request was denied." }
+      format.html { redirect_to action: :index, notice: 'Request was denied.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Only allow a list of trusted parameters through.
-    def hour_request_params
-      params.require(:hour_request).permit(:user_id, :points, :category, :description)
-    end
+
+  # Only allow a list of trusted parameters through.
+  def hour_request_params
+    params.require(:hour_request).permit(:user_id, :points, :category, :description)
+  end
 end

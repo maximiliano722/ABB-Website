@@ -1,23 +1,23 @@
+# frozen_string_literal: true
+
 class MembershipController < ApplicationController
   def index
     @user = current_user
     @request = HourRequest.new
 
-
-    hr_sql_query = "SELECT * FROM hour_requests WHERE user_id=" + @user.id.to_s
+    hr_sql_query = "SELECT * FROM hour_requests WHERE user_id=#{@user.id}"
     @requests = HourRequest.find_by_sql(hr_sql_query)
 
-    al_sql_query = "SELECT * FROM attendance_logs WHERE user_id=" + @user.id.to_s
+    al_sql_query = "SELECT * FROM attendance_logs WHERE user_id=#{@user.id}"
     @attendance_logs = AttendanceLog.find_by_sql(al_sql_query)
-
   end
 
   def events
     @user = current_user
-    sql_query = "SELECT * FROM member_events WHERE id NOT IN (SELECT event_id FROM attendance_logs WHERE user_id = " + @user.id.to_s + ")"
+    sql_query = "SELECT * FROM member_events WHERE id NOT IN (SELECT event_id FROM attendance_logs WHERE user_id = #{@user.id})"
     @events = MemberEvent.find_by_sql(sql_query)
 
-    al_sql_query = "SELECT * FROM attendance_logs WHERE user_id=" + @user.id.to_s
+    al_sql_query = "SELECT * FROM attendance_logs WHERE user_id=#{@user.id}"
     @attendance_logs = AttendanceLog.find_by_sql(al_sql_query)
   end
 
@@ -27,8 +27,8 @@ class MembershipController < ApplicationController
   end
 
   def edit
-    #@id = params['id']
-    #@user = User.find(@id)
+    # @id = params['id']
+    # @user = User.find(@id)
     @user = current_user
   end
 
@@ -46,28 +46,29 @@ class MembershipController < ApplicationController
       attendance_log.save
 
       user = User.find(user_id)
-    
-      if category == "Service"
+
+      case category
+      when 'Service'
         user.service_points += event.point_value
         user.save
-      elsif category == "Brother"
+      when 'Brother'
         user.brother_points += event.point_value
         user.save
-      elsif category == "Social"
+      when 'Social'
         user.social_points += event.point_value
         user.save
-      elsif category == "Study"
+      when 'Study'
         user.study_hours += event.point_value
         user.save
       end
 
       respond_to do |format|
-        format.html { redirect_to controller: :page, action: :event_view, notice: "Successfully Signed In" }
+        format.html { redirect_to controller: :page, action: :event_view, notice: 'Successfully Signed In' }
         format.json { head :no_content }
       end
     else
       respond_to do |format|
-        format.html { redirect_to controller: :page, action: :event_view, notice: "Incorrect Password" }
+        format.html { redirect_to controller: :page, action: :event_view, notice: 'Incorrect Password' }
         format.json { head :no_content }
       end
     end
@@ -83,15 +84,15 @@ class MembershipController < ApplicationController
     QuestionMailer.new_question(last_name, first_name, email, number, message).deliver_now
 
     respond_to do |format|
-      format.html { redirect_to controller: :page, action: :index, notice: "Email Sent!" }
+      format.html { redirect_to controller: :page, action: :index, notice: 'Email Sent!' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Only allow a list of trusted parameters through.
-    def point_params
-      params.require(:user).permit(:service_points,:brother_points,:social_points, :study_hours)
-    end
-end
 
+  # Only allow a list of trusted parameters through.
+  def point_params
+    params.require(:user).permit(:service_points, :brother_points, :social_points, :study_hours)
+  end
+end

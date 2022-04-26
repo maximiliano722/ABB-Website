@@ -3,7 +3,7 @@
 module Admins
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2
-      admin = Admin.from_google(**from_google_params) #This is in Rails 6
+      admin = Admin.from_google(**from_google_params) # This is in Rails 6
       @current_admin = admin
       if admin.present?
         sign_out_all_scopes
