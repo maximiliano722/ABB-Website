@@ -8,7 +8,7 @@ gem 'devise'
 gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-google-oauth2'
 
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'bcrypt',         '~> 3.1.13'
@@ -37,9 +37,9 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rexml'
-#add breakman
+# add breakman
 gem 'brakeman'
-#add rubocop
+# add rubocop
 gem 'rubocop', require: false
 
 group :development, :test do
@@ -65,7 +65,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  #adds simple cov to the gem file
+  # adds simple cov to the gem file
   gem 'simplecov', require: false
 end
 

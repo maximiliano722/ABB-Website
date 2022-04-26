@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new 
+    @user = User.new
   end
 
   # GET /users/1/edit
@@ -57,7 +57,7 @@ class UsersController < ApplicationController
         format.html { redirect_to user_url(@user), notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
-        format.html { render :edit, status: :unprocessable_entity}
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -83,12 +83,12 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :social_points, :service_points, :brother_points, :study_hours, :is_admin, :major, :year, :position)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :social_points,
+                                 :service_points, :brother_points, :study_hours, :is_admin, :major, :year, :position)
   end
 
-
   def logged_in_user
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
     unless logged_in?
       flash[:danger] = 'Please log in.'
       redirect_to login_url unless @user.is_admin
@@ -97,11 +97,10 @@ class UsersController < ApplicationController
   # Only allow user see and edit their own page
 
   def correct_user
-
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
     if @user.nil?
-      redirect_to(root_url) unless !current_admin.nil?
-    
+      redirect_to(root_url) if current_admin.nil?
+
     elsif @user != current_user
       redirect_to(root_url) unless current_user.is_admin
     end
@@ -109,8 +108,6 @@ class UsersController < ApplicationController
 
   def admin_user
     authenticate_admin!
-    #redirect_to(root_url) unless current_user.admin?
+    # redirect_to(root_url) unless current_user.admin?
   end
-
-
 end

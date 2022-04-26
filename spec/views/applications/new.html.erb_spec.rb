@@ -11,15 +11,15 @@ RSpec.describe 'applications/new', type: :view do
                          ))
   end
 
-  #it 'renders new application form' do
+  # it 'renders new application form' do
   #  render
 
   #  assert_select 'form[action=?][method=?]', applications_path, 'post' do
-    #  assert_select 'input[name=?]', 'application[name]'
+  #  assert_select 'input[name=?]', 'application[name]'
 
-    #  assert_select 'input[name=?]', 'application[email]'
+  #  assert_select 'input[name=?]', 'application[email]'
 
-    #  assert_select 'input[name=?]', 'application[status]'
-    #end
-  #end
+  #  assert_select 'input[name=?]', 'application[status]'
+  # end
+  # end
 end
