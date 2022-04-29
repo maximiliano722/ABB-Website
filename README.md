@@ -56,7 +56,13 @@ The application can be seen using a browser and navigating to http://localhost:3
 
 ## Environmental Variables/Files ##
 
-** N/A
+Google OAuth2 support requires two keys to function as intended: Client ID and Client Secret
+
+Create a new file called application.yml in the /config folder and add the following lines:
+
+  `GOOGLE_OAUTH_CLIENT_ID: 'YOUR_GOOGLE_OAUTH_CLIENT_ID_HERE'`
+
+  `GOOGLE_OAUTH_CLIENT_SECRET: 'YOUR_GOOGLE_OAUTH_CLIENT_SECRET_HERE'`
 
 ## Deployment ##
 
