@@ -63,6 +63,15 @@ Create a new file called application.yml in the /config folder and add the follo
   `GOOGLE_OAUTH_CLIENT_ID: 'YOUR_GOOGLE_OAUTH_CLIENT_ID_HERE'`
 
   `GOOGLE_OAUTH_CLIENT_SECRET: 'YOUR_GOOGLE_OAUTH_CLIENT_SECRET_HERE'`
+  
+  ## Cloud Image Storage ##
+The images uploaded within this application are stored on a cloud storage provided by AWS's S3 service.
+The images are automatically deleted from the cloud when the users and sponsors with pictures are deleted on the application.
+A variable called RAILS_MASTER_KEY should be initiailized on the app's heroku configuration variables to use S3 cloud storage; without this key, the web application will not work.
+
+To set the extra_images on the webpage, you'll need to create extra_images with these "group" names for each page:
+ Home Page: First Image, Carousel
+ About page: About Image, Integrity Image, Brotherhood Image, Professionalism Image, Service Image
 
 ## Deployment ##
 
@@ -86,14 +95,6 @@ CI: Visible in .github/workflows/workflow.yml
 
 CD: Contiously deploying two heroku apps: a test app tracking our testv2 branch and a prdocution app tracking our main branch
 
-## Cloud Image Storage ##
-The images uploaded within this application are stored on a cloud storage provided by AWS's S3 service.
-The images are automatically deleted from the cloud when the users and sponsors with pictures are deleted on the application.
-A variable called RAILS_MASTER_KEY should be initiailized on the app's heroku configuration variables to use S3 cloud storage; without this key, the web application will not work.
-
-To set the extra_images on the webpage, you'll need to create extra_images with these "group" names for each page:
- Home Page: First Image, Carousel
- About page: About Image, Integrity Image, Brotherhood Image, Professionalism Image, Service Image
 
 ## Support ##
 
