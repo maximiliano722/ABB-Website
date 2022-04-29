@@ -64,6 +64,12 @@ Create a new file called application.yml in the /config folder and add the follo
 
   `GOOGLE_OAUTH_CLIENT_SECRET: 'YOUR_GOOGLE_OAUTH_CLIENT_SECRET_HERE'`
   
+In order to successfully deploy a new app, you'll need to export this key from the app:
+   
+   RAILS_MASTER_KEY
+   
+This will help access the credentails needed for the application to use AWS S3's storage services, otherwise the app will not work.
+  
   ## Cloud Image Storage ##
 The images uploaded within this application are stored on a cloud storage provided by AWS's S3 service.
 The images are automatically deleted from the cloud when the users and sponsors with pictures are deleted on the application.
