@@ -64,11 +64,11 @@ Create a new file called application.yml in the /config folder and add the follo
 
   `GOOGLE_OAUTH_CLIENT_SECRET: 'YOUR_GOOGLE_OAUTH_CLIENT_SECRET_HERE'`
   
-In order to successfully deploy a new app, you'll need to export this key from the app:
+In order to successfully deploy a new app, you'll need to export this key into the heroku environment variables:
    
    RAILS_MASTER_KEY
    
-This will help access the credentails needed for the application to use AWS S3's storage services, otherwise the app will not work.
+This will help your applications gain access to two more credentails (AWS_ACCESS_KEY and AWS_SECRET_KEY) that are encrypted in the config/credentials.yml file, and these values are needed for the application to use AWS S3's storage services. 
   
   ## Cloud Image Storage ##
 The images uploaded within this application are stored on a cloud storage provided by AWS's S3 service.
