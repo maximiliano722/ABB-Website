@@ -119,11 +119,6 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  ENV['GOOGLE_OAUTH_CLIENT_ID'] = '107609895920-ccfjscpj7en7ntcb6fv0n6rj71vvlr1v.apps.googleusercontent.com'
-  ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
-
-  ENV['GMAIL_USERNAME'] = 'ABBcsce431@gmail.com'
-  ENV['GMAIL_PASSWORD'] = 'quatnnsetdjlcivv'
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
