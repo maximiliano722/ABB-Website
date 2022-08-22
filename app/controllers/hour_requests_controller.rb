@@ -69,17 +69,17 @@ class HourRequestsController < ApplicationController
     user = User.find(request.user_id)
 
     case category
-    when 'Service'
-      user.service_points += approved_points
+    when 'Networking'
+      user.networking_points += approved_points
       user.save
-    when 'Brother'
+    when 'Brotherhood'
       user.brother_points += approved_points
       user.save
-    when 'Social'
-      user.social_points += approved_points
+    when 'Professionalism'
+      user.professionalism_points += approved_points
       user.save
-    when 'Study'
-      user.study_hours += approved_points
+    when 'Meeting'
+      user.meeting_hours += approved_points
       user.save
     end
 

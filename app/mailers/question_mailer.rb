@@ -8,6 +8,6 @@ class QuestionMailer < ApplicationMailer
     @number = number
     @message = message
 
-    mail to: 'm.zavala22@tamu.edu', subject: 'New Question Submitted to ABB Website!'
+    mail to: 'aggiebusinessbrothers@gmail.com', subject: 'New Question Submitted to ABB Website!'
   end
 end

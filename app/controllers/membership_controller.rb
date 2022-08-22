@@ -48,17 +48,17 @@ class MembershipController < ApplicationController
       user = User.find(user_id)
 
       case category
-      when 'Service'
-        user.service_points += event.point_value
+      when 'Networking'
+        user.networking_points += event.point_value
         user.save
-      when 'Brother'
+      when 'Brotherhood'
         user.brother_points += event.point_value
         user.save
-      when 'Social'
-        user.social_points += event.point_value
+      when 'Professionalism'
+        user.professionalism_points += event.point_value
         user.save
-      when 'Study'
-        user.study_hours += event.point_value
+      when 'Meeting'
+        user.meeting_hours += event.point_value
         user.save
       end
 
@@ -93,6 +93,6 @@ class MembershipController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def point_params
-    params.require(:user).permit(:service_points, :brother_points, :social_points, :study_hours)
+    params.require(:user).permit(:networking_points, :brother_points, :professionalism_points, :meeting_hours)
   end
 end
